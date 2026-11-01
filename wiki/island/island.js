@@ -73,7 +73,7 @@
       help_url_h: "網址可以分享",
       help_url: "選到哪張圖、哪隻 Boss、走到第幾步都記在網址裡。複製網址給別人，打開就是同一畫面。",
       help_tl_h: "時間軸",
-      help_tl: "上方切到「時間軸」，直播集數、驗證事件、地圖進度依日期由舊到新排成一條線。點集數可開 VOD，點事件可回到流程視圖或物種頁。沒有日期的事件集中在底部的「日期未定」區。",
+      help_tl: "上方切到「時間軸」，直播集數、驗證事件、地圖進度依日期由舊到新排成一條線。集數列的 VOD 連結可開錄影，事件列的連結可跳到流程視圖或物種頁。沒有日期的事件集中在底部的「日期未定」區。",
       help_src_h: "資料來源",
       help_src: "Boss、洞窟、Artifact 資料整理自 ark.wiki.gg 與 kamigame，驗證級數以實際遊玩為準。看到錯誤歡迎回報。",
       // 時間軸視圖（任務單 C4）
@@ -120,7 +120,7 @@
       legend_title: "凡例", legend_status: "マップ状態", legend_verif: "検証", legend_nodes: "ノード",
       node_boss: "ボス（Γ／β／α 三色；灰＝単一難度）", node_cave: "洞窟", node_artifact: "アーティファクト",
       generated: "生成日", version: "バージョン", mock: "ダミーデータ",
-      map: "マップ", kind: "種別", status: "状態", release: "ASA 配信", started: "開始", finished_at: "完了",
+      map: "マップ", kind: "種別", status: "状態", release: "ASA リリース", started: "開始", finished_at: "完了",
       boss_progress: "ボス進捗",
       targets: "このマップの目標", species_list: "このマップの生物", expand: "生物を展開", collapse: "閉じる",
       type: "種別", difficulty: "難度", artifacts: "必要アーティファクト", produces: "入手アーティファクト",
@@ -154,7 +154,7 @@
       help_url_h: "URL で共有できます",
       help_url: "選んだマップ、ボス、何歩目まで進んだかは URL に記録されます。URL をコピーして送れば、相手も同じ画面を開けます。",
       help_tl_h: "タイムライン",
-      help_tl: "上部で「タイムライン」に切り替えると、配信回、検証イベント、マップ進捗を日付の古い順に一本の線に並べます。配信回を押すと VOD、イベントを押すとフロー表示や生物ページへ移れます。日付のないイベントは下部の「日付未定」にまとめています。",
+      help_tl: "上部で「タイムライン」に切り替えると、配信回、検証イベント、マップ進捗を日付の古い順に一本の線に並べます。配信回の VOD リンクから録画を開け、イベントからフロー表示や生物ページへ移動できます。日付のないイベントは下部の「日付未定」にまとめて表示します。",
       help_src_h: "データの出典",
       help_src: "ボス、洞窟、アーティファクトのデータは ark.wiki.gg と kamigame をもとに整理し、検証レベルは実際のプレイを基準にしています。誤りに気づいたらお知らせください。",
       // タイムライン表示（C4）
@@ -163,10 +163,10 @@
       tl_filter: "マップで絞り込み", tl_all: "すべて", tl_no_map_n: "{n} 回はマップ未記入（マップ絞り込み時は非表示）",
       tl_undated: "日付未定", tl_undated_hint: "検証レベルはあるが日付がまだないイベント。検証記録に日付を入れると自動で軸に載ります。",
       tl_map_unfilled: "マップ未記入", tl_empty: "タイムラインのデータはまだありません",
-      tl_k_episode: "配信回", tl_k_event: "検証イベント", tl_k_map: "マップ進捗", tl_k_release: "ASA 配信",
-      tl_show_release: "ASA 配信日を表示", tl_release: "ASA 配信 {map}", tl_started: "{map} 開始", tl_finished: "{map} 完了",
+      tl_k_episode: "配信回", tl_k_event: "検証イベント", tl_k_map: "マップ進捗", tl_k_release: "ASA リリース",
+      tl_show_release: "ASA リリース日を表示", tl_release: "ASA リリース {map}", tl_started: "{map} 開始", tl_finished: "{map} 完了",
       tl_ev_l3: "テイム済（L3）", tl_ev_l2: "試行（L2）", tl_ev_target_l3: "実戦済 L3", tl_ev_target_l2: "試行 L2",
-      tl_ep: "第 {n} 回", tl_ep_no: "回", tl_ep_title: "タイトル", tl_ep_date: "日付", tl_ep_highlight: "この回の要点", tl_vod: "VOD",
+      tl_ep: "第 {n} 回", tl_ep_no: "配信回", tl_ep_title: "タイトル", tl_ep_date: "日付", tl_ep_highlight: "この回の要点", tl_vod: "VOD",
       tl_open_vod: "VOD を開く", tl_no_vod: "VOD なし", tl_with_ep: "同じ回のイベント", tl_which: "イベント",
       to_timeline: "タイムラインで見る", tl_legend: "凡例"
     }
