@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配種計畫：恐爪龍（Deinonychus／デイノニクス） - ARK 離線 wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="../index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="deinonychus_JP.html">日本語</a>
+</header>
+<main class="page">
+<h1 id="配種計畫恐爪龍deinonychusデイノニクス">配種計畫：恐爪龍（Deinonychus／デイノニクス）</h1>
+<blockquote><p>自動生成：<code>scripts/build_breeding.py</code>。數值來源見文末「來源」節；查不到的一律寫「未確認」，不補值。</p></blockquote>
+<h2 id="1-用途">1. 用途</h2>
+<p><strong>出血型攻擊手（出血對 Boss 也有效），Grendel 戰的替代攻擊位</strong></p>
+<p>kamigame 物種頁寫「デイノニクスの出血効果は、ボスにも有効」「HP の高いボスに対してはより効果が高い」，但同時警告「体力は低く、攻撃を受けない立ち回りが重要」。Grendel 攻略頁把 Deinonychus 列為替代方案，並寫「複数人でやる場合や特質厳選が出来る場合は、デイノニクスが一番早く討伐が可能」（該頁自陳未實測）。因為體力低是主要死因，配種先補 HP、再補攻擊（優先序為推論）。</p>
+<h2 id="2-目標-stat-與優先序">2. 目標 stat 與優先序</h2>
+<p>優先序：HP（體力） ＞ 攻（近戰攻擊）（推論：來源未寫 stat 優先序，項目與排序皆本卡判斷）</p>
+<p>目標數值：攻略來源目標：近戰 700% 為目標（kamigame ヌナタク攻略「ほかの生物候補」欄，同欄註明要從其他地圖轉移過來）（注意：攻略來源給的是「養成完成後的實數」，即 HP 值、近戰 %、鞍甲值；<code>data/個體屬性.csv</code> 記的是「野生點數」，兩者單位不同，不能直接互換，野生點數只能當「同物種之間誰比較好」的排序用）；現況基準線＝野生點數 HP≥25、攻≥28（＝現有個體最高值，來源 data/個體屬性.csv 2026-07-20 快照）</p>
+<h2 id="3-突變策略">3. 突變策略</h2>
+<p>固定一隻高 stat 公＋一群突變計數 0 的母；雙親母系＋父系合計 &lt;20 才有完整 7.31% 機率，一方 ≥20 降到 4.07%，雙方都 ≥20 為 0%。突變出現就把新公換上去，母群永遠保持乾淨。</p>
+<h2 id="4-孵化溫度妊娠或孵化時間成長時間">4. 孵化溫度／妊娠或孵化時間／成長時間</h2>
+<ul><li>孵化適溫：80 ～ 90℃（kamigame：42℃，疑該站誤植）</li><li>孵化或妊娠時間：孵化 4 時 59 分 59 秒（kamigame：2時間0分0秒，疑該站誤植）</li><li>總成熟時間：1 日 13 時 2 分 13 秒（kamigame：1日13時間02分13秒）</li><li>幼年期時間：3時間42分13秒</li><li>交配冷卻：18 時 0 分 0 秒 〜 2 日 0 時 0 分 0 秒</li><li>產卵／妊娠場所：陸上</li><li>蛋可做的 kibble：通常キブル</li></ul>
+<p>來源核對：成熟時間＝一致／孵化或妊娠時間＝三源裁決（Dv 17999 秒 vs kamigame 7200 秒（差 10799 秒）；見本節裁決說明）／孵化溫度＝三源裁決（Dv 80.0–90.0℃ vs kamigame 42℃；見本節裁決說明）</p>
+<p><strong>三源裁決（2026-09-13）：孵化溫度以 80 ～ 90℃、孵化時間以 5 小時為主值。</strong>ark.wiki.gg（官方 ASA wiki）的 Deinonychus wikitext 寫 <code>incubationmin = 80</code>／<code>incubationmax = 90</code>；dododex 的 Deinonychus 頁（該頁自標 ASA 與 ASE 皆適用）寫 80–90°C 與 5h Egg incubation；兩者與 fandom <code>Module:Dv/data</code> 的 80–90℃／17998 秒一致。kamigame 的 42℃／2 時間判為該站誤植：同一張表的其他四欄（合計成熟 1日13時間02分13秒、幼年期 3時間42分13秒、刷り込み回数 4、猶予 5時間02分13秒）與遊戲檔逐秒吻合，沒有只改溫度與孵化時間、卻讓成熟與印記整條鏈不動的道理。作業請照 80 ～ 90℃ 備料（極高溫段，空調台數見通用手冊第 2 節），不要照 42℃：溫度不在範圍內的蛋不會推進孵化進度，還會一路掉受精蛋耐久直到毀掉。</p>
+<h2 id="5-幼體照顧">5. 幼體照顧</h2>
+<ul><li>餌（kamigame 原字）：肉類</li><li>印記次數：4｜印記寬限時間：5時間02分13秒</li><li>肉食；本種是「只能靠偷蛋取得」的例外，幼體照常吃一般肉類，不像 Wyvern 需要特殊食物（fandom Breeding「Caring for Babies from Egg-only Tames」明列 Deinonychus 為 exception）。</li></ul>
+<h2 id="6-現有個體配對建議">6. 現有個體配對建議</h2>
+<ul><li>隻數 10｜公 8／母 2｜冷凍中 0｜留種 8／淘汰候選 2</li></ul>
+<div class="table-wrap"><table><thead><tr><th>stat</th><th>最高值</th><th>持有者</th></tr></thead><tbody><tr><td>HP（體力）</td><td>25</td><td>母Lv187#896137、母Lv202#019820、公Lv198#439626、公Lv194#467100、公Lv197#697338、公Lv191#390364</td></tr><tr><td>耐（耐力）</td><td>22</td><td>公Lv198#439626、公Lv194#467100、公Lv197#697338、公Lv191#390364</td></tr><tr><td>氧（氧氣）</td><td>31</td><td>母Lv187#896137、母Lv202#019820、公Lv198#439626</td></tr><tr><td>食（食物）</td><td>29</td><td>公Lv190#348556</td></tr><tr><td>重（負重）</td><td>28</td><td>母Lv187#896137、母Lv202#019820、公Lv191#390364</td></tr><tr><td>攻（近戰攻擊）</td><td>28</td><td>公Lv190#348556</td></tr></tbody></table></div>
+<p><strong>配對建議（前 3）</strong></p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>公</th><th>母</th><th>子代可湊點數總和</th><th>各項貢獻</th></tr></thead><tbody><tr><td>1</td><td>公Lv190#348556</td><td>母Lv187#896137</td><td>53</td><td>HP25(母)；攻28(公)</td></tr><tr><td>2</td><td>公Lv190#348556</td><td>母Lv202#019820</td><td>53</td><td>HP25(母)；攻28(公)</td></tr><tr><td>3</td><td>公Lv197#697338</td><td>母Lv187#896137</td><td>49</td><td>HP25(公)；攻24(母)</td></tr></tbody></table></div>
+<p>（配對算法與儀表板 🧬 育種決策頁、<code>scripts/report_breeding.py</code> 共用 <code>ark_progress.compute_breeding()</code>，納入計算 stat＝HP、攻、目標色系＝紅）</p>
+<h2 id="7-來源">7. 來源</h2>
+<ul><li><a href="https://kamigame.jp/asa/page/383839160559000779.html">https://kamigame.jp/asa/page/383839160559000779.html</a></li><li><a href="https://kamigame.jp/asa/page/400530104020635620.html">https://kamigame.jp/asa/page/400530104020635620.html</a></li><li><a href="https://ark.wiki.gg/wiki/Deinonychus">https://ark.wiki.gg/wiki/Deinonychus</a></li><li><a href="https://www.dododex.com/taming/deinonychus">https://www.dododex.com/taming/deinonychus</a></li><li><a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a></li><li><a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li><li><a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></li><li><a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li>kamigame 快取檔：<code>.cache/kamigame/page_383839160559000779.html</code></li></ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全地圖攻略順序與直播規劃 / 全マップ攻略順序と配信ロードマップ - ARK 離線 wiki</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="roadmap_JP.html">日本語</a>
+</header>
+<main class="page">
+<h1 id="全地圖攻略順序與直播規劃--全マップ攻略順序と配信ロードマップ">全地圖攻略順序與直播規劃 / 全マップ攻略順序と配信ロードマップ</h1>
+<p>日文對照版＝<a href="roadmap_JP.html"><code>roadmap_JP.md</code></a>（逐節對應）。資料表＝<code>data/直播規劃.csv</code>（9 欄，40 列；未收進本站）。
+比對報表＝<code>reports/獨有物種口徑比對_A6.md</code>、<code>reports/預計抓_建議差異.md</code>（未收進本站）。
+產生器＝<code>scripts/build_roadmap_A6.py</code>（可重跑、冪等、不查網路）。本檔為手寫散文，數字全部來自該腳本實跑輸出。</p>
+<hr>
+<h2 id="零既定口徑與免責">零、既定口徑與免責</h2>
+<p><strong>以下三條為既定口徑，本檔一律照用，不重新討論：</strong></p>
+<ol><li><strong>「打完一張圖」＝該圖獨有物種全馴 ＋ 全洞窟 ＋ Boss</strong>（既定口徑）。</li><li><strong>Lost Colony 是長期主基地，順位最高</strong>（既定口徑，下文稱「決策 1」）。本檔第三節會說明，
+「順位最高」與「第一個打完」是兩件事：本檔把 LC 當成常設的資產基地，不是第一個結案的圖。</li><li><strong>物種完成判定是全域一次</strong>：每物種在任何一張圖馴服一次即清格，不分地圖、不分變體
+（<code>README.md</code>「專案目標」節）。</li></ol>
+<p><strong>「估計」聲明：本檔所有集數區間都是估計，不是承諾。</strong> <code>data/直播集數.csv</code> 45 列的<strong>地圖欄全部是空的</strong>
+（實測 45/45 空），所以沒有任何一張圖有精確的已用集數。本檔只能用
+<code>攻略清單.csv</code> 的完成日期與 <code>直播集數.csv</code> 的播出日期<strong>兩者</strong>交叉，
+把 45 集<strong>粗分</strong>成：Lost Colony ≈ #1–23（2026-02-16〜06-30）、Valguero ≈ #24–44（2026-07-01〜08-05）、
+Ragnarok ≈ #45（2026-09-06 起）。這個切分本身是<strong>推估</strong>，沒有任何一列資料直接佐證。
+（<code>地圖進度.csv</code> 的開始日期只有 Ragnarok 填了，Valguero 與 Lost Colony 兩欄皆空，
+所以它只定得出 Ragnarok 這一個切點，不構成第三個交叉來源。2026-09-13 驗收建議 4 更正。）
+由此推出的單位係數（洞窟 1–2 集／個、Boss 群 2–4 集／群、獨有物種 1.5–3 種／集）同樣是推估。
+<strong>要讓後續估計變準，最便宜的動作是把 <code>直播集數.csv</code> 45 列的地圖欄補填。</strong></p>
+<p><strong>查證紀律</strong>：本檔每段標依據（工作區檔案的節號或表列）。工作區查不到的一律寫「未確認」，不補推測。
+本卡為綜合卡，<strong>除了讀取已在 <code>.cache/kamigame/</code> 的兩張離線頁面之外沒有發任何網路請求</strong>。</p>
+<hr>
+<h2 id="一現況數字scriptsark_progresspy-compute-實跑2026-09-13">一、現況數字（<code>scripts/ark_progress.py</code> <code>compute()</code> 實跑，2026-09-13）</h2>
+<div class="table-wrap"><table><thead><tr><th>指標</th><th>數值</th></tr></thead><tbody><tr><td>圖鑑</td><td><strong>65 / 294（22.1%）</strong></td></tr><tr><td>已釋出圖可取得的可馴服物種</td><td>248（另 46 種只在未推出／未確認的圖，現在抓不到）</td></tr><tr><td>未購買 DLC 排除的物種</td><td>26（Aquatica）</td></tr><tr><td>直播集數</td><td>45（#45＝2026-09-06，Ragnarok 開圖日）</td></tr><tr><td>進行中的圖</td><td>Ragnarok（目前所在）、Valguero、Lost Colony</td></tr><tr><td>尚未開始</td><td>The Island、Scorched Earth、The Center、Aberration、Extinction、Astraeos、Genesis: Part 1</td></tr></tbody></table></div>
+<p><strong>剩餘工作量的真實規模：294 − 65 ＝ 229 種未馴。</strong> 但「打完十圖」不需要全部 229 種。
+依「打完一張圖」的定義只需要各圖的<strong>獨有</strong>物種，這就是下一節為什麼重要。</p>
+<hr>
+<h2 id="二每圖獨有物種兩個口徑不一致而且差很多">二、每圖獨有物種：兩個口徑不一致，而且差很多</h2>
+<p>本節用官方出沒資料重算獨有物種，再與 <code>compute()</code> 的 <code>unique</code>（清單）口徑比對。結果如下。</p>
+<div class="table-wrap"><table><thead><tr><th>地圖</th><th>清單獨有</th><th>官方出沒獨有</th><th>清單獨有且未馴</th><th>該圖可馴未馴（清單）</th><th>該圖可馴未馴（兩表聯集）</th></tr></thead><tbody><tr><td>The Island</td><td>0</td><td>0</td><td>0</td><td>63</td><td>64</td></tr><tr><td>Scorched Earth</td><td>0</td><td>0</td><td>0</td><td>41</td><td>46</td></tr><tr><td>The Center</td><td>0</td><td>0</td><td>0</td><td>66</td><td>73</td></tr><tr><td><strong>Aberration</strong></td><td><strong>44</strong></td><td><strong>12</strong></td><td>38</td><td>66</td><td>66</td></tr><tr><td>Extinction</td><td>6</td><td>1</td><td>6</td><td>63</td><td>63</td></tr><tr><td>Astraeos</td><td>3</td><td>3</td><td>3</td><td>31</td><td>31</td></tr><tr><td><strong>Ragnarok</strong></td><td><strong>8</strong></td><td><strong>4</strong></td><td>8</td><td>86</td><td>90</td></tr><tr><td>Valguero</td><td>2</td><td>2</td><td>1</td><td>75</td><td><strong>110</strong></td></tr><tr><td>Lost Colony</td><td>4</td><td>4</td><td>3</td><td>19</td><td><strong>56</strong></td></tr><tr><td><strong>Genesis: Part 1</strong></td><td><strong>31</strong></td><td><strong>35</strong></td><td>31</td><td>98</td><td>114</td></tr></tbody></table></div>
+<p>（來源：<code>scripts/build_roadmap_A6.py</code> 實跑；逐筆落差見 <code>reports/獨有物種口徑比對_A6.md</code>。）</p>
+<h3 id="21-最重要的一條落差落差-32-種裡有-31-種同時出現在-valguero">2.1 最重要的一條落差：落差 32 種裡有 31 種同時出現在 Valguero</h3>
+<p><code>data/生物清單.csv</code> 把 44 種 <code>Aberrant *</code> 物種標成 Aberration 獨有；但
+<code>data/出沒地點.csv</code>（來源 <code>ark.wiki.gg/wiki/Data:Spawn_Map/Valguero/ASA</code>，信心「高」）
+對其中 <strong>32 種</strong>另外登記了 Aberration 以外的生成點，所以這 32 種在官方出沒口徑下不算 Aberration 獨有。
+這 32 種裡 <strong>31 種的另一個生成地是 Valguero</strong>（區域描述寫「地下深淵區（Aberration 生態）」、「專屬生成點」等），
+剩下 <strong>1 種是 <code>Aberrant Megalania</code>，出沒表給的是 Aberration＋Ragnarok，不含 Valguero</strong>。
+扣掉已馴的，<strong>現在還沒馴、而且 Valguero 就抓得到的畸變種有 25 種</strong>。</p>
+<blockquote><p><strong>2026-09-13 驗收必修 1</strong>：本節原寫「32 種在 Valguero 也生成」，把「落差集合（32）」與
+「也在 Valguero 的集合（31）」當成同一件事，數字錯 1。<code>reports/獨有物種口徑比對_A6.md</code>
+的逐筆資料本來就是對的（該檔明列 <code>Aberrant Megalania：Aberration、Ragnarok</code>），
+25 種未馴清單不受影響，只有本節的標題與敘述需更正。</p></blockquote>
+<p>這 25 種是：Aberrant Anglerfish、Araneo、Beelzebufo、Carbonemys、Carnotaurus、Dimetrodon、
+Dimorphodon、Diplocaulus、Diplodocus、Dire Bear、Doedicurus、Electrophorus、Equus、Moschops、
+Otter、Ovis、Paraceratherium、Parasaur、Pulmonoscorpius、Salmon、Sarco、Stegosaurus、
+Titanoboa、Triceratops、Trilobite。（逐筆出沒地圖見 <code>reports/獨有物種口徑比對_A6.md</code> Aberration 節。）</p>
+<p><strong>這是本卡在資料上最大的發現</strong>：Valguero 已有基地（16.4/48.1）與 6 個洞窟座標，
+在那裡順手就能清掉 25 格圖鑑；而按現行清單口徑，這 25 格會被顯示成「要去 Aberration 才拿得到」。
+兩個口徑哪個對，本卡<strong>不調解</strong>。官方生成資料（<code>Data:Spawn_Map</code>）在來源層級上高於 wiki 名冊欄位，
+但 <code>生物清單.csv</code> 的「出自地圖或DLC」欄是圖鑑進度的現用口徑，改動會動到圖鑑分母。<strong>登記為待確認。</strong></p>
+<h3 id="22-其餘落差">2.2 其餘落差</h3>
+<ul><li><strong>Extinction 5 種</strong>（Desert／Forest／Ice Titan、Mek、Mega Mek）：出沒表<strong>完全查無</strong>這 5 種。
+合理：它們不是野生生成物（泰坦靠終端機召喚、Mek 靠製造），所以官方生成資料沒有它們。
+這裡清單口徑是對的，出沒口徑失效。</li><li><strong>Ragnarok 4 種</strong>（Autumn／Spring／Summer／Winter Drakeling）：出沒表顯示四季幼龍在
+The Center、Valguero 也有（Summer 另在 Scorched Earth、Genesis P1；Winter 另在 Lost Colony、Genesis P1）。
+<strong>這條直接牴觸既有口徑決策 22 的「四季 Drakeling（Ragnarok 獨有）」</strong>，登記為待確認。</li><li><strong>Genesis: Part 1 多出 4 種</strong>（Tek Parasaur／Raptor／Rex／Stegosaurus）：<code>生物清單.csv</code> 的
+「出自地圖或DLC」欄寫「未確認」，所以 <code>compute()</code> 把它們歸進「尚未在任何已推出圖出現」的 46 種；
+但出沒表明寫 Genesis: Part 1 月面生態區。<strong>等於現在的圖鑑分母把 4 種其實抓得到的物種算成抓不到。</strong></li></ul>
+<h3 id="23-口徑的已知限制">2.3 口徑的已知限制</h3>
+<ul><li>出沒表只涵蓋 294 個可馴服物種中的 <strong>251 種</strong>，另 43 種查無。查無的物種在官方出沒口徑下
+不會被算成任何圖的獨有，所以<strong>官方出沒口徑會系統性低估獨有數</strong>，不能單獨拿來取代清單口徑。</li><li><code>生物清單.csv</code> 有 <code>Spirit Dire Bear</code> 與 <code>Spirit Direbear</code> 兩個拼法並存，兩者都算 Ragnarok 獨有未馴。
+<strong>極可能是同一物種的重複列</strong>，但本卡不動 <code>生物清單.csv</code>（紀律：衝突記錄、不寫回本體），登記待確認。</li></ul>
+<hr>
+<h2 id="三地圖順序">三、地圖順序</h2>
+<h3 id="31-排序時真正咬住的四個限制">3.1 排序時真正咬住的四個限制</h3>
+<ol><li><strong>Artifact 是每張圖的通行費。</strong> 競技場 Boss 一律要 Artifact，而 Artifact 來自該圖的洞窟。
+十圖的洞窟數落差極大：The Island 10 個、The Center 9 個、Astraeos／Ragnarok／Valguero 各 6 個、
+Scorched Earth／Aberration／Extinction 各 3 個、Lost Colony 與 Genesis: Part 1 <strong>查無</strong>
+（<code>scripts/seed_checklist.py --dry-run</code> 對 kamigame 快取頁的離線解析結果）。</li><li><strong>Artifact 能不能跨圖搬，工作區查無明文。</strong> 這一條決定整個排序長什麼樣，見 3.4 第 1 點。
+<strong>本卡保守假設「不能跨圖」</strong>，也就是每張圖的 Boss 貢物要在該圖自己湊齊。</li><li><strong>獨有物種集中在四張圖。</strong> Aberration（38）、Genesis: Part 1（31）、Ragnarok（8）、Extinction（6）
+佔了獨有未馴的絕大多數；The Island／Scorched Earth／The Center <strong>獨有＝0</strong>，
+它們對圖鑑沒有任何非去不可的理由，價值全在 Artifact 與 Tekgram。</li><li><strong>跨圖帶隊靠上傳／下載。</strong> <code>data/配種目標.csv</code> 的 16 個配種目標裡，Therizinosaurus 明文寫
+「Valguero：Grendel 編成 ×14；Ragnarok：Nunatak 編成 ×10 並當坐騎」。同一支草食隊要服務兩張圖，
+所以這兩張圖的 Boss 戰應該<strong>排在一起</strong>，不要中間隔四五張圖再重練一次。</li></ol>
+<h3 id="32-主推順序">3.2 主推順序</h3>
+<blockquote><p><strong>一句話：先把手上三張進行中的圖榨乾（Ragnarok 物種 → Valguero 物種＋洞窟＋Boss → 回頭打 Nunatak → LC 升級），
+再照「Artifact 密度由高到低」推故事圖，把任務制與 X 變體最多的 Genesis: Part 1 留到最後。</strong></p></blockquote>
+<div class="table-wrap"><table><thead><tr><th>順位</th><th>地圖</th><th>一句話理由</th><th>主要依據</th></tr></thead><tbody><tr><td>1</td><td><strong>Ragnarok</strong></td><td>目前所在地圖、據點已建（58.6/51.6），8 種獨有裡 4 種是手渡し的四季幼龍＝當下最便宜的圖鑑格</td><td><code>攻略清單.csv</code> Ragnarok 據點列；<code>reports/地圖預習_Ragnarok.md</code> 手渡し節</td></tr><tr><td>2</td><td><strong>Valguero</strong></td><td>6 個洞窟一次拿滿 <strong>10 種 Artifact</strong>，且這 10 種<strong>恰好就是 Grendel 三難度要的 10 種</strong>＝全系列唯一自給自足的 Boss；同時清 25 種畸變種</td><td><code>攻略清單.csv</code> Valguero 洞窟 6 列；<code>wiki/guides/boss_valguero.md</code> 一節第 2 小節；<code>reports/獨有物種口徑比對_A6.md</code></td></tr><tr><td>3</td><td><strong>Lost Colony</strong></td><td>既定的長期主基地，配種戰隊常駐地；但它的 Boss 前置（印章 100–200 個 ×2 ＋ Alpha Ossidon ×5）是全系列最長的磨材線，適合當背景長線而不是衝刺目標</td><td>決策 1；<code>wiki/guides/boss_lost-colony.md</code> 2 節</td></tr><tr><td>4</td><td><strong>The Island</strong></td><td>10 個洞窟＝十碑系 Artifact 一次補滿，且四隻 Boss 的等級門檻最低（30/45/55/60 起跳）＝Tekgram 的教科書起點</td><td><code>seed_checklist --dry-run</code> The Island 10 洞窟；<code>wiki/guides/boss_the-island.md</code> 各節第 2 小節</td></tr><tr><td>5</td><td><strong>Scorched Earth</strong></td><td>三種 Wyvern 之爪與飛龍奶的唯一產地，是 Extinction（Desert Titan 要 Fire Talon ×10）與飛龍配種線的上游</td><td><code>wiki/guides/boss_scorched-earth.md</code> 二節；<code>wiki/guides/boss_extinction.md</code> 2 節</td></tr><tr><td>6</td><td><strong>The Center</strong></td><td>9 個洞窟，<strong>含目前工作區唯一確認的「邪悪 Artifact」產地（邪悪の洞窟 41.5/28.5）</strong>。而邪悪正是 Ragnarok 的 Nunatak 要的 10 種之一</td><td><code>seed_checklist --dry-run</code> The Center；<code>wiki/guides/boss_ragnarok.md</code> 一節第 2 小節</td></tr><tr><td>7</td><td><strong>Aberration</strong></td><td>扣掉 Valguero 也有的 25 種之後，真正非來不可的只剩 13 種（含 Rock Drake、Reaper 兩條長線）；且全程輻射、成本高</td><td><code>reports/獨有物種口徑比對_A6.md</code> Aberration 節；<code>data/難度標籤.csv</code> Rock Drake／Reaper</td></tr><tr><td>8</td><td><strong>Extinction</strong></td><td>6 種獨有全是泰坦與 Mek，等於階段二與階段四合併；King Titan 需三泰坦 Trophy ＋ Corrupt Heart 300，是長備料局</td><td><code>wiki/guides/boss_extinction.md</code> 2 節 King Titan 表</td></tr><tr><td>9</td><td><strong>Astraeos</strong></td><td>只有 3 種獨有、可馴池最小（41 種），但 Boss 多達 9 群＝投報比最差；且 Hydraskos 編成要 Deinonychus，得從 Valguero 傳過來。<strong>注意：9 群裡有 4 群是野外迷你 Boss，備料成本與競技場 Boss 差一個量級，本圖階段四的 18–36 集估計可能嚴重高估，這條排序理由要打折看</strong></td><td><code>compute()</code> per_map；<code>wiki/guides/boss_astraeos.md</code> 2、4 節</td></tr><tr><td>10</td><td><strong>Genesis: Part 1</strong></td><td>獨有最多（35，官方出沒口徑）但 21 種是 X 變體、馴法與本體相同＝重複勞動；Boss 門檻是<strong>任務數 58／116／168</strong> 而非素材，是全系列最長的單圖工期</td><td><code>reports/獨有物種口徑比對_A6.md</code>；<code>wiki/guides/boss_genesis-part-1.md</code> 二節第 1 小節</td></tr></tbody></table></div>
+<p><strong>Ragnarok 的 Boss 回鍋</strong>：順位 1 只做 Ragnarok 的階段一〜三（據點、8 種獨有、6 個洞窟含兩隻地城 Boss）。
+Nunatak 押到順位 6（The Center）之後才回來，理由見 3.4 第 1 點。這在
+<code>data/直播規劃.csv</code> 裡不另開一列，而是寫進 Ragnarok 階段四的「前置條件」欄。</p>
+<h3 id="33-替代順序b-案照決策-1-字面lc-先行">3.3 替代順序（B 案：照決策 1 字面，LC 先行）</h3>
+<div class="table-wrap"><table><thead><tr><th>順位</th><th>地圖</th><th>與主推的差別</th></tr></thead><tbody><tr><td>1</td><td>Lost Colony</td><td>完全照「LC 順位最高」的字面解讀，開局就回 LC</td></tr><tr><td>2</td><td>Valguero</td><td>同主推</td></tr><tr><td>3</td><td>Ragnarok</td><td>從順位 1 降到 3</td></tr><tr><td>4–10</td><td>The Island → The Center → Scorched Earth → Aberration → Extinction → Astraeos → Genesis: Part 1</td><td>大致同主推，只把 The Center 提前到 Scorched Earth 之前（為了早點拿邪悪 Artifact）</td></tr></tbody></table></div>
+<p><strong>B 案的理由</strong>：完全不動既有決策，指揮成本最低；而且 LC 的印章磨材線越早開始、越不會在後期卡住。</p>
+<p><strong>B 案的代價</strong>：① Ragnarok 據點才剛建好（2026-09-06）就要放著，等於 #45 那集白開；
+② LC 的階段二三種獨有裡兩種是「極高」難度（Aureliax 要高空換蛋再擋五波 Neophyte、
+Ossidon 要打到 50% 昏迷再玩至少四輪 Bolus 小遊戲），開局就撞硬牆，直播節奏會很難看；
+③ LC 洞窟數在工作區<strong>查無</strong>（kamigame 洞窟座標一覧沒有ロストコロニー節），
+等於「全洞窟」這個結案條件目前無法定義，硬排第一會卡在一個定義不明的驗收點上。</p>
+<h3 id="34-本卡建議改寫既有決策的地方兩處皆待確認">3.4 本卡建議改寫既有決策的地方（兩處，皆待確認）</h3>
+<p><strong>① 決策 1 的「Valguero 打完洞窟/Boss 前，先把物種抓完再回 LC」：建議改成「洞窟不要延後」。</strong>
+理由：Valguero 的 6 個洞窟是全系列<strong>唯一</strong>一次拿滿 10 種 Artifact 的地方，而 Grendel 三難度
+要的 Artifact <strong>恰好就是這 10 種</strong>（Gamma：天帝／暴食／群集；Beta：免疫／強者／狡猾；
+Alpha：門番／岩山／破壊者／野獣。對上 6 個洞窟名：天帝、野獣と暴食、強者と免疫と群集、
+狡猾と破壊者、門番、岩山，一個不多一個不少）。這是逐項對位得出，不是推測；
+來源＝<code>wiki/guides/boss_valguero.md</code> 一節第 2 小節的貢物表 × <code>data/攻略清單.csv</code> Valguero 洞窟 6 列的名稱。
+把洞窟延後 ＝ 把這個全系列最乾淨的 Boss 一起延後，沒有好處。</p>
+<p><strong>② 決策 22 的「四季 Drakeling（Ragnarok 獨有）」：官方出沒表說不是。</strong>
+四季幼龍在 The Center 與 Valguero 也生成（見 2.2）。如果要在 Valguero 順手抓，
+Ragnarok 的階段二可以再少 4 種。本卡在 <code>data/直播規劃.csv</code> 仍<strong>保守</strong>照清單口徑把它們留在 Ragnarok。</p>
+<hr>
+<h2 id="四逐圖四階段">四、逐圖四階段</h2>
+<p>以下每圖四階段的「目標／前置條件／估集數／依據」四欄，與 <code>data/直播規劃.csv</code> 逐列一致
+（該 CSV 是本節的機器可讀版；文字有出入以 CSV 為準，因為 CSV 由腳本生成、本節是手寫）。
+估集數全部是估計，基準見第零節。</p>
+<h3 id="41-ragnarokラグナロク仙境順位-1獨有未馴-8">4.1 Ragnarok（ラグナロク／仙境）｜順位 1｜獨有未馴 8</h3>
+<ul><li><strong>階段一 據點與基本坐騎（2–4 集）</strong>：據點已建（58.6/51.6）＋水邊分點（60.2/28.0），本階段只剩補冷凍艙與運輸鳥。</li><li><strong>階段二 獨有物種（3–6 集）</strong>：Autumn／Spring／Summer／Winter Drakeling（<strong>手渡し</strong>，餌＝超級キブル(黄色)／羊肉系，
+<code>reports/地圖預習_Ragnarok.md</code>）、Griffin（昏睡，<strong>需先建陷阱且不可繁殖，必須一次抓到高等個體</strong>，
+<code>data/難度標籤.csv</code> Griffin 列；陷阱型式見 <code>wiki/traps/bear-trap-and-bola.md</code>＝陷阱圖鑑<strong>第 7 型</strong>「熊夾與鎖鏈類」，
+其第 8 節「適用物種」的獸夾／大型獸夾／鎖鏈球三份名單都含 Griffin。
+<strong>本檔原引第 1／3 型為誤</strong>，那兩型的適用物種是 Argentavis 系，名單裡沒有 Griffin，2026-09-13 驗收必修 3 更正）、
+Spirit Dire Bear／Spirit Direbear／Spirit Direwolf（Spirit 系名稱有重複拼法，見 2.3）。</li><li><strong>階段三 洞窟（6–12 集）</strong>：強者／試練／暴食／凍土／肉食／ジャングル 共 6 個。
+兩隻地城 Boss 順便處理：<strong>Iceworm Queen 在凍土の洞窟，必須「不騎乘」從瀑布落進底部水池才會現身</strong>；
+<strong>Lava Elemental 在ジャングルの洞窟最深處，入口被水晶封住，要帶金屬鎬</strong>
+（<code>wiki/guides/boss_ragnarok.md</code> 二、三節第 1 小節）。兩隻都不需貢物。</li><li><strong>階段四 Nunatak（6–12 集，且</strong>建議押後<strong>）</strong>：Lv70／80／90，三難度都要 <strong>10 種 Artifact 全交齊</strong>
+（狩人／賢者／大物／暴食／群集／免疫／天帝／強者／狡猾／<strong>邪悪</strong>），Beta 起加 Apex 素材。
+<strong>飛行生物不能傳送進場</strong>，強制地面戰。
+<strong>卡點</strong>：<code>wiki/guides/boss_ragnarok.md</code> 未確認清單第 3 條明寫「除狩人、群集外，其餘 8 個 Artifact 在
+ASA Ragnarok 的洞窟對應未確認」；本圖 6 個洞窟名只另外佐證了強者與暴食，
+<strong>仍有 6 個（賢者／大物／免疫／天帝／狡猾／邪悪）在本圖的來源查無</strong>。
+其中「邪悪」在工作區唯一確認的產地是 <strong>The Center 的邪悪の洞窟（41.5/28.5）</strong>。
+推薦編成（kamigame Alpha／單人）：Deinotherium ×5（公 1 母 4，HP 2.1 萬＋、鞍 50＋、印隨 100%、mate boost，
+每隻蛋糕 30–40，設中立）＋Therizinosaurus ×10（HP 2.1 萬＋、近戰 500%＋、鞍 50、印隨 100%，設攻擊性），
+騎 Therizinosaurus 不要騎 Deinotherium（會卡位）。</li></ul>
+<blockquote><p><strong>資料品質備註（不改 CSV，登記待確認）</strong>：<code>data/攻略清單.csv</code> 的 Ragnarok 有第 7 列
+「狩人の洞窟 85.4/54.2」，備註已標「未確認：座標與是否屬 Ragnarok 待實地核」。
+本卡實跑 <code>seed_checklist --dry-run</code> 發現 <strong>The Island 的狩人の洞窟座標同樣是 85.4/54.2</strong>，
+而 Ragnarok 的 kamigame 節裡沒有這個洞窟。高度懷疑這列是誤掛的 The Island 資料。</p></blockquote>
+<h3 id="42-valgueroバルゲロ順位-2獨有未馴-1清單口徑">4.2 Valguero（バルゲロ）｜順位 2｜獨有未馴 1（清單口徑）</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：據點已建（16.4/48.1），只剩把 LC／Ragnarok 的戰力下載過來。</li><li><strong>階段二（2–4 集，但實質工作量遠大於此數）</strong>：清單口徑只剩 Chalk Golem 一種。
+<strong>但官方出沒表顯示本圖的 Aberration 生態區另有 25 種現被歸戶到 Aberration 的畸變種可抓</strong>（見 2.1）。
+這 25 種多數是昏睡或手渡し的低難度物種，區域描述集中在「地下深淵區（Aberration 生態）」，
+需輻射防護與光寵。<strong>若採用官方出沒口徑，這裡是全系列 CP 值最高的一段。</strong></li><li><strong>階段三（6–12 集）</strong>：6 個洞窟，現況已完成 3 個（岩山 2026-07-11、門番 2026-07-11、狡猾と破壊者 2026-07-10）。
+剩天帝（要潛水裝）、野獣と暴食、強者と免疫と群集（要防毒面具）。裝備需求見 <code>攻略清單.csv</code> 備註欄。</li><li><strong>階段四（4–8 集）</strong>：Grendel Lv70／80／90。<strong>貢物三難度各不相同、不是超集</strong>，囤貨要照難度分開備
+（Gamma 天帝＋暴食＋群集；Beta 免疫＋強者＋狡猾；Alpha 門番＋岩山＋破壊者＋野獣，
+另加 Argentavis Talon／Allosaurus Brain／Sarcosuchus Skin／Titanoboa Venom 等 Apex 素材）。
+kamigame Alpha／單人編成：Therizinosaurus ×14（HP 1.5 萬＋、近戰 700%、鞍 100、印隨 100%、mate boost、帶蛋糕）
+＋Stegosaurus ×2（坦）＋Daeodon ×2（補；蛋糕夠可不帶）。
+另有<strong>野外 Broodmother</strong>（不需貢物，但<strong>不給 Tekgram</strong>，只給藍圖），順手打掉即可。</li></ul>
+<h3 id="43-lost-colonyロストコロニー順位-3獨有未馴-3">4.3 Lost Colony（ロストコロニー）｜順位 3｜獨有未馴 3</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：長期主基地升級：孵化場、冷凍艙倉、傳送設施。配種戰隊常駐於此。</li><li><strong>階段二（2–4 集，難度極高）</strong>：Aureliax（<strong>極高</strong>：只能孵蛋，蛋要在高空騎上牠反覆換禮物取得，
+身上有肩寵會直接中止；變蛋落地後要撐過五波 Neophyte）、Ossidon（<strong>極高</strong>：打到 50% 昏迷值而非打昏，
+再騎上去玩 Bolus 小遊戲至少四輪，每次騎乘掉 25% 馴服效率）、Gloon（<strong>高</strong>：手渡し，
+但要先不驚動浮空發光的牠、清掉被吸引的 Revenant、再射眼睛）。三條理由全出自 <code>data/難度標籤.csv</code>。</li><li><strong>階段三 洞窟（未確認）</strong>：kamigame 洞窟座標一覧<strong>查無ロストコロニー節</strong>，
+<code>攻略清單.csv</code> 的 LC 只有據點／任務／Boss／劇情四列、沒有洞窟列。
+<strong>「全洞窟」這個結案條件在 LC 目前無法定義</strong>，需要實地確認或另找來源。</li><li><strong>階段四（4–8 集，前置最長）</strong>：Lost King／Lost Queen，Lv55／70／95，兩隻<strong>貢品表完全相同</strong>。
+瓶頸不是 Boss 本身：Minor／Greater／Prime 的 Aberrant 與 Crimson 印章各要 <strong>100／150／200 個</strong>（兩種都要），
+Alpha Ossidon Skull Alpha 難度要 <strong>5 個</strong>（＝先打 5 隻 Alpha Ossidon）。
+<strong>Lost Queen 戰不能帶任何坐騎</strong>（全部會昏倒），要準備的是人的裝備與消耗品，隊伍配置在這場沒有意義。</li></ul>
+<h3 id="44-the-islandアイランド順位-4獨有-0">4.4 The Island（アイランド）｜順位 4｜獨有 0</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：紅／綠／藍三碑附近各設補給點。本圖對圖鑑沒有非去不可的理由（獨有＝0），
+價值全在 Artifact 與 Tekgram。</li><li><strong>階段二（1–2 集）</strong>：獨有＝0；63 種可馴未馴全部在別圖也抓得到，可視為機會財、不強求。</li><li><strong>階段三（10–20 集）</strong>：<strong>10 個洞窟</strong>＝狩人／賢者／大物／群集／暴食／野獣／天帝／免疫／強者／狡猾，
+十碑系 Artifact 一次補滿。另有 Tek 洞窟（監察者前置，<strong>開門只開 5 分鐘、進去後 60 分鐘走完全程</strong>）。</li><li><strong>階段四（8–16 集）</strong>：育母（Lv30/50/70）→ 大金剛（45/65/85）→ 噴火龍（55/75/100）→ 監察者（60/80/100）。
+監察者要三隻 Boss 的<strong>同級戰利品各 1（不會被消耗）</strong>＋Alpha 系掉落物；高難度戰利品可以開低難度的門。
+噴火龍的火焰吐息是按最大生命百分比扣血，純堆數量會崩盤，要走鐮刀龍＋蔬菜蛋糕的自回血路線
+（每塊蛋糕回 10% 最大生命、上限 2100 點，抵銷一次吐息要 2 塊）。</li></ul>
+<h3 id="45-scorched-earthスコーチドアース順位-5獨有-0">4.5 Scorched Earth（スコーチドアース）｜順位 5｜獨有 0</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：沙漠氣候據點＋水源。</li><li><strong>階段二（1–2 集）</strong>：獨有＝0。但 Fire／Lightning／Poison Wyvern 的偷蛋線是後續多場 Boss 的素材源，
+三種飛龍在 <code>data/難度標籤.csv</code> 都標「極高」（成體不可馴服、只能偷蛋，偷蛋會激怒整群）。</li><li><strong>階段三（3–6 集）</strong>：3 個洞窟＝岩山（Old Tunnels）／門番（Grave of the Tyrants）／破壊者（Ruins of Nosti）。
+三個 Artifact 單人模式重生時間 30 分鐘。</li><li><strong>階段四（2–4 集）</strong>：Manticore Lv55／70／95。血量是所有 Boss 中最低，
+但<strong>帶任何飛行生物或發光肩寵（Glowtail／Featherlight／Bulbdog）就永遠不落地＝直接失敗</strong>。
+貢物＝火焰／閃電／劇毒之爪各 2／10／20 ＋ 門番／岩山／破壊者三 Artifact。</li></ul>
+<h3 id="46-the-centerセンター順位-6獨有-0">4.6 The Center（センター）｜順位 6｜獨有 0</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：據點。本圖最大價值是 9 個洞窟，<strong>含目前唯一確認的「邪悪 Artifact」產地</strong>。</li><li><strong>階段二（1–2 集）</strong>：獨有＝0。</li><li><strong>階段三（9–18 集）</strong>：9 個洞窟＝免疫／賢者と暴食／天帝／狩人／強者と大物／野獣／<strong>邪悪（41.5/28.5）</strong>／狡猾／群集。
+拿到邪悪之後，Ragnarok 的 Nunatak 才有機會湊齊 10 種 Artifact（前提是 Artifact 可跨圖搬，見 3.4）。</li><li><strong>階段四（2–4 集）</strong>：育母＋大金剛<strong>同場雙 Boss</strong>，Lv70／80／90。
+貢品是全遊戲最長之一（<strong>六種 Artifact ＋十種材料</strong>，Beta 各 10、Alpha 各 25）。
+核心原則是分頭處理不要同時硬碰；來源給的具體可行配置是<strong>羽暴龍 1 隻＋頂級數值霸王龍 14 隻打 Alpha，約 5 分鐘解決</strong>。</li></ul>
+<h3 id="47-aberrationアベレーション順位-7獨有未馴-38清單13扣掉-valguero-重疊">4.7 Aberration（アベレーション）｜順位 7｜獨有未馴 38（清單）／13（扣掉 Valguero 重疊）</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：輻射區據點＋光寵（Bulbdog／Shinehorn／Featherlight／Glowtail 擇一），全程需 Hazard 裝。</li><li><strong>階段二（13–26 集）</strong>：清單口徑 38 種；扣掉官方出沒表顯示 Valguero 也有的 25 種，
+<strong>本圖真正非來不可的是 13 種</strong>（嚴格說是 12 種：13 種裡的 <code>Aberrant Megalania</code> 依同一張出沒表
+在 Ragnarok 也生成，見 2.1；2026-09-13 驗收建議 1 補註），含兩條長線：Rock Drake（只能到最深的 Grave of the Lost 偷蛋、全程輻射）、
+Reaper（要被 Reaper Queen 受孕，先用充能光削到血量低於 2000 再關光等費洛蒙霧；<strong>馴後不可繁殖</strong>）。</li><li><strong>階段三（3–6 集）</strong>：3 個洞窟＝堕落（Depths）／影（Shadows）／追跡者（Stalker）。
+<strong>三顆神器都要自己下洞窟拿</strong>，沒有代打路徑。</li><li><strong>階段四（2–4 集）</strong>：Rockwell Lv60／75／100，在<strong>最底層終端機</strong>觸發（地表方尖碑出現召喚選項的條件官方明寫「未知」）。
+下去的路上全程輻射需 Hazard 裝，但<strong>競技場內不是輻射區</strong>，到場可換金屬／Flak 裝。
+Alpha 另需 Alpha Basilisk Fang／Alpha Karkinos Claw／Alpha Reaper King Barb 各 1。
+來源指出這才是 Alpha 的真正瓶頸，不是 Boss 本身。</li></ul>
+<h3 id="48-extinctionエクスティンクション順位-8獨有未馴-6">4.8 Extinction（エクスティンクション）｜順位 8｜獨有未馴 6</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：城市區據點。本圖 6 種獨有全是製造物或泰坦，不是一般野生馴服。</li><li><strong>階段二（2–4 集，與階段四重疊）</strong>：Gacha（特殊，規則坑多：附近有別的 Gacha 就「難過」不吃東西）、
+Mek／Mega Mek（製造，需等級 91 ＋ Engram 38 點）、Forest／Ice／Desert Titan（本身就是階段四的內容）。</li><li><strong>階段三（3–6 集）</strong>：3 個洞窟＝成長（Growth）／虚無（Void）／混沌（Chaos），各對應一隻泰坦的召喚終端機。
+三洞的坑：<strong>Forest Cave 全洞禁建禁攀爬、Mek 過不去</strong>（但 Giganotosaurus 可以從入口一路走到終端機）；
+<strong>Ice Cave 除 Managarmr 外飛行生物進不去、洞內生物最高 Lv300 且不可馴服</strong>，是三洞中最難；
+<strong>Desert Cave 飛行不能進，但 Gasbags 例外</strong>。</li><li><strong>階段四（8–16 集）</strong>：三泰坦各自只有一種召喚配方、等級門檻都是 1，但各要 <strong>Corrupt Heart ×100</strong>。
+King Titan <strong>必須先把三隻泰坦各殺一次拿 Trophy</strong>，且 Beta 要先過 Gamma、Alpha 要先過 Beta；
+Alpha 另需 Corrupt Heart 300 ＋ Giganotosaurus Heart 20 ＋ Spinosaurus Sail 20。
+Desert Titan 有個 ASA 專屬簡單解：在柱子塔或 Quetzal 平台鞍上放一個 Bladewasp Hive。</li></ul>
+<h3 id="49-astraeosアストレオス順位-9獨有未馴-3">4.9 Astraeos（アストレオス）｜順位 9｜獨有未馴 3</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：據點。本圖可馴池最小（41 種）但 Boss 最多（9 群），投報比最差。</li><li><strong>階段二（2–4 集）</strong>：Boaratos（<strong>高</strong>：昏迷值減少極快且血量遠低於昏迷值，需步槍＋強力麻醉彈，
+常備 5 疊以上 Narcoberry，1 疊約擋 5 分鐘）、Grand Tortugar（昏睡，難度標籤未收）、
+Maeguana（<strong>中</strong>：一驚動就跳起高速滑翔逃走，通常只有一到兩發機會；但昏迷值低，Lv150 約 1000）。</li><li><strong>階段三（6–12 集）</strong>：6 個洞窟＝狩人／賢者／大物／群衆／暴食／野獣。
+另有迷宮（Labyrinth）90.6/74.1 的 Minotarchos：<strong>洞內不能從冷凍艙放生物</strong>，要打就得自己走進去。</li><li><strong>階段四（18–36 集，估計，可能高估；全系列 Boss 群數最多）</strong>：Natrix（Lv30/50/70）／Thodes（45/65/85）／Hydraskos（90/90/90）三守護者
+＋Abyssalus／Shallocis 雙克拉肯（60/75/100，v93.0 新增，終端機在西側，<strong>精確座標未確認</strong>）
+＋Minotarchos／Colossus／Kroaratos／Erymanthian &amp; Kalydonios 四迷你 Boss。
+<strong>Hydraskos 的推薦編成含 Deinonychus，但 Deinonychus 在 Astraeos 不自然生成，要從 Valguero 傳過來</strong>。
+這是本圖排在 Valguero 之後的硬理由。<blockquote><p><strong>估集數偏誤揭露（2026-09-13 驗收必修 2）</strong>：18–36 集＝9 群 × 2–4 集，而「一群 Boss ＝ 2–4 集」
+這個係數是本檔自訂、沒有來源。更重要的是這 9 群裡有 <strong>4 群是野外迷你 Boss</strong>
+（Minotarchos／Colossus／Kroaratos／Erymanthian &amp; Kalydonios），它們不需要貢物、不需要囤 Apex 素材，
+備料成本與競技場 Boss 差一個量級。<strong>本區間可能嚴重高估</strong>，而且這個數字還被本檔 3.2 拿去當把 Astraeos
+排到順位 9 的主要理由，請連同排序一起打折看。同一段揭露也寫進 <code>data/直播規劃.csv</code> 該列的估集數與依據欄。</p></blockquote></li></ul>
+<h3 id="410-genesis-part-1ジェネシス-パート1順位-10獨有未馴-31清單35官方出沒">4.10 Genesis: Part 1（ジェネシス パート1）｜順位 10｜獨有未馴 31（清單）／35（官方出沒）</h3>
+<ul><li><strong>階段一（2–4 集）</strong>：五生態區（火山／沼澤／雪原／海洋／月面）各設前哨；任務系統是本圖主軸。</li><li><strong>階段二（11–21 集）</strong>：獨有未馴數全系列最多，但<strong>其中 21 種是 X 變體，馴服方式與本體相同</strong>。
+差別是 X 系野生個體傷害 +250%、對玩家與馴服生物減免 60%，<strong>麻醉需求約 2.5 倍</strong>。
+真正的新機制只有幾種：Bloodstalker（<strong>極高</strong>，必須故意被絲線抓住，血袋需求四位數，
+150 級約 1386–1486 個，且要犧牲 4–5 隻寵物把馴服加成推上去）、Megachelon、Ferox、Palaeoctopus、Astrocetus。</li><li><strong>階段三 洞窟（未確認）</strong>：kamigame 洞窟座標一覧的地圖名常數表<strong>查無 Genesis: Part 1</strong>；
+本圖以任務（Mission）取代傳統洞窟，<strong>Artifact 取得路徑在工作區查無</strong>。</li><li><strong>階段四（4–8 集，但前置極長）</strong>：Moeder（水下任務，<strong>無貢物</strong>，全程水下需氧氣瓶或 Megachelon 供氧）
+＋Corrupted Master Controller（<strong>無貢物，門檻是任務完成數 Gamma 58／Beta 116／Alpha 168</strong>）。
+<strong>CMC 的成本是上百個任務而不是素材，這是全系列最長的單圖工期。</strong>
+另註：<code>wiki/guides/boss_genesis-part-1.md</code> 未確認清單第 1 條明寫 kamigame ASA 頁自承未更新，
+<strong>該檔的戰術內容全部來自 ASE 來源</strong>，ASA 是否相同未確認。</li></ul>
+<hr>
+<h2 id="五跨圖資產表">五、跨圖資產表</h2>
+<p><strong>規則</strong>：ARK 的跨圖搬運靠方尖碑／傳送器的上傳與下載。本表只寫「哪些要帶、哪些現抓」，
+<strong>不主張 Artifact 能不能跨圖搬</strong>。那條在工作區查無明文（見 3.4 與第六節）。</p>
+<h3 id="51-要一路帶著走的配種戰隊常駐-lost-colony">5.1 要一路帶著走的（配種戰隊常駐 Lost Colony）</h3>
+<div class="table-wrap"><table><thead><tr><th>物種</th><th>角色</th><th>服務哪幾張圖</th><th>依據</th></tr></thead><tbody><tr><td><strong>Therizinosaurus</strong></td><td>Boss 戰主力攻擊手</td><td>Valguero（Grendel ×14）、Ragnarok（Nunatak ×10 兼坐騎）、Astraeos（Hydraskos DPS）、The Island（噴火龍／監察者）</td><td><code>data/配種目標.csv</code> Therizinosaur 列；<code>boss_valguero.md</code> 一 4；<code>boss_ragnarok.md</code> 一 4</td></tr><tr><td><strong>Yutyrannus</strong></td><td>增益位（攻 +20%／減傷 20%），每場 1–2 隻</td><td>幾乎所有競技場 Boss</td><td><code>data/配種目標.csv</code>；<code>boss_the-island.md</code> 各節 4</td></tr><tr><td><strong>Daeodon</strong></td><td>補師，每場 2 隻（需大量食物）</td><td>Valguero、The Island、The Center、Astraeos、Lost Colony、Genesis P1</td><td><code>data/配種目標.csv</code>；各 boss 檔 4 節</td></tr><tr><td><strong>Rex</strong></td><td>通用攻擊手 ×15</td><td>The Center（1 羽暴龍＋14 Rex 可打 Alpha）、The Island、Extinction、Lost Colony</td><td><code>data/配種目標.csv</code> Rex 列；<code>boss_the-center.md</code> 四節</td></tr><tr><td><strong>Deinotherium</strong></td><td>Nunatak 坦兼增益（公 1 母 4，多一隻公就失效）</td><td>Ragnarok；The Island 噴火龍替代案</td><td><code>data/配種目標.csv</code>；<code>boss_ragnarok.md</code> 一 4</td></tr><tr><td><strong>Stegosaurus</strong></td><td>坦（硬化板模式）</td><td>Valguero（Grendel ×2）、Astraeos（Hydraskos）、The Island（育母減傷 6 隻編組）</td><td><code>data/配種目標.csv</code>；<code>boss_valguero.md</code> 一 4</td></tr><tr><td><strong>Deinonychus</strong></td><td>出血攻擊手（出血不吃近戰數值，點血量）</td><td>Astraeos（<strong>不自然生成，必須從 Valguero 帶</strong>）、Valguero、The Island 噴火龍</td><td><code>boss_astraeos.md</code> 4 節；<code>data/配種目標.csv</code></td></tr><tr><td><strong>Megatherium</strong></td><td>對昆蟲增傷，育母專用</td><td>The Island、The Center、Valguero 野外育母</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>Ice Wyvern</strong>（現有 17 隻）</td><td>現有最大宗飛行戰力，運輸與探路</td><td>全圖（除禁飛場）</td><td><code>data/配種目標.csv</code> Ice Wyvern 列</td></tr><tr><td><strong>Argentavis</strong></td><td>抓野生個體進陷阱、載運</td><td>全圖</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>Thylacoleo／Direwolf</strong></td><td>洞窟坐騎（攀樹牆／群體加成）</td><td>所有洞窟階段</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>Pyromane</strong>（現有 23 隻）</td><td>肩乘／騎乘給寒暑雙抗</td><td>雪原與沙漠圖的階段一</td><td><code>data/配種目標.csv</code>；<code>reports/育種決策_Pyromane.md</code></td></tr></tbody></table></div>
+<h3 id="52-只能在該圖現抓帶不走或不值得帶的">5.2 只能在該圖現抓、帶不走或不值得帶的</h3>
+<div class="table-wrap"><table><thead><tr><th>圖</th><th>現抓項目</th><th>理由</th></tr></thead><tbody><tr><td>Aberration</td><td>光寵（Bulbdog／Shinehorn／Featherlight／Glowtail）、Rock Drake、Reaper</td><td>光寵是 Rockwell 與 Nameless 的必需品；Rock Drake 只能在最深處偷蛋；Reaper 馴後不可繁殖，帶不出血統</td></tr><tr><td>Scorched Earth</td><td>Fire／Lightning／Poison Wyvern（偷蛋）</td><td>三種之爪只能從對應屬性飛龍採，是 Manticore 與 Desert Titan 的貢物</td></tr><tr><td>Ragnarok</td><td>Griffin</td><td><strong>不可繁殖</strong>，必須一次抓到高等個體（<code>data/難度標籤.csv</code>）</td></tr><tr><td>Extinction</td><td>Gacha、Mek</td><td>Gacha 是特殊機制、Mek 是製造物，兩者都不走配種線</td></tr><tr><td>Genesis: Part 1</td><td>X 系全部（21 種）</td><td>X 變體要在 Genesis 的對應生態區抓，帶進來的本體不會變成 X</td></tr><tr><td>Lost Colony</td><td>Aureliax、Ossidon、Gloon</td><td>三種都是 LC 獨有，且 Aureliax 是孵蛋線</td></tr></tbody></table></div>
+<h3 id="53-配種戰隊養在哪">5.3 配種戰隊養在哪</h3>
+<p><strong>Lost Colony（既定的長期主基地）。</strong> 孵化設備、冷凍艙倉、突變線全部集中在 LC，
+其他圖只放「前哨＋當圖工作用的坐騎」。理由：① 決策 1 明定 LC 是長期主基地；
+② 配種要連續照顧幼體（印隨窗口），基地一直搬會斷線；③ 冷凍艙讓成體隨時下載到任何圖，
+基地不必跟著人跑。配種機制與孵化溫度見 <code>wiki/breeding/_general.md</code> 第 1、2 節。</p>
+<hr>
+<h2 id="六未確認清單與待確認事項">六、未確認清單與待確認事項</h2>
+<h3 id="61-未確認工作區查無來源不腦補">6.1 未確認（工作區查無來源，不腦補）</h3>
+<ol><li><strong>Artifact 能不能跨圖上傳／下載</strong>：工作區十份 boss 攻略檔與 README 全部查無明文。<strong>這是本卡最大的未確認項。</strong></li><li><strong>Ragnarok 的 6 個 Artifact 對應洞窟</strong>（賢者／大物／免疫／天帝／狡猾／邪悪）：
+<code>boss_ragnarok.md</code> 未確認清單第 3 條已登記。</li><li><strong>Lost Colony 的洞窟數與座標</strong>：kamigame 洞窟座標一覧無ロストコロニー節。</li><li><strong>Genesis: Part 1 的洞窟／Artifact 取得路徑</strong>：kamigame 地圖名常數表無此圖。</li><li><strong>各圖 Boss 戰的時限</strong>：The Island、Valguero、Ragnarok、Lost Colony、Genesis P1 的來源都沒寫。</li><li><strong>Astraeos 西側雙克拉肯終端機的精確座標</strong>：更新日誌只寫「西側」。</li><li><strong>每張圖的官方繁中名</strong>：<code>data/官方三語對照.csv</code> 只收生物名，不收地圖名；
+本檔只有 Ragnarok＝仙境有查證（決策 22），其餘地圖一律用英文名。</li><li><strong>Genesis: Part 1 兩隻 Boss 的 ASA 實際數值與機制</strong>：kamigame ASA 頁自承未更新，現有內容全來自 ASE。</li><li><strong>逐圖已用集數</strong>：<code>data/直播集數.csv</code> 45 列地圖欄 45/45 全空，<code>data/馴服紀錄.csv</code> 242 列的集數欄也全空，無法精算。本檔所有估集數因此標「估計」。</li><li><strong><code>Grand Tortugar</code> 的難度</strong>：Astraeos 獨有未馴，但 <code>data/難度標籤.csv</code> 未收錄該物種。</li></ol>
+<h3 id="62-待確認事項">6.2 待確認事項</h3>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>事項</th><th>本卡採用的保守方</th></tr></thead><tbody><tr><td>1</td><td><strong>獨有物種要用哪個口徑</strong>（生物清單「出自地圖或DLC」vs 官方 <code>Data:Spawn_Map</code>）</td><td>沿用清單口徑（＝圖鑑進度現用），官方出沒口徑只寫進比對報表，不改任何 CSV</td></tr><tr><td>2</td><td><strong>Artifact 是否可跨圖搬</strong>（決定 Ragnarok Nunatak 要不要等 The Center 的邪悪）</td><td>假設<strong>不可跨圖</strong>（保守），因此 Nunatak 押後、且標明 6 個 Artifact 在本圖查無</td></tr><tr><td>3</td><td><strong>「打完」含不含 Alpha 難度</strong></td><td>本檔的估集數按<strong>三難度都打</strong>計算（保守＝較長）。若只要 Gamma，LC 的印章從 200 降到 100、Extinction King Titan 的 Corrupt Heart 從 300 降到 150、Aberration 免打三隻 Alpha，整體工期會少掉一大截</td></tr><tr><td>4</td><td>四季 Drakeling 是不是 Ragnarok 獨有（牴觸決策 22）</td><td>照決策 22 留在 Ragnarok</td></tr><tr><td>5</td><td><code>Spirit Dire Bear</code> vs <code>Spirit Direbear</code> 是否為同一物種的重複列</td><td>兩列都留、都算未馴（保守＝分母較大）</td></tr><tr><td>6</td><td><code>攻略清單.csv</code> Ragnarok 的「狩人の洞窟 85.4/54.2」是否為 The Island 資料誤掛</td><td>不動該列，只在本檔 4.1 登記</td></tr><tr><td>7</td><td>Tek Parasaur／Raptor／Rex／Stegosaurus 要不要從「尚未可取得」移進 Genesis: Part 1</td><td>不動 <code>生物清單.csv</code>，只在比對報表登記</td></tr><tr><td>8</td><td><code>data/預計抓生物.csv</code> 要不要改成「只列獨有未馴」</td><td><strong>不動現表</strong>，差異寫在 <code>reports/預計抓_建議差異.md</code></td></tr><tr><td>9</td><td>決策 1「Valguero 洞窟/Boss 延後」是否改成不延後</td><td>本檔主推建議改（見 3.4①），但 CSV 的順位仍把 LC 放在 Valguero 之後，待確認</td></tr><tr><td>10</td><td>直播集數.csv 的地圖欄要不要補填</td><td>不代填（機器不該猜地圖），但本檔第零節說明這是估計失準的根因</td></tr></tbody></table></div>
+</main>
+</body>
+</html>

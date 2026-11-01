@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全マップ攻略順序と配信ロードマップ / 全地圖攻略順序與直播規劃 - ARK 離線 wiki</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="roadmap.html">繁體中文</a>
+</header>
+<main class="page">
+<h1 id="全マップ攻略順序と配信ロードマップ--全地圖攻略順序與直播規劃">全マップ攻略順序と配信ロードマップ / 全地圖攻略順序與直播規劃</h1>
+<p>繁体中文版＝<a href="roadmap.html"><code>roadmap.md</code></a>（節ごとに対応）。データ表＝<code>data/直播規劃.csv</code>（9 列、40 行；本サイト未収録）。
+比較レポート＝<code>reports/獨有物種口徑比對_A6.md</code>、<code>reports/預計抓_建議差異.md</code>（本サイト未収録）。
+生成スクリプト＝<code>scripts/build_roadmap_A6.py</code>（再実行可・冪等・ネットワーク不使用）。本ファイルは手書きの散文で、数字は全て同スクリプトの実行出力。</p>
+<hr>
+<h2 id="0-主催側の確定方針と免責">0. 主催側の確定方針と免責</h2>
+<p><strong>以下の既定基準 3 点はそのまま使い、蒸し返さない：</strong></p>
+<ol><li><strong>「1 マップをクリアした」＝当該マップの固有種を全テイム ＋ 全洞窟踏破 ＋ ボス撃破</strong>（既定基準）。</li><li><strong>Lost Colony は長期メイン拠点、優先順位は最上位</strong>（既定基準、以下「決定 1」）。第 3 節で述べる通り、
+「優先順位が最上位」と「最初にクリアする」は別物であり、本ファイルは LC を常設の資産基地として扱い、最初に決着させるマップとはしない。</li><li><strong>種の完了判定は全域で 1 回</strong>：どのマップであれ 1 回テイムすれば図鑑の枠が埋まる（マップ・変種を問わない、<code>README.md</code>「専案目標」節）。</li></ol>
+<p><strong>「推定」の断り：本ファイルの話数レンジは全て推定であり、確約ではない。</strong>
+<code>data/直播集數.csv</code> の 45 行は<strong>マップ欄が全て空</strong>（実測 45/45 が空）で、どのマップにも正確な消費話数が存在しない。
+本ファイルは <code>攻略清單.csv</code> の完了日と <code>直播集數.csv</code> の配信日の<strong>2 つ</strong>を突き合わせて
+45 話を<strong>大まかに</strong>：Lost Colony ≈ #1–23（2026-02-16〜06-30）、Valguero ≈ #24–44（2026-07-01〜08-05）、
+Ragnarok ≈ #45（2026-09-06〜）と区切るしかない。この区切り自体が<strong>推定</strong>で、直接裏付けるデータ行は一つもない。
+（<code>地圖進度.csv</code> の開始日は Ragnarok にしか入っておらず、Valguero と Lost Colony は両方とも空なので、
+Ragnarok の区切り 1 点しか決められず、3 つ目の突き合わせ材料にはならない。2026-09-13 検収の提案 4 による訂正。）
+そこから導いた係数（洞窟 1–2 話／ヶ所、ボス群 2–4 話／群、固有種 1.5–3 種／話）も同じく推定。
+<strong>今後の見積り精度を上げる最も安い手は、<code>直播集數.csv</code> 45 行のマップ欄を埋めること。</strong></p>
+<p><strong>検証規律</strong>：各段落に根拠（ワークスペース内ファイルの節番号または表の行）を付す。ワークスペースで確認できないものは全て「未確認」と書き、推測で埋めない。
+本カードは総合カードであり、<strong><code>.cache/kamigame/</code> に既にあるオフラインページ 2 枚の読み込み以外、ネットワークリクエストは一切発行していない</strong>。</p>
+<hr>
+<h2 id="1-現況の数字scriptsark_progresspy-compute-実行2026-09-13">1. 現況の数字（<code>scripts/ark_progress.py</code> <code>compute()</code> 実行、2026-09-13）</h2>
+<div class="table-wrap"><table><thead><tr><th>指標</th><th>値</th></tr></thead><tbody><tr><td>図鑑</td><td><strong>65 / 294（22.1%）</strong></td></tr><tr><td>リリース済みマップで入手可能なテイム可能種</td><td>248（残り 46 種は未実装／未確認マップのみで現状入手不可）</td></tr><tr><td>未購入 DLC により除外された種</td><td>26（Aquatica）</td></tr><tr><td>配信話数</td><td>45（#45＝2026-09-06、Ragnarok 開始日）</td></tr><tr><td>進行中のマップ</td><td>Ragnarok（現在地）、Valguero、Lost Colony</td></tr><tr><td>未着手</td><td>The Island、Scorched Earth、The Center、Aberration、Extinction、Astraeos、Genesis: Part 1</td></tr></tbody></table></div>
+<p><strong>残作業の実規模：294 − 65 ＝ 229 種が未テイム。</strong> ただし「10 マップをクリアする」のに 229 種全ては不要で、
+「1 マップをクリアした」の定義では各マップの<strong>固有</strong>種だけでよい。だからこそ次節が重要になる。</p>
+<hr>
+<h2 id="2-マップ別の固有種2-つの基準が一致せずしかも差が大きい">2. マップ別の固有種：2 つの基準が一致せず、しかも差が大きい</h2>
+<p>本節では公式スポーンデータで固有種を再計算し、<code>compute()</code> の <code>unique</code>（リスト基準）と比較する。結果は以下。</p>
+<div class="table-wrap"><table><thead><tr><th>マップ</th><th>リスト基準の固有</th><th>公式スポーン基準の固有</th><th>リスト固有かつ未テイム</th><th>テイム可能な未テイム（リスト）</th><th>テイム可能な未テイム（両表の和）</th></tr></thead><tbody><tr><td>The Island</td><td>0</td><td>0</td><td>0</td><td>63</td><td>64</td></tr><tr><td>Scorched Earth</td><td>0</td><td>0</td><td>0</td><td>41</td><td>46</td></tr><tr><td>The Center</td><td>0</td><td>0</td><td>0</td><td>66</td><td>73</td></tr><tr><td><strong>Aberration</strong></td><td><strong>44</strong></td><td><strong>12</strong></td><td>38</td><td>66</td><td>66</td></tr><tr><td>Extinction</td><td>6</td><td>1</td><td>6</td><td>63</td><td>63</td></tr><tr><td>Astraeos</td><td>3</td><td>3</td><td>3</td><td>31</td><td>31</td></tr><tr><td><strong>Ragnarok</strong></td><td><strong>8</strong></td><td><strong>4</strong></td><td>8</td><td>86</td><td>90</td></tr><tr><td>Valguero</td><td>2</td><td>2</td><td>1</td><td>75</td><td><strong>110</strong></td></tr><tr><td>Lost Colony</td><td>4</td><td>4</td><td>3</td><td>19</td><td><strong>56</strong></td></tr><tr><td><strong>Genesis: Part 1</strong></td><td><strong>31</strong></td><td><strong>35</strong></td><td>31</td><td>98</td><td>114</td></tr></tbody></table></div>
+<p>（出典：<code>scripts/build_roadmap_A6.py</code> の実行。件別の差分は <code>reports/獨有物種口徑比對_A6.md</code>。）</p>
+<h3 id="21-最重要の差分差分-32-種のうち-31-種が-valguero-にも出現する">2.1 最重要の差分：差分 32 種のうち 31 種が Valguero にも出現する</h3>
+<p><code>data/生物清單.csv</code> は <code>Aberrant *</code> 44 種を Aberration 固有としているが、
+<code>data/出沒地點.csv</code>（出典 <code>ark.wiki.gg/wiki/Data:Spawn_Map/Valguero/ASA</code>、信頼度「高」）は
+そのうち <strong>32 種</strong>について Aberration 以外のスポーン地点も登録しており、この 32 種は公式スポーン基準では Aberration 固有にならない。
+この 32 種のうち <strong>31 種はもう一方のスポーン先が Valguero</strong>（区域記述は「地下深淵区（アベレーション生態）」「専用スポーン地点」等）で、
+残る <strong>1 種は <code>Aberrant Megalania</code>、スポーン表が示すのは Aberration＋Ragnarok で Valguero を含まない</strong>。
+テイム済みを除くと、<strong>未テイムかつ Valguero で入手可能なアベラント種は 25 種</strong>。</p>
+<blockquote><p><strong>2026-09-13 検収の必須修正 1</strong>：本節は当初「32 種が Valguero にも出現」と書き、
+「差分集合（32）」と「Valguero にも出る集合（31）」を同一視して数字が 1 ずれていた。
+<code>reports/獨有物種口徑比對_A6.md</code> の件別データは元から正しく（同ファイルに
+<code>Aberrant Megalania：Aberration、Ragnarok</code> と明記）、未テイム 25 種のリストにも影響はない。
+訂正が必要なのは本節の見出しと記述のみ。</p></blockquote>
+<p>その 25 種：Aberrant Anglerfish、Araneo、Beelzebufo、Carbonemys、Carnotaurus、Dimetrodon、
+Dimorphodon、Diplocaulus、Diplodocus、Dire Bear、Doedicurus、Electrophorus、Equus、Moschops、
+Otter、Ovis、Paraceratherium、Parasaur、Pulmonoscorpius、Salmon、Sarco、Stegosaurus、
+Titanoboa、Triceratops、Trilobite。（件別のスポーンマップは <code>reports/獨有物種口徑比對_A6.md</code> の Aberration 節。）</p>
+<p><strong>これが本カードのデータ上の最大の発見</strong>：Valguero には既に拠点（16.4/48.1）と洞窟 6 ヶ所の座標があり、
+そこでついでに図鑑 25 枠を埋められる。一方、現行のリスト基準ではこの 25 枠が「Aberration に行かないと取れない」と表示される。
+どちらの基準が正しいかは本カードでは<strong>調停しない</strong>。公式スポーンデータ（<code>Data:Spawn_Map</code>）は出典の階層として wiki の名簿欄より上だが、
+<code>生物清單.csv</code> の「出自地圖或DLC」欄は図鑑進捗の現行基準であり、変更すると図鑑の分母が動く。<strong>確認待ちとして登録。</strong></p>
+<h3 id="22-その他の差分">2.2 その他の差分</h3>
+<ul><li><strong>Extinction の 5 種</strong>（Desert／Forest／Ice Titan、Mek、Mega Mek）：スポーン表に<strong>全く存在しない</strong>。
+妥当である。野生スポーンではない（タイタンはターミナル召喚、Mek は製造）ため公式スポーンデータに載らない。
+ここではリスト基準が正しく、スポーン基準が機能しない。</li><li><strong>Ragnarok の 4 種</strong>（Autumn／Spring／Summer／Winter Drakeling）：スポーン表では四季ドレイクリングは
+The Center と Valguero にも出現（Summer は加えて Scorched Earth と Genesis P1、Winter は Lost Colony と Genesis P1）。
+<strong>これは既定基準の決定 22「四季ドレイクリング（Ragnarok 固有）」と正面から食い違う</strong>ため、確認待ちとして登録。</li><li><strong>Genesis: Part 1 で 4 種が増える</strong>（Tek Parasaur／Raptor／Rex／Stegosaurus）：<code>生物清單.csv</code> の
+「出自地圖或DLC」欄が「未確認」のため <code>compute()</code> は「未リリースマップのみ」の 46 種に分類しているが、
+スポーン表は Genesis: Part 1 の月面生態区と明記している。<strong>つまり現在の図鑑の分母は、実際には取れる 4 種を取れない扱いにしている。</strong></li></ul>
+<h3 id="23-基準の既知の限界">2.3 基準の既知の限界</h3>
+<ul><li>スポーン表がカバーするのはテイム可能 294 種のうち <strong>251 種</strong>で、残り 43 種は未収録。未収録種は公式スポーン基準ではどのマップの固有にもならない。
+したがって<strong>公式スポーン基準は固有数を系統的に過小評価する</strong>ため、単独でリスト基準を置き換えることはできない。</li><li><code>生物清單.csv</code> には <code>Spirit Dire Bear</code> と <code>Spirit Direbear</code> の 2 綴りが併存し、両方が Ragnarok 固有の未テイムに数えられている。
+<strong>同一種の重複行である可能性が高い</strong>が、本カードは <code>生物清單.csv</code> を変更しない（規律：衝突は記録し本体に書き戻さない）。確認待ち。</li></ul>
+<hr>
+<h2 id="3-マップ順序">3. マップ順序</h2>
+<h3 id="31-順序決定で実際に効く-4-つの制約">3.1 順序決定で実際に効く 4 つの制約</h3>
+<ol><li><strong>アーティファクトは各マップの通行料。</strong> アリーナ型ボスは例外なくアーティファクトを要求し、それは当該マップの洞窟から出る。
+10 マップで洞窟数の差が大きい：The Island 10 ヶ所、The Center 9 ヶ所、Astraeos／Ragnarok／Valguero 各 6 ヶ所、
+Scorched Earth／Aberration／Extinction 各 3 ヶ所、Lost Colony と Genesis: Part 1 は<strong>確認できず</strong>
+（<code>scripts/seed_checklist.py --dry-run</code> による kamigame キャッシュページのオフライン解析結果）。</li><li><strong>アーティファクトがマップ間を移動できるか、ワークスペースに明文がない。</strong> これが順序全体の形を決める。3.4 の 1 番を参照。
+<strong>本カードは「移動できない」と保守的に仮定する</strong>。すなわち各マップのボス貢物はそのマップ内で揃える前提。</li><li><strong>固有種は 4 マップに集中している。</strong> Aberration（38）、Genesis: Part 1（31）、Ragnarok（8）、Extinction（6）で未テイム固有の大半を占める。
+The Island／Scorched Earth／The Center は<strong>固有 0</strong>で、図鑑の観点では必ず行くべき理由がなく、価値はアーティファクトと Tekgram にある。</li><li><strong>マップ間の戦力輸送はアップロード／ダウンロード。</strong> <code>data/配種目標.csv</code> の 16 件のうち Therizinosaurus には
+「Valguero：グレンデル編成 ×14／Ragnarok：ヌナタク編成 ×10 かつ騎乗用」と明記がある。同じ草食隊が 2 マップを兼任するので、
+この 2 マップのボス戦は<strong>近接して配置すべき</strong>で、間に 4〜5 マップ挟んで育て直すのは無駄。</li></ol>
+<h3 id="32-推奨順序本命">3.2 推奨順序（本命）</h3>
+<blockquote><p><strong>一言：手持ちの進行中 3 マップを絞り切り（Ragnarok の種 → Valguero の種＋洞窟＋ボス → 戻ってヌナタク → LC 拡張）、
+その後は「アーティファクト密度の高い順」にストーリーマップを進め、ミッション制で X 変種が最多の Genesis: Part 1 を最後に回す。</strong></p></blockquote>
+<div class="table-wrap"><table><thead><tr><th>順位</th><th>マップ</th><th>一言理由</th><th>主な根拠</th></tr></thead><tbody><tr><td>1</td><td><strong>Ragnarok</strong></td><td>現在の所在マップで拠点も建設済み（58.6/51.6）。固有 8 種のうち 4 種は手渡しの四季ドレイクリング＝現時点で最も安い図鑑枠</td><td><code>攻略清單.csv</code> Ragnarok 拠点行；<code>reports/地圖預習_Ragnarok.md</code> 手渡し節</td></tr><tr><td>2</td><td><strong>Valguero</strong></td><td>洞窟 6 ヶ所で<strong>アーティファクト 10 種</strong>を一括回収でき、その 10 種が<strong>グレンデル 3 難易度の要求と完全一致</strong>＝シリーズ唯一の自給自足ボス。同時にアベラント 25 種も回収</td><td><code>攻略清單.csv</code> Valguero 洞窟 6 行；<code>wiki/guides/boss_valguero.md</code> 一節 2 項；<code>reports/獨有物種口徑比對_A6.md</code></td></tr><tr><td>3</td><td><strong>Lost Colony</strong></td><td>既定の長期メイン拠点で繁殖部隊の常駐地。ただしボス前提条件（印章 100–200 個 ×2 ＋ アルファ・オシドン ×5）はシリーズ最長の素材集めで、スプリント目標ではなく背景の長期線に適する</td><td>決定 1；<code>wiki/guides/boss_lost-colony.md</code> 2 節</td></tr><tr><td>4</td><td><strong>The Island</strong></td><td>洞窟 10 ヶ所＝オベリスク系アーティファクトを一括補充でき、ボス 4 体のレベル条件も最低（30/45/55/60 から）＝Tekgram の教科書的出発点</td><td><code>seed_checklist --dry-run</code> The Island 洞窟 10；<code>wiki/guides/boss_the-island.md</code> 各節 2 項</td></tr><tr><td>5</td><td><strong>Scorched Earth</strong></td><td>3 種のワイバーン鉤爪とワイバーンミルクの唯一の産地で、Extinction（デザートタイタンにファイアタロン ×10）とワイバーン繁殖線の上流</td><td><code>wiki/guides/boss_scorched-earth.md</code> 二節；<code>wiki/guides/boss_extinction.md</code> 2 節</td></tr><tr><td>6</td><td><strong>The Center</strong></td><td>洞窟 9 ヶ所、<strong>ワークスペースで唯一確認できる「邪悪アーティファクト」の産地（邪悪の洞窟 41.5/28.5）を含む</strong>。邪悪は Ragnarok のヌナタクが要求する 10 種の一つ</td><td><code>seed_checklist --dry-run</code> The Center；<code>wiki/guides/boss_ragnarok.md</code> 一節 2 項</td></tr><tr><td>7</td><td><strong>Aberration</strong></td><td>Valguero にも出る 25 種を除くと、本当にここでしか取れないのは 13 種（ロックドレイクとリーパーの長期線を含む）。全行程が放射線区域でコストが高い</td><td><code>reports/獨有物種口徑比對_A6.md</code> Aberration 節；<code>data/難度標籤.csv</code> Rock Drake／Reaper</td></tr><tr><td>8</td><td><strong>Extinction</strong></td><td>固有 6 種が全てタイタンとメック＝第 2 段階と第 4 段階が一体化。キングタイタンはタイタン 3 体のトロフィー＋コラプトハート 300 が必要で長期の素材局</td><td><code>wiki/guides/boss_extinction.md</code> 2 節 キングタイタン表</td></tr><tr><td>9</td><td><strong>Astraeos</strong></td><td>固有は 3 種のみでテイム可能プールも最小（41 種）なのにボスは 9 群＝費用対効果が最悪。かつヒドラスコス編成にはデイノニクスが必要で Valguero から持ち込む必要がある。<strong>注意：9 群のうち 4 群はフィールドのミニボスで、素材準備のコストがアリーナ型ボスと 1 桁違う。本マップ第 4 段階の 18–36 話という推定は大幅な過大評価の可能性があり、この順位理由は割り引いて読むこと</strong></td><td><code>compute()</code> per_map；<code>wiki/guides/boss_astraeos.md</code> 2、4 節</td></tr><tr><td>10</td><td><strong>Genesis: Part 1</strong></td><td>固有が最多（35、公式スポーン基準）だが 21 種は X 変種でテイム方法は原種と同じ＝作業の反復。ボス条件は素材ではなく<strong>ミッション数 58／116／168</strong> で、シリーズ最長の単一マップ工期</td><td><code>reports/獨有物種口徑比對_A6.md</code>；<code>wiki/guides/boss_genesis-part-1.md</code> 二節 1 項</td></tr></tbody></table></div>
+<p><strong>Ragnarok のボス再訪</strong>：順位 1 では Ragnarok の第 1〜3 段階（拠点、固有 8 種、洞窟 6 ヶ所＋ダンジョンボス 2 体）のみを行う。
+ヌナタクは順位 6（The Center）の後に戻って挑む。理由は 3.4 の 1 番。
+これは <code>data/直播規劃.csv</code> に別行を立てず、Ragnarok 第 4 段階の「前置條件」欄に書いてある。</p>
+<h3 id="33-代替順序b-案決定-1-の字義通りlc-先行">3.3 代替順序（B 案：決定 1 の字義通り、LC 先行）</h3>
+<div class="table-wrap"><table><thead><tr><th>順位</th><th>マップ</th><th>本命との違い</th></tr></thead><tbody><tr><td>1</td><td>Lost Colony</td><td>「LC が最優先」を字義通りに解釈し、開幕から LC に戻る</td></tr><tr><td>2</td><td>Valguero</td><td>本命と同じ</td></tr><tr><td>3</td><td>Ragnarok</td><td>順位 1 から 3 に後退</td></tr><tr><td>4–10</td><td>The Island → The Center → Scorched Earth → Aberration → Extinction → Astraeos → Genesis: Part 1</td><td>ほぼ本命と同じだが、邪悪アーティファクトを早く取るため The Center を Scorched Earth より前に出す</td></tr></tbody></table></div>
+<p><strong>B 案の利点</strong>：既存決定を一切動かさず指揮コストが最小。かつ LC の印章集めを早く始めるほど後半で詰まらない。</p>
+<p><strong>B 案の代償</strong>：① Ragnarok の拠点を建てたばかり（2026-09-06）で放置することになり、#45 が無駄になる。
+② LC の第 2 段階の固有 3 種のうち 2 種が「極高」難度（アウレリアックスは高空で卵を交換し落下後に Neophyte 5 波を凌ぐ、
+オシドンは気絶値 50% まで削ってから Bolus ミニゲームを最低 4 周）で、開幕から硬い壁に当たり配信のテンポが悪い。
+③ LC の洞窟数がワークスペースで<strong>確認できない</strong>（kamigame の洞窟座標一覧にロストコロニーの節がない）ため、
+「全洞窟」という完了条件が現時点で定義不能であり、定義の曖昧な検収点に最初から詰まることになる。</p>
+<h3 id="34-既存決定の書き換えを提案する箇所2-件いずれも要確認">3.4 既存決定の書き換えを提案する箇所（2 件、いずれも要確認）</h3>
+<p><strong>① 決定 1 の「Valguero は洞窟/ボスの前に種を回収して LC に戻る」：「洞窟は後回しにしない」へ変更を提案。</strong>
+理由：Valguero の洞窟 6 ヶ所はシリーズで<strong>唯一</strong>アーティファクト 10 種を一括回収できる場所であり、
+グレンデル 3 難易度が要求するアーティファクトが<strong>まさにその 10 種</strong>（ガンマ：天帝／暴食／群集、ベータ：免疫／強者／狡猾、
+アルファ：門番／岩山／破壊者／野獣。洞窟 6 ヶ所の名称「天帝」「野獣と暴食」「強者と免疫と群集」「狡猾と破壊者」「門番」「岩山」と過不足なく一致）。
+これは項目ごとの突き合わせで得た結論であり推測ではない。
+出典＝<code>wiki/guides/boss_valguero.md</code> 一節 2 項の貢物表 × <code>data/攻略清單.csv</code> Valguero 洞窟 6 行の名称。
+洞窟を後回しにすることは、シリーズで最もきれいなボス戦を一緒に後回しにすることであり、利点がない。</p>
+<p><strong>② 決定 22 の「四季ドレイクリング（Ragnarok 固有）」：公式スポーン表はそう言っていない。</strong>
+四季ドレイクリングは The Center と Valguero にもスポーンする（2.2 参照）。Valguero でついでに取るなら、
+Ragnarok の第 2 段階はさらに 4 種減らせる。本カードは <code>data/直播規劃.csv</code> では<strong>保守的に</strong>リスト基準のまま Ragnarok に残している。</p>
+<hr>
+<h2 id="4-マップ別の-4-段階">4. マップ別の 4 段階</h2>
+<p>以下の各マップ 4 段階の「目標／前提条件／推定話数／根拠」は <code>data/直播規劃.csv</code> の各行と一致する
+（同 CSV が本節の機械可読版。文言に差がある場合は CSV を正とする。CSV はスクリプト生成、本節は手書きのため）。
+推定話数は全て推定で、基準は第 0 節。</p>
+<h3 id="41-ragnarokラグナロク仙境順位-1固有未テイム-8">4.1 Ragnarok（ラグナロク／仙境）｜順位 1｜固有未テイム 8</h3>
+<ul><li><strong>第 1 段階 拠点と基本騎乗生物（2–4 話）</strong>：拠点は建設済み（58.6/51.6）＋水辺サブ拠点（60.2/28.0）。残るはクライオポッドと輸送鳥の補充のみ。</li><li><strong>第 2 段階 固有種（3–6 話）</strong>：Autumn／Spring／Summer／Winter Drakeling（<strong>手渡し</strong>、餌＝超級キブル(黄色)／羊肉系、
+<code>reports/地圖預習_Ragnarok.md</code>）、Griffin（気絶、<strong>先に罠が必要かつ繁殖不可なので一発で高レベル個体を取る必要がある</strong>、
+<code>data/難度標籤.csv</code> Griffin 行。罠の型は <code>wiki/traps/bear-trap-and-bola.md</code>＝罠図鑑の<strong>第 7 型</strong>「トラバサミとボーラ系」で、
+同ファイル第 8 節「適用物種」のトラバサミ／トラバサミ(大)／チェーンボーラの 3 リストいずれにも Griffin が含まれる。
+<strong>本ファイルが当初引いていた第 1／3 型は誤り</strong>で、その 2 型の適用物種は Argentavis 系であり Griffin は名簿にない。2026-09-13 検収の必須修正 3 による訂正）、
+Spirit Dire Bear／Spirit Direbear／Spirit Direwolf（スピリット系は綴りが重複、2.3 参照）。</li><li><strong>第 3 段階 洞窟（6–12 話）</strong>：強者／試練／暴食／凍土／肉食／ジャングルの 6 ヶ所。
+ダンジョンボス 2 体もついでに処理：<strong>アイスワーム(女王)は凍土の洞窟にいて、「騎乗せず」滝から底の水溜りに落ちないと出現しない</strong>。
+<strong>ラヴァエレメンタルはジャングルの洞窟の最深部、入口が水晶で塞がれているので金属ピッケルが必要</strong>
+（<code>wiki/guides/boss_ragnarok.md</code> 二・三節 1 項）。どちらも貢物不要。</li><li><strong>第 4 段階 ヌナタク（6–12 話、かつ</strong>後回しを推奨<strong>）</strong>：Lv70／80／90、3 難易度とも <strong>アーティファクト 10 種を全て納める</strong>
+（狩人／賢者／大物／暴食／群集／免疫／天帝／強者／狡猾／<strong>邪悪</strong>）。ベータ以降は Apex 素材が加わる。
+<strong>飛行生物は転送で入場できず</strong>、地上戦が強制される。
+<strong>詰まり所</strong>：<code>wiki/guides/boss_ragnarok.md</code> の未確認リスト第 3 項に「狩人・群集を除く残り 8 個のアーティファクトの
+ASA Ragnarok における洞窟対応は未確認」と明記がある。本マップの洞窟 6 ヶ所の名称から追加で裏付けられるのは強者と暴食のみで、
+<strong>なお 6 個（賢者／大物／免疫／天帝／狡猾／邪悪）が本マップの出典から確認できない</strong>。
+うち「邪悪」のワークスペース内で唯一確認できる産地は <strong>The Center の邪悪の洞窟（41.5/28.5）</strong>。
+推奨編成（kamigame アルファ／ソロ）：ディノテリウム ×5（オス 1 メス 4、HP 2.1 万＋、サドル 50＋、刷り込み 100%、mate boost、
+各個体にケーキ 30–40、中立設定）＋テリジノサウルス ×10（HP 2.1 万＋、近接 500%＋、サドル 50、刷り込み 100%、攻撃的設定）。
+騎乗はテリジノサウルスで、ディノテリウムには乗らない（引っかかって動けなくなる）。</li></ul>
+<blockquote><p><strong>データ品質の注記（CSV は変更せず、裁定待ちとして登録）</strong>：<code>data/攻略清單.csv</code> の Ragnarok には 7 行目
+「狩人の洞窟 85.4/54.2」があり、備考は既に「未確認：座標と Ragnarok 所属かは実地確認待ち」となっている。
+本カードの <code>seed_checklist --dry-run</code> 実行で、<strong>The Island の狩人の洞窟の座標も同じ 85.4/54.2</strong> であり、
+Ragnarok の kamigame 節にはこの洞窟が存在しないことが分かった。The Island のデータの誤登録である可能性が高い。</p></blockquote>
+<h3 id="42-valgueroバルゲロ順位-2固有未テイム-1リスト基準">4.2 Valguero（バルゲロ）｜順位 2｜固有未テイム 1（リスト基準）</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：拠点は建設済み（16.4/48.1）。残るは LC／Ragnarok からの戦力ダウンロードのみ。</li><li><strong>第 2 段階（2–4 話、ただし実質的な作業量はこれを大きく超える）</strong>：リスト基準では Chalk Golem 1 種のみ。
+<strong>しかし公式スポーン表では本マップのアベレーション生態区に、現在 Aberration に帰属しているアベラント種 25 種が出現する</strong>（2.1 参照）。
+この 25 種の多くは気絶または手渡しの低難度種で、区域記述は「地下深淵区（アベレーション生態）」に集中し、放射線防護と発光ペットが必要。
+<strong>公式スポーン基準を採用するなら、ここがシリーズで最も費用対効果の高い区間になる。</strong></li><li><strong>第 3 段階（6–12 話）</strong>：洞窟 6 ヶ所、現状 3 ヶ所踏破済み（岩山 2026-07-11、門番 2026-07-11、狡猾と破壊者 2026-07-10）。
+残りは天帝（潜水装備）、野獣と暴食、強者と免疫と群集（ガスマスク）。装備要件は <code>攻略清單.csv</code> 備考欄。</li><li><strong>第 4 段階（4–8 話）</strong>：グレンデル Lv70／80／90。<strong>貢物は難易度ごとに別物で上位互換ではない</strong>ため、難易度別に分けて備蓄する
+（ガンマ：天帝＋暴食＋群集、ベータ：免疫＋強者＋狡猾、アルファ：門番＋岩山＋破壊者＋野獣。
+加えてアルゲンタヴィスの鉤爪／アロサウルスの脳／サルコスクスの皮／ティタノボアの毒などの Apex 素材）。
+kamigame のアルファ／ソロ編成：テリジノサウルス ×14（HP 1.5 万＋、近接 700%、サドル 100、刷り込み 100%、mate boost、ケーキ持参）
+＋ステゴサウルス ×2（タンク）＋ダエオドン ×2（回復、ケーキが足りれば不要）。
+別途<strong>フィールドのブルードマザー</strong>（貢物不要だが<strong>Tekgram は出ない</strong>、設計図のみ）もついでに処理。</li></ul>
+<h3 id="43-lost-colonyロストコロニー順位-3固有未テイム-3">4.3 Lost Colony（ロストコロニー）｜順位 3｜固有未テイム 3</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：長期メイン拠点の拡張：孵化場、クライオ保管、転送設備。繁殖部隊はここに常駐。</li><li><strong>第 2 段階（2–4 話、難度は極高）</strong>：アウレリアックス（<strong>極高</strong>：卵からのみ。卵は高空で本体に騎乗し繰り返しランダムな贈り物を受け取って入手し、
+肩乗りペットがいると即中断。変異卵が落下したあと Neophyte 5 波を凌ぐ必要がある）、オシドン（<strong>極高</strong>：気絶させるのではなく気絶値 50% まで削り、
+騎乗して Bolus ミニゲームを最低 4 周。騎乗のたびにテイム効率 25% 低下）、グルーン（<strong>高</strong>：手渡しだが、
+浮遊発光中に驚かせない・引き寄せられた Revenant を先に排除・その後に目を撃つ、の 3 段階が必要）。3 件とも <code>data/難度標籤.csv</code> が出典。</li><li><strong>第 3 段階 洞窟（未確認）</strong>：kamigame の洞窟座標一覧に<strong>ロストコロニーの節が存在しない</strong>。
+<code>攻略清單.csv</code> の LC は拠点／ミッション／ボス／ストーリーの 4 行のみで洞窟行がない。
+<strong>「全洞窟」という完了条件が LC では現時点で定義できない</strong>ため、実地確認か別の出典が必要。</li><li><strong>第 4 段階（4–8 話、前提条件が最長）</strong>：ロストキング／ロストクイーン、Lv55／70／95、両者の<strong>貢物表は完全に同一</strong>。
+ボトルネックはボス自体ではない：Minor／Greater／Prime のアベラント印章とクリムゾン印章がそれぞれ <strong>100／150／200 個</strong>（両方必要）、
+アルファ・オシドンの頭蓋骨はアルファ難度で <strong>5 個</strong>（＝アルファ・オシドンを 5 体倒す）。
+<strong>ロストクイーン戦は騎乗生物を一切持ち込めず</strong>（全て気絶する）、用意すべきは人の装備と消耗品で、部隊編成はこの戦闘では意味がない。</li></ul>
+<h3 id="44-the-islandアイランド順位-4固有-0">4.4 The Island（アイランド）｜順位 4｜固有 0</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：赤／緑／青の 3 オベリスク周辺に補給拠点。本マップは図鑑の観点では必ず行く理由がなく（固有 0）、価値はアーティファクトと Tekgram。</li><li><strong>第 2 段階（1–2 話）</strong>：固有 0。テイム可能な未テイム 63 種は全て他マップでも入手可能なので、無理に追わなくてよい。</li><li><strong>第 3 段階（10–20 話）</strong>：<strong>洞窟 10 ヶ所</strong>＝狩人／賢者／大物／群集／暴食／野獣／天帝／免疫／強者／狡猾。オベリスク系アーティファクトを一括補充。
+別途 Tek 洞窟（監督者の前提条件、<strong>扉は 5 分間しか開かず、入場後 60 分以内に踏破</strong>）。</li><li><strong>第 4 段階（8–16 話）</strong>：ブルードマザー（Lv30/50/70）→ メガピテクス（45/65/85）→ ドラゴン（55/75/100）→ 監督者（60/80/100）。
+監督者にはボス 3 体の<strong>同難度トロフィー各 1（消費されない）</strong>＋アルファ系ドロップが必要。高難度のトロフィーで低難度の扉を開けられる。
+ドラゴンの火炎ブレスは最大 HP の割合ダメージなので数を並べるだけでは崩壊する。テリジノサウルス＋スイートベジケーキの自己回復ラインが必要
+（ケーキ 1 個で最大 HP の 10% 回復・上限 2100、ブレス 1 回を相殺するにはケーキ 2 個）。</li></ul>
+<h3 id="45-scorched-earthスコーチドアース順位-5固有-0">4.5 Scorched Earth（スコーチドアース）｜順位 5｜固有 0</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：砂漠気候対応の拠点＋水源確保。</li><li><strong>第 2 段階（1–2 話）</strong>：固有 0。ただしファイア／ライトニング／ポイズンワイバーンの卵泥棒ラインは後続の複数ボスの素材源。
+3 種のワイバーンは <code>data/難度標籤.csv</code> でいずれも「極高」（成体はテイム不可で卵泥棒のみ、卵を盗むと群れ全体が敵対）。</li><li><strong>第 3 段階（3–6 話）</strong>：洞窟 3 ヶ所＝岩山（Old Tunnels）／門番（Grave of the Tyrants）／破壊者（Ruins of Nosti）。
+3 つのアーティファクトはソロモードでのリスポーン 30 分。</li><li><strong>第 4 段階（2–4 話）</strong>：マンティコア Lv55／70／95。HP は全ボス中最低だが、
+<strong>飛行生物や発光肩乗り（Glowtail／Featherlight／Bulbdog）を 1 体でも連れると永久に着地せず＝実質敗北</strong>。
+貢物＝ファイア／ライトニング／ポイズンの鉤爪 各 2／10／20 ＋ 門番／岩山／破壊者のアーティファクト。</li></ul>
+<h3 id="46-the-centerセンター順位-6固有-0">4.6 The Center（センター）｜順位 6｜固有 0</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：拠点。本マップ最大の価値は洞窟 9 ヶ所、<strong>現時点で唯一確認できる「邪悪アーティファクト」の産地を含む</strong>こと。</li><li><strong>第 2 段階（1–2 話）</strong>：固有 0。</li><li><strong>第 3 段階（9–18 話）</strong>：洞窟 9 ヶ所＝免疫／賢者と暴食／天帝／狩人／強者と大物／野獣／<strong>邪悪（41.5/28.5）</strong>／狡猾／群集。
+邪悪を入手して初めて Ragnarok のヌナタク用にアーティファクト 10 種が揃う可能性が出る（アーティファクトがマップ間移動できる前提、3.4 参照）。</li><li><strong>第 4 段階（2–4 話）</strong>：ブルードマザー＋メガピテクスの<strong>同時 2 体戦</strong>、Lv70／80／90。
+貢物はゲーム最長級（<strong>アーティファクト 6 種＋素材 10 種</strong>、ベータ各 10、アルファ各 25）。
+基本原則は分担処理で 2 体同時に正面から当たらないこと。出典が示す具体的に通る編成は
+<strong>ユウティラヌス 1 体＋最高級ステータスのティラノサウルス 14 体でアルファを約 5 分で撃破</strong>。</li></ul>
+<h3 id="47-aberrationアベレーション順位-7固有未テイム-38リスト13valguero-重複を除く">4.7 Aberration（アベレーション）｜順位 7｜固有未テイム 38（リスト）／13（Valguero 重複を除く）</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：放射線区域対応の拠点＋発光ペット（Bulbdog／Shinehorn／Featherlight／Glowtail のいずれか）。全行程でハザードスーツ必須。</li><li><strong>第 2 段階（13–26 話）</strong>：リスト基準では 38 種。公式スポーン表で Valguero にも出る 25 種を除くと、
+<strong>本マップでしか取れないのは 13 種</strong>（厳密には 12 種：13 種のうち <code>Aberrant Megalania</code> は
+同じスポーン表で Ragnarok にも出現する。2.1 参照、2026-09-13 検収の提案 1 による補注）で、長期線 2 本を含む：ロックドレイク（最深部の Grave of the Lost で卵泥棒のみ、全行程が放射線）、
+リーパー（リーパークイーンに受胎させる必要があり、先にチャージライトで HP 2000 未満まで削ってからライトを消してフェロモン霧を待つ。<strong>テイム後は繁殖不可</strong>）。</li><li><strong>第 3 段階（3–6 話）</strong>：洞窟 3 ヶ所＝堕落（Depths）／影（Shadows）／追跡者（Stalker）。
+<strong>3 つのアーティファクトは全て自分で洞窟に潜って取る</strong>しかなく、代替ルートはない。</li><li><strong>第 4 段階（2–4 話）</strong>：ロックウェル Lv60／75／100、<strong>最下層のターミナル</strong>で発動（地上オベリスクに召喚選択肢が出る条件は公式が「不明」と明記）。
+下る道中は全て放射線でハザードスーツが必要だが、<strong>アリーナ内は放射線区域ではない</strong>ので到着後は金属／フラック装備に着替えられる。
+アルファには追加でアルファ・バジリスクの牙／アルファ・カルキノスの爪／アルファ・リーパーキングの棘が各 1 必要。
+出典はこれこそがアルファの真のボトルネックであり、ボス自体ではないと指摘している。</li></ul>
+<h3 id="48-extinctionエクスティンクション順位-8固有未テイム-6">4.8 Extinction（エクスティンクション）｜順位 8｜固有未テイム 6</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：シティ区の拠点。本マップの固有 6 種は全て製造物かタイタンで、通常の野生テイムではない。</li><li><strong>第 2 段階（2–4 話、第 4 段階と重複）</strong>：ガチャ（特殊、ルールの落とし穴が多い：近くに別のガチャがいると「不機嫌」になり食べない）、
+メック／メガメック（製造、レベル 91 ＋ エングラム 38 ポイントが必要）、フォレスト／アイス／デザートタイタン（これ自体が第 4 段階の内容）。</li><li><strong>第 3 段階（3–6 話）</strong>：洞窟 3 ヶ所＝成長（Growth）／虚無（Void）／混沌（Chaos）。それぞれタイタン 1 体の召喚ターミナルに対応。
+3 洞窟の落とし穴：<strong>フォレストケイブは全域が建築禁止・よじ登り禁止でメックは通過できない</strong>（ただしギガノトサウルスは入口からターミナルまで行ける）。
+<strong>アイスケイブはマナガルム以外の飛行生物が入れず、洞内の生物は最大 Lv300 かつテイム不可</strong>で 3 洞中最難。
+<strong>デザートケイブは飛行不可だがガスバッグのみ例外</strong>。</li><li><strong>第 4 段階（8–16 話）</strong>：タイタン 3 体はそれぞれ召喚レシピが 1 種類のみ・レベル条件は全て 1 だが、各 <strong>コラプトハート ×100</strong> が必要。
+キングタイタンは<strong>先にタイタン 3 体を各 1 回倒してトロフィーを得る必要があり</strong>、ベータはガンマ、アルファはベータのクリアが前提。
+アルファには追加でコラプトハート 300 ＋ ギガノトサウルスの心臓 20 ＋ スピノサウルスの帆 20。
+デザートタイタンには ASA 専用の簡単な解がある：柱の塔かケツァルコアトルスのプラットフォームサドルに Bladewasp Hive を置く。</li></ul>
+<h3 id="49-astraeosアストレオス順位-9固有未テイム-3">4.9 Astraeos（アストレオス）｜順位 9｜固有未テイム 3</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：拠点。本マップはテイム可能プールが最小（41 種）なのにボスが最多（9 群）で費用対効果が最悪。</li><li><strong>第 2 段階（2–4 話）</strong>：ボアラトス（<strong>高</strong>：気絶値の減少が極めて速く HP が気絶値よりはるかに低いのでライフル＋強力麻酔弾が必要。
+ナルコベリーを 5 スタック以上常備、1 スタックで約 5 分）、グランドトルトゥガル（気絶、難度ラベル未収録）、
+マエグアナ（<strong>中</strong>：驚かせると跳ね上がって高速滑空で逃げるため通常 1〜2 発しかチャンスがない。ただし気絶値は低く Lv150 で約 1000）。</li><li><strong>第 3 段階（6–12 話）</strong>：洞窟 6 ヶ所＝狩人／賢者／大物／群衆／暴食／野獣。
+別途ラビリンス（90.6/74.1）のミノタルコス：<strong>洞内ではクライオポッドから生物を出せない</strong>ので、自分で歩いて入るしかない。</li><li><strong>第 4 段階（18–36 話、推定・過大評価の可能性あり。シリーズ最多のボス群数）</strong>：ナトリクス（Lv30/50/70）／ソデス（45/65/85）／ヒドラスコス（90/90/90）の 3 守護者
+＋アビサルス／シャロキスの 2 クラーケン（60/75/100、v93.0 で追加、ターミナルは西側、<strong>正確な座標は未確認</strong>）
+＋ミノタルコス／コロッサス／クロアラトス／エリュマントス＆カリュドーンの 4 ミニボス。
+<strong>ヒドラスコスの推奨編成にはデイノニクスが含まれるが、デイノニクスは Astraeos に自然スポーンしないため Valguero から転送する必要がある</strong>。
+これが本マップを Valguero より後に置く決定的理由。<blockquote><p><strong>推定話数の偏りの開示（2026-09-13 検収の必須修正 2）</strong>：18–36 話＝9 群 × 2–4 話であり、
+「ボス 1 群＝2–4 話」という係数は本ファイルが独自に定めたもので出典がない。さらに重要なのは、
+この 9 群のうち <strong>4 群がフィールドのミニボス</strong>（ミノタルコス／コロッサス／クロアラトス／エリュマントス＆カリュドーン）で、
+貢物も Apex 素材の備蓄も不要であり、素材準備のコストがアリーナ型ボスと 1 桁違う点。
+<strong>本レンジは大幅な過大評価の可能性があり</strong>、しかもこの数字は本ファイル 3.2 で Astraeos を順位 9 に置く
+主な理由として使われている。順位ごと割り引いて読んでほしい。同じ開示は <code>data/直播規劃.csv</code> の
+該当行の推定話数欄と根拠欄にも記載した。</p></blockquote></li></ul>
+<h3 id="410-genesis-part-1ジェネシス-パート1順位-10固有未テイム-31リスト35公式スポーン">4.10 Genesis: Part 1（ジェネシス パート1）｜順位 10｜固有未テイム 31（リスト）／35（公式スポーン）</h3>
+<ul><li><strong>第 1 段階（2–4 話）</strong>：5 バイオーム（火山／沼地／雪原／海洋／月面）に前哨拠点。ミッションシステムが本マップの主軸。</li><li><strong>第 2 段階（11–21 話）</strong>：固有未テイム数はシリーズ最多だが、<strong>うち 21 種は X 変種でテイム方法は原種と同じ</strong>。
+違いは X 系の野生個体がダメージ +250%、プレイヤーとテイム生物への被ダメージ 60% 軽減、<strong>麻酔要求量が約 2.5 倍</strong>という点。
+本当に新しい機構は数種のみ：ブラッドストーカー（<strong>極高</strong>、意図的に糸に捕まる必要があり、血液パックの要求が 4 桁
+（Lv150 で約 1386–1486 個）、かつテイムボーナスを上げるためペット 4〜5 体を犠牲にする）、メガケロン、フェロックス、パレオクトパス、アストロセタス。</li><li><strong>第 3 段階 洞窟（未確認）</strong>：kamigame の洞窟座標一覧の地図名対応表に <strong>Genesis: Part 1 が存在しない</strong>。
+本マップは従来の洞窟の代わりにミッションを採用しており、<strong>アーティファクトの入手経路はワークスペースで確認できない</strong>。</li><li><strong>第 4 段階（4–8 話、ただし前提条件が極端に長い）</strong>：ムーダー（水中ミッション、<strong>貢物なし</strong>、全行程が水中で SCUBA かメガケロンの酸素供給が必要）
+＋コラプト・マスターコントローラー（<strong>貢物なし、条件はミッション達成数 ガンマ 58／ベータ 116／アルファ 168</strong>）。
+<strong>CMC のコストは素材ではなく数百のミッションであり、これがシリーズ最長の単一マップ工期。</strong>
+補足：<code>wiki/guides/boss_genesis-part-1.md</code> の未確認リスト第 1 項に、kamigame の ASA ページが未更新を自認しており
+<strong>同ファイルの戦術内容は全て ASE 由来</strong>で、ASA で同じかは未確認、と明記されている。</li></ul>
+<hr>
+<h2 id="5-マップ横断の資産表">5. マップ横断の資産表</h2>
+<p><strong>前提</strong>：ARK のマップ間輸送はオベリスク／転送機のアップロードとダウンロードによる。本表は「何を持ち運び、何を現地調達するか」だけを書き、
+<strong>アーティファクトがマップ間を移動できるかは主張しない</strong>。それはワークスペースに明文がない（3.4 と第 6 節参照）。</p>
+<h3 id="51-連れ回す部隊繁殖部隊は-lost-colony-常駐">5.1 連れ回す部隊（繁殖部隊は Lost Colony 常駐）</h3>
+<div class="table-wrap"><table><thead><tr><th>種</th><th>役割</th><th>対象マップ</th><th>根拠</th></tr></thead><tbody><tr><td><strong>テリジノサウルス</strong></td><td>ボス戦の主力アタッカー</td><td>Valguero（グレンデル ×14）、Ragnarok（ヌナタク ×10 かつ騎乗）、Astraeos（ヒドラスコス DPS）、The Island（ドラゴン／監督者）</td><td><code>data/配種目標.csv</code> Therizinosaur 行；<code>boss_valguero.md</code> 一 4；<code>boss_ragnarok.md</code> 一 4</td></tr><tr><td><strong>ユウティラヌス</strong></td><td>バフ役（攻撃 +20%／被ダメ 20% 減）、1 戦あたり 1–2 体</td><td>ほぼ全てのアリーナ型ボス</td><td><code>data/配種目標.csv</code>；<code>boss_the-island.md</code> 各節 4</td></tr><tr><td><strong>ダエオドン</strong></td><td>回復役、1 戦あたり 2 体（大量の食料が必要）</td><td>Valguero、The Island、The Center、Astraeos、Lost Colony、Genesis P1</td><td><code>data/配種目標.csv</code>；各 boss ファイル 4 節</td></tr><tr><td><strong>ティラノサウルス</strong></td><td>汎用アタッカー ×15</td><td>The Center（ユウティラヌス 1＋レックス 14 でアルファ可）、The Island、Extinction、Lost Colony</td><td><code>data/配種目標.csv</code> Rex 行；<code>boss_the-center.md</code> 四節</td></tr><tr><td><strong>ディノテリウム</strong></td><td>ヌナタクのタンク兼バフ（オス 1 メス 4、オスが 2 体以上だと無効）</td><td>Ragnarok、The Island のドラゴン代替案</td><td><code>data/配種目標.csv</code>；<code>boss_ragnarok.md</code> 一 4</td></tr><tr><td><strong>ステゴサウルス</strong></td><td>タンク（硬化モード）</td><td>Valguero（グレンデル ×2）、Astraeos（ヒドラスコス）、The Island（ブルードマザー用 6 体編成の被ダメ減）</td><td><code>data/配種目標.csv</code>；<code>boss_valguero.md</code> 一 4</td></tr><tr><td><strong>デイノニクス</strong></td><td>出血アタッカー（出血は近接値に依存しないので HP に振る）</td><td>Astraeos（<strong>自然スポーンしないので Valguero から必須持ち込み</strong>）、Valguero、The Island のドラゴン</td><td><code>boss_astraeos.md</code> 4 節；<code>data/配種目標.csv</code></td></tr><tr><td><strong>メガテリウム</strong></td><td>虫特効、ブルードマザー専用</td><td>The Island、The Center、Valguero のフィールドブルードマザー</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>アイスワイバーン</strong>（現有 17 体）</td><td>現有最大の飛行戦力、輸送と偵察</td><td>全マップ（飛行禁止エリアを除く）</td><td><code>data/配種目標.csv</code> Ice Wyvern 行</td></tr><tr><td><strong>アルゲンタヴィス</strong></td><td>野生個体を掴んで罠に運ぶ、輸送</td><td>全マップ</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>ティラコレオ／ダイアウルフ</strong></td><td>洞窟用騎乗（壁・木を登る／群れボーナス）</td><td>全ての洞窟段階</td><td><code>data/配種目標.csv</code></td></tr><tr><td><strong>パイロメイン</strong>（現有 23 体）</td><td>肩乗り／騎乗で寒暑両耐性を付与</td><td>雪原・砂漠マップの第 1 段階</td><td><code>data/配種目標.csv</code>；<code>reports/育種決策_Pyromane.md</code></td></tr></tbody></table></div>
+<h3 id="52-現地調達のみ持ち出せない持ち込む価値がない">5.2 現地調達のみ（持ち出せない・持ち込む価値がない）</h3>
+<div class="table-wrap"><table><thead><tr><th>マップ</th><th>現地調達</th><th>理由</th></tr></thead><tbody><tr><td>Aberration</td><td>発光ペット（Bulbdog／Shinehorn／Featherlight／Glowtail）、ロックドレイク、リーパー</td><td>発光ペットはロックウェルと Nameless への必需品。ロックドレイクは最深部の卵泥棒のみ。リーパーはテイム後繁殖不可で血統を持ち出せない</td></tr><tr><td>Scorched Earth</td><td>ファイア／ライトニング／ポイズンワイバーン（卵泥棒）</td><td>3 種の鉤爪は対応属性のワイバーンからしか採れず、マンティコアとデザートタイタンの貢物になる</td></tr><tr><td>Ragnarok</td><td>グリフィン</td><td><strong>繁殖不可</strong>のため一発で高レベル個体を取る必要がある（<code>data/難度標籤.csv</code>）</td></tr><tr><td>Extinction</td><td>ガチャ、メック</td><td>ガチャは特殊機構、メックは製造物で、いずれも繁殖ラインに乗らない</td></tr><tr><td>Genesis: Part 1</td><td>X 系全種（21 種）</td><td>X 変種は Genesis の対応バイオームで取るしかなく、持ち込んだ原種は X にならない</td></tr><tr><td>Lost Colony</td><td>アウレリアックス、オシドン、グルーン</td><td>3 種とも LC 固有で、アウレリアックスは孵化ライン</td></tr></tbody></table></div>
+<h3 id="53-繁殖部隊をどこで育てるか">5.3 繁殖部隊をどこで育てるか</h3>
+<p><strong>Lost Colony（既定の長期メイン拠点）。</strong> 孵化設備、クライオ保管、突然変異ラインを全て LC に集約し、
+他マップには「前哨＋そのマップ用の作業騎乗生物」だけを置く。理由：① 決定 1 が LC を長期メイン拠点と定めている。
+② 繁殖は幼体を継続的に世話する必要があり（刷り込みの時間枠）、拠点を移し続けると途切れる。
+③ クライオポッドがあれば成体はいつでもどのマップにもダウンロードでき、拠点が人について回る必要がない。
+繁殖機構と孵化温度は <code>wiki/breeding/_general.md</code> の第 1・2 節。</p>
+<hr>
+<h2 id="6-未確認リストと確認待ち事項">6. 未確認リストと確認待ち事項</h2>
+<h3 id="61-未確認ワークスペースに出典なし推測で埋めない">6.1 未確認（ワークスペースに出典なし、推測で埋めない）</h3>
+<ol><li><strong>アーティファクトがマップ間でアップロード／ダウンロードできるか</strong>：ワークスペースのボス攻略 10 ファイルと README のいずれにも明文がない。<strong>本カード最大の未確認項目。</strong></li><li><strong>Ragnarok のアーティファクト 6 個の対応洞窟</strong>（賢者／大物／免疫／天帝／狡猾／邪悪）：<code>boss_ragnarok.md</code> の未確認リスト第 3 項に既に登録済み。</li><li><strong>Lost Colony の洞窟数と座標</strong>：kamigame の洞窟座標一覧にロストコロニーの節がない。</li><li><strong>Genesis: Part 1 の洞窟／アーティファクト入手経路</strong>：kamigame の地図名対応表に本マップがない。</li><li><strong>各マップのボス戦の制限時間</strong>：The Island、Valguero、Ragnarok、Lost Colony、Genesis P1 のいずれも出典に記載がない。</li><li><strong>Astraeos 西側の 2 クラーケン用ターミナルの正確な座標</strong>：更新履歴には「西側」としか書かれていない。</li><li><strong>各マップの公式繁体中文名</strong>：<code>data/官方三語對照.csv</code> は生物名のみでマップ名を収録していない。
+本ファイルで検証済みなのは Ragnarok＝仙境のみ（決定 22）で、他は全て英語名を使用。</li><li><strong>Genesis: Part 1 の 2 体のボスの ASA における実数値と機構</strong>：kamigame の ASA ページが未更新を自認しており、現行内容は全て ASE 由来。</li><li><strong>マップ別の消費話数</strong>：<code>data/直播集數.csv</code> 45 行のマップ欄が 45/45 全て空で、<code>data/馴服紀錄.csv</code> 242 行の話数欄も全て空のため精算できない。本ファイルの推定話数が全て「推定」なのはこのため。</li><li><strong><code>Grand Tortugar</code> の難度</strong>：Astraeos 固有の未テイム種だが、<code>data/難度標籤.csv</code> に当該種の行がない。</li></ol>
+<h3 id="62-確認待ち事項">6.2 確認待ち事項</h3>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>事項</th><th>本カードが採った保守側</th></tr></thead><tbody><tr><td>1</td><td><strong>固有種をどちらの基準で数えるか</strong>（生物清單の「出自地圖或DLC」vs 公式 <code>Data:Spawn_Map</code>）</td><td>リスト基準を踏襲（＝図鑑進捗の現行）。公式スポーン基準は比較レポートに書くのみで、CSV は一切変更しない</td></tr><tr><td>2</td><td><strong>アーティファクトがマップ間移動できるか</strong>（Ragnarok のヌナタクが The Center の邪悪を待つべきかを決める）</td><td><strong>移動不可</strong>と仮定（保守）。したがってヌナタクは後回しとし、アーティファクト 6 個が本マップで確認できない旨を明記</td></tr><tr><td>3</td><td><strong>「クリア」にアルファ難度を含めるか</strong></td><td>本ファイルの推定話数は<strong>3 難度とも挑む</strong>前提で計算（保守＝長め）。ガンマのみでよければ、LC の印章が 200 から 100 に、Extinction のキングタイタンのコラプトハートが 300 から 150 に減り、Aberration もアルファ 3 体を倒す必要がなくなり、全体工期は大幅に短縮される</td></tr><tr><td>4</td><td>四季ドレイクリングは Ragnarok 固有か（決定 22 と矛盾）</td><td>決定 22 に従い Ragnarok に残す</td></tr><tr><td>5</td><td><code>Spirit Dire Bear</code> と <code>Spirit Direbear</code> は同一種の重複行か</td><td>両行とも残し、両方を未テイムに数える（保守＝分母が大きい側）</td></tr><tr><td>6</td><td><code>攻略清單.csv</code> の Ragnarok「狩人の洞窟 85.4/54.2」は The Island のデータの誤登録か</td><td>当該行は変更せず、本ファイル 4.1 に登録するのみ</td></tr><tr><td>7</td><td>Tek Parasaur／Raptor／Rex／Stegosaurus を「未入手可能」から Genesis: Part 1 に移すか</td><td><code>生物清單.csv</code> は変更せず、比較レポートに登録するのみ</td></tr><tr><td>8</td><td><code>data/預計抓生物.csv</code> を「固有未テイムのみ」に変更するか</td><td><strong>現行表は変更しない</strong>。差分は <code>reports/預計抓_建議差異.md</code> に記載</td></tr><tr><td>9</td><td>決定 1 の「Valguero の洞窟/ボスを後回し」を後回ししない形に変えるか</td><td>本ファイルの本命案は変更を提案（3.4① 参照）だが、CSV の順位では LC を Valguero の後に置いたまま確認待ち</td></tr><tr><td>10</td><td>直播集數.csv のマップ欄を埋めるか</td><td>代理入力はしない（機械がマップを推測すべきではない）。ただし本ファイル第 0 節で、これが推定精度不足の根本原因だと説明した</td></tr></tbody></table></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブリーディング総合ハンドブック（ARK: Survival Ascended） - ARK 離線 wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="../index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="_general.html">繁體中文</a>
+</header>
+<main class="page">
+<h1 id="ブリーディング総合ハンドブックark-survival-ascended">ブリーディング総合ハンドブック（ARK: Survival Ascended）</h1>
+<p>手書きファイル（スクリプト生成ではない）。各種の個別計画は同じフォルダにあり、
+<code>scripts/build_breeding.py</code> が生成する。
+<strong>記述ルール</strong>：攻略テキストは自分の言葉で書き直し、段落ごとに出典 URL を付ける。
+出典に無いものは「未確認」または「推論」と明記し、憶測で埋めない。
+（繁体字版 <code>_general.md</code> と節構成は 1 対 1 対応）</p>
+<h2 id="0-種別計画インデックス">0. 種別計画インデックス</h2>
+<div class="table-wrap"><table><thead><tr><th>英名</th><th>繁体字</th><th>日本語</th><th>ファイル</th><th>主な用途</th></tr></thead><tbody><tr><td>Rex</td><td>霸王龍</td><td>ティラノサウルス</td><td><a href="rex_JP.html">rex_JP.md</a> ／ <a href="rex.html">繁</a></td><td>ボス戦アタッカー</td></tr><tr><td>Therizinosaur</td><td>—</td><td>テリジノサウルス</td><td><a href="therizinosaur_JP.html">therizinosaur_JP.md</a> ／ <a href="therizinosaur.html">繁</a></td><td>ボス戦アタッカー（グレンデル／ヌナタク）</td></tr><tr><td>Yutyrannus</td><td>羽暴龍</td><td>ユウティラヌス</td><td><a href="yutyrannus_JP.html">yutyrannus_JP.md</a> ／ <a href="yutyrannus.html">繁</a></td><td>ボス戦バッファー</td></tr><tr><td>Deinonychus</td><td>恐爪龍</td><td>デイノニクス</td><td><a href="deinonychus_JP.html">deinonychus_JP.md</a> ／ <a href="deinonychus.html">繁</a></td><td>出血アタッカー</td></tr><tr><td>Megatherium</td><td>大地懶</td><td>メガテリウム</td><td><a href="megatherium_JP.html">megatherium_JP.md</a> ／ <a href="megatherium.html">繁</a></td><td>ブルードマザー特化</td></tr><tr><td>Shadowmane</td><td>影鬃</td><td>シャドウメイン</td><td><a href="shadowmane_JP.html">shadowmane_JP.md</a> ／ <a href="shadowmane.html">繁</a></td><td>事前計画（ASA 未実装）</td></tr><tr><td>Pyromane</td><td>熾炎貓</td><td>パイロメイン</td><td><a href="pyromane_JP.html">pyromane_JP.md</a> ／ <a href="pyromane.html">繁</a></td><td>育成中</td></tr><tr><td>Daeodon</td><td>凶齒豨</td><td>ダエオドン</td><td><a href="daeodon_JP.html">daeodon_JP.md</a> ／ <a href="daeodon.html">繁</a></td><td>ボス戦ヒーラー</td></tr><tr><td>Argentavis</td><td>阿根廷巨鷹</td><td>アルゲンタヴィス</td><td><a href="argentavis_JP.html">argentavis_JP.md</a> ／ <a href="argentavis.html">繁</a></td><td>運搬・掴み</td></tr><tr><td>Direwolf</td><td>恐狼</td><td>ダイアウルフ</td><td><a href="direwolf_JP.html">direwolf_JP.md</a> ／ <a href="direwolf.html">繁</a></td><td>洞窟探索</td></tr><tr><td>Thylacoleo</td><td>袋獅</td><td>ティラコレオ</td><td><a href="thylacoleo_JP.html">thylacoleo_JP.md</a> ／ <a href="thylacoleo.html">繁</a></td><td>洞窟騎乗</td></tr><tr><td>Wyvern</td><td>飛龍</td><td>ワイバーン</td><td><a href="wyvern_JP.html">wyvern_JP.md</a> ／ <a href="wyvern.html">繁</a></td><td>卵回収＋同型繁殖</td></tr><tr><td>Ice Wyvern</td><td>寒冰飛龍</td><td>アイスワイバーン</td><td><a href="ice-wyvern_JP.html">ice-wyvern_JP.md</a> ／ <a href="ice-wyvern.html">繁</a></td><td>現有最大の飛行戦力</td></tr><tr><td>Deinotherium</td><td>—</td><td>ディノテリウム</td><td><a href="deinotherium_JP.html">deinotherium_JP.md</a> ／ <a href="deinotherium.html">繁</a></td><td>ヌナタクのタンク兼バッファー</td></tr><tr><td>Stegosaurus</td><td>—</td><td>ステゴサウルス</td><td><a href="stegosaurus_JP.html">stegosaurus_JP.md</a> ／ <a href="stegosaurus.html">繁</a></td><td>グレンデルのタンク</td></tr><tr><td>Rock Drake</td><td>岩龍</td><td>ロックドレイク</td><td><a href="rock-drake_JP.html">rock-drake_JP.md</a> ／ <a href="rock-drake.html">繁</a></td><td>アベレーションの代表騎乗</td></tr></tbody></table></div>
+<p>データ表：<code>data/配種目標.csv</code>（同じく <code>scripts/build_breeding.py</code> が生成。列は第 5 節）。</p>
+<h2 id="1-ブリーディングの仕組み">1. ブリーディングの仕組み</h2>
+<p><strong>交配条件とクールタイム</strong>：オスとメスを交配モードにし、頭上にハートが出る距離まで近づける。
+完了後はメスがクールタイムに入り、Dv/data に値がある 13 種はすべて 18 時間〜48 時間
+（<code>Module:Dv/data</code> の <code>mintimebetweenmating</code>／<code>maxtimebetweenmating</code> が同値。ディノテリウムとパイロメインは Dv/data に無く未確認）。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a> ／
+<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>ステータス遺伝</strong>：子が継承するのは両親の「野生レベル」（テイム完了後・プレイヤーの振り分け前）。
+各ステータスが独立に判定され、<strong>55% の確率で両親のうち高い方</strong>を引き継ぐ（＝45% で低い方）。
+両親の良い所を全部揃えた個体を出すのに複数回の交配が要るのはこのため。
+いわゆる「55/45」はこの一条を指す。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>双子・三つ子</strong>：双子 10%、三つ子 2%（出典ページは v220 のパッチノートを引用）。kamigame も同数値で、
+「一部の種族を除き」と補足。双子や変異の確率を上げる生物は存在せず、オヴィラプトルやユニコーンが
+確率を上げるという話は誤り（出典ページが名指しで否定）。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>変異</strong>：1 回の出産につき変異判定は最大 3 回、各 2.5%。両親の（母系＋父系）カウンタがどちらも 20 未満なら、
+最低 1 回当たる確率 7.31%、2 回 0.184%、3 回 0.00156%。当たったステータスは<strong>野生レベル +2</strong>、
+同時にカラー区画がランダムに 1 つ変化し、「変異を提供した側」のカウンタが +1 される。
+出典：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>20/20 ルールの正しい理解</strong>：画面の X/20 は「母系カウンタ」と「父系カウンタ」であり、
+<strong>その個体の実際の変異数ではない</strong>。子の母系カウンタ＝母の（母系＋父系）、父系カウンタ＝父の（母系＋父系）、
+そこに今回発現した変異が加算される。変異源になれるかは<strong>両カウンタの合計</strong>が 20 未満かで決まる。
+よって、両親とも 20 未満なら 7.31%、該当側が 20 以上なら 4.07%、両方 20 以上なら 0%。
+出典：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>実践ライン（出典が示す標準手順）</strong>：まず各ステータスが最良の個体を「オス系統」として用意し、
+同等のステータスでカウンタ 0 のメス群（多いほど早い）を揃える。オスのカウンタが 20 を超えても、
+メス群が 20 未満である限り変異のチャンスは残る。変異が出たら新しいオスに入れ替える。
+出典ページは公式サーバーのレベル上限 450（通常種）／500（x-・r- 種）にも触れ、上げ過ぎに注意と記載。
+本プロジェクトはシングルプレイのため上限は設定次第だが、「上げ切って育てられなくなるな」という趣旨は同じ。
+出典：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>刷り込み</strong>：8 時間ごとに世話の要求（抱っこ／散歩／指定キブル）が発生し、すべて満たすと基礎ステータス +20%、
+さらに刷り込んだ本人が騎乗したときに与ダメージ +30%・被ダメージ -30%。刷り込まなくてもペナルティはないが、
+恩恵もゼロ。1 回逃しても既に貯まった刷り込み値は失われない。イベント中は間隔と増加量が変わることがある。
+種ごとの回数と最後の猶予時間は各種ファイル第 5 節（kamigame の「刷り込み回数」「刷り込み猶予時間」）。
+検算：総成熟時間 ÷ 8 時間＝刷り込み回数、余りが猶予時間（Rex と Direwolf の 2 例で一致を確認。
+この検算は本プロジェクト側の照合であり、出典の明文ではない）。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>近親交配</strong>：Breeding・Mutations どちらのページにも近親ペナルティの記述は<strong>無い</strong>。
+さらに公式 wiki の変異スタック手順自体が「1 頭のオスに多数のメス、同じ血統を何世代も戻し交配」であり、
+近親交配が前提として成立している。「近親ペナルティ無し」という説は出典に肯定的な明文が無いため、
+本ハンドブックでは「出典にペナルティ機構の記載なし、かつ公式手順が前提としている」と記すに留め、断定しない。
+出典：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a> ／ <a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<h2 id="2-孵化設備と温度">2. 孵化設備と温度</h2>
+<p><strong>いつ孵化が始まるか</strong>：受精卵は地面に置くか、Egg Incubator（Genesis: Part 2 の孵卵器）に正しく入れた時点で
+カウントが始まる。拾って冷蔵庫・保存ビン・インベントリに入れれば一時停止扱いで、耐久も減らず腐敗も極めて遅い。
+温度が範囲外だと進行しないだけでなく「受精卵の耐久」が減り続け、ゼロで破棄される。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>エアコンの台数（出典の目安）</strong>：6 台で大半の卵に対応、8 台あれば熱波・寒波も凌げる。
+ギガノトサウルスや Scorched Earth／ラグナロクのワイバーンなど大型卵は 14 台以上、
+Aberration のロックドレイクは極低温要求で最低 15 台、バルゲロのデイノニクスは極高温要求で
+雪原なら約 23 台。<strong>出典ページ自身がこの数字に注釈で疑問を呈している</strong>（周囲の気温やマップ差の影響が大きい）。
+起点の目安として使い、実際は卵の HUD 表示に従う。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>代替手段</strong>：Egg Incubator は最大 10 個の卵を同時に保管・孵化でき、温度は手動設定。
+ディメトロドンの断熱効果は近接攻撃力に比例して上がり、重ねがけも可能。出典ページは近接約 1000 で
+ワイバーンの卵にも対応でき、肉だけで維持できてエアコンより安いと記載（欠点は移動が遅く運びにくい）。
+序盤でエアコンが無い時期はスタンドトーチ・焚き火・工業用調理器などの熱源で代用できるが、
+熱源は耐熱を下げるため加減が要る。kamigame 側の序列は「エアコンで囲うのが基本、ディメトロドンは補助、
+エアコンで十分」。
+出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://ark.fandom.com/wiki/Wyvern">https://ark.fandom.com/wiki/Wyvern</a> ／
+<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>同じ設備に置けない例</strong>：本表 16 種のうち、アルゲンタヴィスの卵だけが低温帯（12〜13.5℃）、ワイバーン系が最高温帯（80〜90℃）、
+ロックドレイクは極低温帯（-90〜-80℃）で、これらは同じ設備を共有できない。
+ティラノとユウティラヌスは同じ 32〜34℃ なので並べて置ける。各種の温度は個別ファイル第 4 節。
+出典：<a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a>（16 種の温度帯は本プロジェクト側で突き合わせ）</p>
+<p><strong>オヴィラプトル</strong>：kamigame の配種ページでおすすめ度最高の補助生物として挙げられている：
+周囲の交配間隔を短縮し、有精卵を自動回収する。（変異率や双子率は上げない。第 1 節の否定を参照。）
+出典：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<h2 id="3-カラーの仕組み">3. カラーの仕組み</h2>
+<p><strong>遺伝</strong>：各カラー区画は独立して、両親のどちらかの色を引き継ぐ。イベントカラーも遺伝する。
+レベルアップと染色は遺伝に影響せず、遺伝するのは「テイム完了時または成熟完了時」の値。
+「各区画独立 50/50」という説のうち、<strong>独立</strong>という部分は出典にあるが、<strong>50/50 という確率</strong>は
+kamigame にも fandom にも明文が無い。本ハンドブックでは未確認とし、断定しない。
+出典：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>変異によるカラー変化</strong>：変異 1 回につきカラー区画が 1 つランダムに変わる。親とよく似た色になることも、
+その種が使っていない区画に当たって「見た目が変わらない」こともある。
+見た目に変化が無い＝変異が無い、ではない。
+出典：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>本プロジェクトのカラー基準</strong>（<code>data/顏色表.csv</code>、<code>scripts/build_color_table.py</code> 生成）：
+通常生物色の ID 1〜100 のみ収録し、染料色 201〜226 は収録しない（個体属性に出る 200 番台は一律「未確認」、推測しない）。
+カラー系統（紅／橙／黃／綠／青／藍／紫／灰／黑／白）は 16 進数を HSL に変換して自動分類。
+カラーコード 0 はその区画「未使用」を意味し、育種決策ページでは参照しない。
+各種ファイル第 6 節のペアリングで使う「目標カラー系」の既定値は紅
+（<code>scripts/report_breeding.py --family</code> で変更可）。
+出典：本ワークスペース <code>README.md</code>「顏色表.csv」節</p>
+<h2 id="4-ありがちな失敗">4. ありがちな失敗</h2>
+<ol><li><strong>卵をインベントリに入れたまま孵ると思っている</strong>：地面か孵卵器に置かないとカウントが始まらない（第 2 節）。</li><li><strong>X/20 を「その個体の変異数」と誤解</strong>：母系・父系の累計カウンタであり、判定は両者の合計が 20 未満か（第 1 節）。</li><li><strong>カウンタが高い＝良個体だと思う</strong>：出典はカウンタとステータスは無関係と明記。変異 0 でも高ステータスはあり得る。</li><li><strong>メス群が汚染される</strong>：カウンタ 20 以上のメスを使った時点で変異確率は半減、両方 20 以上ならゼロ。メス群は常に清潔に。</li><li><strong>幼年期に餌箱で与えようとする</strong>：幼年期は餌箱から食べられず、手動でインベントリに入れる必要がある。
+少年期以降は自分で餌箱から食べる。出典：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li><strong>野生ワイバーンがいないマップでワイバーンを繁殖させる</strong>：幼体はワイバーンミルクしか食べず、
+ミルクは野生メスかアルファからしか得られないため餓死する。出典：<a href="https://ark.fandom.com/wiki/Wyvern">https://ark.fandom.com/wiki/Wyvern</a></li><li><strong>倍率の存在を忘れる</strong>：本ハンドブックと各種ファイルの孵化・成熟時間はゲームファイルの原始値（＝1× 相当）。
+シングルで倍率を変えている場合は各自換算が必要（この一文は説明であり出典の明文ではない）。</li><li><strong>出産・孵化に立ち会わない</strong>：幼体は無所属の状態で生まれ、近づいて使用キーで「クレーム」しないと自分のものにならない。
+同時に食料の減りが速く、放置すると餓死する。出典：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li></ol>
+<h2 id="5-データ表とツール本ワークスペース">5. データ表とツール（本ワークスペース）</h2>
+<ul><li><code>data/配種目標.csv</code>：列＝<code>英文名,用途,目標stat優先序,目標數值區間,突變策略,孵化溫度,
+妊娠或孵化時間,成長時間,幼體注意,幼體注意_JP,來源,信心</code>。
+信心（信頼度）の判定：2 出典（fandom <code>Module:Dv/data</code> と kamigame）の数値を突き合わせ、
+全一致＝高、差が 1% 以内の換算誤差＝中（近似）、片方のみ＝中（単一出典）、数値が衝突＝低、両方無し＝未確認。
+衝突項目を第三の出典で裁定済みの場合（現状はデイノニクスの 1 例のみ）＝高（三源裁決）で、
+裁定内容は該当種ファイルの第 4 節に記載。</li><li><code>目標stat優先序</code> 欄の括弧書き：「ブリーディング時の stat 優先順位」を明記した出典は 1 つも無いため、
+同欄には必ず出処を付す。「stat 項目は出典の閾値由来、順序は本カードの判断」＝kamigame のボス編成表に
+その種の stat 閾値がある場合（ティラノ／テリジノ／ディノテリウムの 3 種）、
+「推論：出典に stat の優先順位の記載なし」＝閾値すら無く、項目も順序も用途から推した場合（残り 13 種）。</li><li><code>scripts/build_breeding.py</code>：本フォルダの全種ファイルと <code>data/配種目標.csv</code> を再生成（冪等）。
+<code>--check</code> は突き合わせ結果のみ表示し、書き込まない。</li><li><code>scripts/report_breeding.py --species &lt;英名&gt;</code>：<code>reports/育種決策_&lt;種&gt;.md</code> を出力。
+ダッシュボードの 🧬 育種決策ページと同じ <code>ark_progress.compute_breeding()</code> を使用し、
+各種ファイル第 6 節も同じ関数なので、3 か所で計算がズレない。</li><li>ペアリングのデータ元は <code>data/個體屬性.csv</code>（セーブスキャン生成、2026-07-20 スナップショット、220 体）。
+セーブデータ更新後に <code>build_breeding.py</code> を再実行すれば第 6 節は自動更新される。</li></ul>
+<h2 id="6-本ハンドブックが扱っていないこと">6. 本ハンドブックが扱っていないこと</h2>
+<ul><li>各ステータスの実数成長式（種ごとの <code>statgain</code> 係数）。今回は取得していない。</li><li>特質（Gene Trait）のブリーディングへの影響：<code>data/個體屬性.csv</code> の特質列は今なお旧形式の文字化け
+（<code>scripts/scan_saves.py</code> のシリアライズ不具合は 2026-09-05 に修正済みだが、再スキャンするまで
+新形式にならない）。そのため各種ファイルのペアリング提案は<strong>特質を考慮していない</strong>。
+出典：本ワークスペース <code>README.md</code>「個體屬性.csv」節。</li><li>公式倍率以外のサーバー設定（本プロジェクトはシングルプレイ）。</li></ul>
+</main>
+</body>
+</html>

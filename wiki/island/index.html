@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARK 全景 / 全景図</title>
+<link rel="stylesheet" href="island.css">
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../index.html" data-i18n="back_to_list">← 清單（離線 wiki 首頁）</a>
+  <h1 class="title" data-i18n="title">ARK 全景</h1>
+  <div class="top-actions">
+    <nav class="views" id="view-switch" aria-label="view">
+      <button type="button" class="view-btn" data-view="flow" data-i18n="view_flow" aria-pressed="true">流程</button>
+      <button type="button" class="view-btn" data-view="grid" data-i18n="view_grid" aria-pressed="false">全景</button>
+      <button type="button" class="view-btn" data-view="timeline" data-i18n="view_timeline" aria-pressed="false">時間軸</button>
+    </nav>
+    <button type="button" id="help-toggle" class="help-btn" aria-label="使用說明" aria-haspopup="dialog" aria-controls="help">？</button>
+    <button type="button" id="lang-toggle" class="lang" aria-label="language">日本語</button>
+  </div>
+</header>
+<div id="error" class="error-wrap" hidden></div>
+<section id="view-flow" class="flow">
+  <aside class="col col-maps">
+    <section class="block" id="stats"></section>
+    <section class="block" id="map-index"></section>
+    <footer class="block meta" id="flow-meta"></footer>
+  </aside>
+  <section class="col col-card" id="card" aria-live="polite"></section>
+  <section class="col col-walk" id="walk" aria-live="polite"></section>
+</section>
+<section id="view-grid" class="layout" hidden>
+  <main class="main">
+    <div id="app" class="board" aria-live="polite">
+      <noscript><p class="error">本頁需要 JavaScript。</p></noscript>
+    </div>
+  </main>
+  <aside class="side" id="side">
+    <section class="side-block" id="grid-stats"></section>
+    <section class="side-block" id="detail"></section>
+    <section class="side-block" id="legend"></section>
+    <footer class="side-block meta" id="meta"></footer>
+  </aside>
+</section>
+<section id="view-timeline" class="tline" hidden>
+  <main class="col tl-col" id="tl-main" aria-live="polite"></main>
+  <aside class="col tl-side" id="tl-side">
+    <section class="block" id="tl-stats"></section>
+    <section class="block" id="tl-detail"></section>
+    <section class="block" id="tl-legend"></section>
+    <footer class="block meta" id="tl-meta"></footer>
+  </aside>
+</section>
+<div id="help" class="help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden></div>
+<script src="island_data.js"></script>
+<script src="island.js"></script>
+</body>
+</html>

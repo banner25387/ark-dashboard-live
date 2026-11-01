@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ジェネシス パート 1 ボス攻略 - ARK 離線 wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="../index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="boss_genesis-part-1.html">繁體中文</a>
+</header>
+<main class="page">
+<h1 id="ジェネシス-パート-1-ボス攻略">ジェネシス パート 1 ボス攻略</h1>
+<p>バージョン基準（先に読むこと）：ジェネシス パート 1 の ASA 実装日は 2026-04-01（<code>data/地圖進度.csv</code>）。
+ただし<strong>現時点で参照できるボスの詳細はほぼ ASE 時代のもの</strong>である。kamigame の ASA 版ジェネシス 1 攻略 TOP は特徴節に「掲載しているのは ASE の情報」と明記し、
+ボス節はリンク 2 本と「詳細情報は後ほど更新予定」のみ。リンク先のムーダー／マスターコントローラーの記事は ARK（ASE）旧サイトの記事（最終更新 2020 年）。
+kamigame の ASA ボス総覧（2026-08-10 更新）にも、現時点でジェネシスの 2 体の挑戦条件セクションは存在しない。
+したがって本ファイルの戦術内容は ASE 基準であり、ASA との差異はすべて未確認とする。既知の ASA 側の変更点：深海バイオームが独立マップ化され大幅に拡張された（ムーダーまでの経路に影響する可能性）。
+（出典：<a href="https://kamigame.jp/asa/page/426329584594620023.html">https://kamigame.jp/asa/page/426329584594620023.html</a>、<a href="https://kamigame.jp/asa/page/298199474839225030.html">https://kamigame.jp/asa/page/298199474839225030.html</a>、<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html</a>）</p>
+<p>本マップのボスは 2 体：海洋ボス <strong>ムーダー（Moeder, Master of the Ocean／深海の女王・ムーダー）</strong>、
+ミッション最終局面のボス <strong>汚染された支配者（Corrupted Master Controller）</strong>。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>、<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>、<code>data/官方三語對照.csv</code>）</p>
+<hr>
+<h2 id="一ムーダーmoeder-master-of-the-ocean海洋ボス">一、ムーダー（Moeder, Master of the Ocean）｜海洋ボス</h2>
+<h3 id="1-召喚場所と方法">1. 召喚場所と方法</h3>
+<p><strong>貢物は不要</strong>で、ミッション形式。深海（海洋）バイオームにテレポート → ミッション「ウェーブレイ・64」を追跡して開始地点の足場へ →
+「母なる海、ムーダー」を追跡し「！」アイコンへ向けて海底へ潜る → 開始地点で難易度を選んで開戦。
+（出典：<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html</a>、<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<p>道中も戦闘もすべて水中なのでスキューバボンベは必携。メガケロンを連れて酸素供給源にする手もある。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="2-必要な貢物">2. 必要な貢物</h3>
+<p>なし。ハードルは「深海のミッション開始地点まで到達できること」と難易度選択そのもの。
+ASE 基準の HP はガンマ 490,000／ベータ 686,000／アルファ 960,400（ガンマ値は kamigame と fandom で一致）。
+（出典：<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html</a>、<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="3-アリーナの特性">3. アリーナの特性</h3>
+<p>2 フェーズの繰り返し：<strong>雑魚フェーズ</strong>（ムーダーは隅に隠れて無敵。イールミニオンが噛みつきと放電で襲い、感電デバフで火力と移動速度を大幅に落としてくる）→
+<strong>本体フェーズ</strong>（雑魚を全滅させると出現し、攻撃が通る）。本体が出てから約 1 分、または一定量のダメージを受けると電気球の弾幕を放って再び無敵化し、隠れて雑魚フェーズへ戻る。
+討伐までに最低 3 回の雑魚フェーズがある。戦闘途中からは渦も発生する（混乱要因だがダメージは無い）。
+重要な点：<strong>隠れている間ムーダーは回復する</strong>し、本体フェーズでも攻撃の手を止めると回復する。雑魚は速攻、本体には継続攻撃。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<p>イールミニオンは難易度別に 3 種類あり（他ボスの雑魚には無い仕様）、ボス級の HP バーを持つ。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="4-推奨編成">4. 推奨編成</h3>
+<ul><li>モササウルス：kamigame（ASE）の推奨主力。高レベル個体 5 体程度で攻略可能。ベータ以上はレベル上げとサドル厳選が必須。</li><li>X-モササウルス：fandom によれば高鎧サドル＋刷り込みでどの難易度も速攻可能。</li><li>X-メガロドン：TEK サドルで遠距離攻撃が可能。群れボーナスには 9 体以上必要。割合出血がアルファ・ムーダーに特に有効と記載。</li><li>X-バシロサウルス：ムーダーと雑魚の電撃を無効化できるが、騎乗した個体しか攻撃しない。タンクとして他の TEK サドル組を守る運用。</li><li>トゥソテウティス：掴みでイールミニオンを抑え込める。</li><li>メガケロン＋ギガノトサウルス：亀が酸素を供給しギガが本体を削る（fandom は変則だが有効と記載）。雑魚処理役は別途必要。</li><li>プレシオサウルス 3〜4 体：速度が高く、囮として有効。</li></ul>
+<p>（出典：<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html</a>、<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="5-プレイヤー装備">5. プレイヤー装備</h3>
+<p>スキューバボンベ（必携）、メディカルブリュー（fandom が強く推奨。雑魚の電撃は騎乗中のプレイヤーにも通る）。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="6-戦闘手順">6. 戦闘手順</h3>
+<ol><li>開幕はイールミニオンの殲滅を最優先。雑魚が残っている間ムーダーは無敵で、本体を攻撃しても無意味。</li><li>雑魚処理中は自分の体力を注視する（感電は騎乗していても入る）。必要ならメディカルブリューを飲む。</li><li>雑魚を全滅させるとムーダーが出現。<strong>側面から</strong>集中攻撃する（正面は大きな噛みつき）。</li><li>電気球の弾幕と共に無敵化したら、その間に体力・スタミナ・酸素を回復する。</li><li>1〜4 を繰り返す（最低 3 巡）。渦は外洋のものより厄介なので、極力降車しない。</li></ol>
+<p>（出典：<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%A0%E3%83%BC%E3%83%80%E3%83%BC.html</a>、<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="7-よくある失敗要因">7. よくある失敗要因</h3>
+<ul><li>雑魚処理が遅い：隠れている間にムーダーが回復し、いつまでも削り切れない。</li><li>本体を正面から殴る：噛みつきの威力が高く、高難易度ではどの生物も溶かされる。</li><li>単体が雑魚に囲まれる：連続感電で持続ダメージ＋恒常的な減速。旋回の遅い騎乗生物は的になる。</li><li>降車する／騎乗から離れる：渦と電撃の両方が処理しづらくなる。</li><li>アリーナ境界に近づきすぎる：fandom にはアンチメッシュ処理で死亡した例が記載されている。</li><li>スキューバボンベの忘れ：全編水中戦。</li></ul>
+<p>（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<h3 id="8-報酬">8. 報酬</h3>
+<p>ムーダーのトロフィーとムーダーの旗を入手。
+TEK エングラム：ガンマで TEK ジェネレーター、TEK センサー（ジェネシス パート 1）、TEK トラフ。ベータで TEK ブーツ・ガントレット・ヘルメットが追加。
+アルファでさらに TEK フォースフィールド、TEK グレネードランチャー（ジェネシス パート 1）、TEK テレポーターが追加。
+（出典：<a href="https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean">https://ark.fandom.com/wiki/Moeder,_Master_of_the_Ocean</a>）</p>
+<hr>
+<h2 id="二汚染された支配者corrupted-master-controllerミッション最終ボス">二、汚染された支配者（Corrupted Master Controller）｜ミッション最終ボス</h2>
+<h3 id="1-召喚場所と方法-2">1. 召喚場所と方法</h3>
+<p><strong>貢物は不要</strong>で、代わりに「ミッションクリア数」が条件。HLN-A のホイールメニューから Arrival Protocol（日本語表記「最後の試練」）を選び、難易度を選択する。
+転送を発起するプレイヤーは規定数のミッションを完了している必要がある：<strong>ガンマ 58／ベータ 116／アルファ 168</strong>。他の参加者は同行するだけでよい。
+（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>、<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html</a>）</p>
+<h3 id="2-必要な貢物-2">2. 必要な貢物</h3>
+<p>なし。コストは 58／116／168 個のミッション消化そのもの。戦場は System Root。
+（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>）</p>
+<h3 id="3-アリーナの特性-2">3. アリーナの特性</h3>
+<ul><li>人数・生物制限：プレイヤー 10 人、生物 20 体。</li><li><strong>場内ではクライオポッドから生物を出せない</strong>（収納は可能）。つまり入場前に全て出しておく必要がある。</li><li>4 フェーズ構成で、<strong>各フェーズ 15 分の制限時間</strong>。</li><li>雑魚の総数に上限が無い（他ボスにはある）ため、無限に湧いて押し潰される。</li><li>第 3 フェーズまでボスは完全無敵かつ攻撃もしてこない。第 4 フェーズで目からのレーザー（騎乗解除＋スタンロック）を使い始める。</li><li>攻略機構：Corrupted Avatar／Dinotar を倒して Code-Key を拾い（<strong>徒歩でのみ拾得可能。走って通過するだけで自動取得</strong>）、コードブレイカー端末へ運んで防御シールドを解除する。
+解除は一時的で、1 回に削れるのは最大でも HP の約 1/4。このサイクルを複数回繰り返すことになる。</li><li>敗北時はプレイヤーの死体が転送を開始した場所へ戻され、インベントリは保持される。勝てそうにない場合は生物をポッドに収めて温存するのも戦略。</li></ul>
+<p>（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>）</p>
+<p>雑魚の出現順（ASE kamigame）：フェーズ 1 からサバイバー（弓を使い、恐竜に騎乗している場合もある）、トリケラトプス、アタックドローン。
+フェーズ 2 からユタラプトル、ティラノサウルス。フェーズ 4 からギガノトサウルス、リーパーキング。
+（出典：<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html</a>）</p>
+<h3 id="4-推奨編成-2">4. 推奨編成</h3>
+<ul><li>ティラノサウルス：ASE kamigame の主力。可能な限り高レベル個体を、高性能サドル付きで。</li><li>ユウティラヌス（X-ユウティラヌス含む）：咆哮バフと恐怖デバフ。Avatar にも Dinotar リーパーにも効く。</li><li>ダエオドン：長期戦のヒーラー。大量の食料を持たせて回復を切らさない。</li><li>フェロクス：アタックドローンがエレメントを落とすため変身を維持できる。機動力が高く騎乗戦闘向き。</li><li>スピノサウルス：直立攻撃の威力と範囲が高く、Dinotar ギガノトにも遠めから当てられる。体力の薄さが難点。</li><li>マグマサウルス：範囲の火傷で群制圧。アンバーグリスで回復できるため、特定エリアを守るタンクに向く。</li><li>ブラッドストーカー：鍵の運搬役を素早くコードブレイカーへ移動させられる。自分とプレイヤーを安全地帯へ引き上げるのにも使える。</li><li>リーパーキング：高火力・高体力に加え天然 80% ダメージ軽減、尾の全方位攻撃と大ジャンプ。ソロで特に有用。</li><li>カルキノス＋メイトブースト済みマンティス 2 体（高品質の剣）：Dinotar への高火力。カルキノスは鍵運搬にも使える。</li><li>X-レックス／TEK レックス：高ステータスで TEK サドル可。旋回半径の大きさが難点。</li><li>マンモス、X-ウーリーライノ、テリジノサウルス：Avatar の群れへの範囲殲滅力が高い。</li><li>ガリミムス、ロールラット：純粋な輸送役。鍵持ちプレイヤーを端末まで高速で運ぶ。</li></ul>
+<p>fandom の注意：<strong>大型生物を連れ過ぎない</strong>こと。1 箇所にまとめられず、鍵集めがかえって困難になる。
+（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>、<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html</a>）</p>
+<h3 id="5-プレイヤー装備-2">5. プレイヤー装備</h3>
+<ul><li>攻撃：高品質のポンプアクションショットガン、アサルトライフル、ファブリケイテッドスナイパーライフル。TEK ライフルがあればなお良い（アタックドローンがエレメントを落とす）。近接用に高品質のパイクや剣も。</li><li>防御：高品質のフラックを複数セット（鍵拾いは徒歩必須で被弾が多い）。ガンマでも複数持参。第 4 フェーズはライオットシールド推奨。</li><li>消耗品：メディカルブリュー、ラザロチャウダー、エンデュロシチューなどのスープ類。</li><li>チーム装備：1 人が TEK グレネードランチャーを持ち、TEK グラビティグレネードで Avatar をまとめて吸着させ、TEK グレネードで一掃する（グラビティは必ず遠距離から。近いと自分が吸い込まれて即死）。</li><li>移動：プレイヤー自身の移動速度を上げる。グラップリングフックや TEK ソードでの飛行テクニックも時間短縮になる。</li></ul>
+<p>（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>）</p>
+<h3 id="6-戦闘手順-2">6. 戦闘手順</h3>
+<ol><li>入場前に全生物を出しておく（場内でポッドは開けない）。役割分担（鍵の運搬役、アタックドローン処理、Dinotar 処理）も決めておく。</li><li>フェーズ 1〜3：生物に地上の敵を処理させ、プレイヤーは徒歩で Code-Key を拾う（1 人が持てる数には上限あり。走って通過するだけで取得）。</li><li>鍵をコードブレイカー端末へ運ぶ。必要数に達するとそのフェーズの敵が消滅し、次のフェーズへ進む。</li><li>フェーズ 4：ボスがレーザーを使い始める。「雑魚処理と鍵集め → 端末へ搬送 → シールド解除 → 全員で集中攻撃」を繰り返す。</li><li>1 回の解除で削れるのは最大でも約 1/4 なので、このサイクルは最低 4 巡する。</li><li>戦闘は常に 1 箇所に集約する。フィールドを横断して鍵を取りに行く時間が最大の浪費になる。</li></ol>
+<p>（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>、<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html</a>）</p>
+<h3 id="7-よくある失敗要因-2">7. よくある失敗要因</h3>
+<ul><li>フェーズごとの 15 分を使い切る：後半ほど厳しく、敗因の多くは時間切れ。</li><li>雑魚の湧き速度が処理速度を上回る：System Root には雑魚数の上限が無く、飲まれると雪崩式に崩れる。</li><li>アタックドローン専任を置かない：恐竜の届かない高度から正確に撃ってきて、プレイヤーの体力回復を止められる。</li><li>鍵拾い役が挟み撃ちにされる：徒歩でしか拾えないため、護衛が無いと Avatar に削られる。</li><li>隅に追い込まれる：Avatar は人と騎乗生物の体力・防具を一気に削る。</li><li>大型生物を連れ過ぎる：フィールド各所に散り、鍵回収の効率が崩壊する。</li><li>第 4 フェーズで当たり判定の無い部位を撃つ：fandom には、シールド解除後でも額・装甲・顔・後頭部などにダメージが入らない不具合が記載されている。まずピストルで有効部位を確かめるとよい。</li></ul>
+<p>（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>）</p>
+<h3 id="8-報酬-2">8. 報酬</h3>
+<p>TEK エングラム（fandom 版）：</p>
+<ul><li>ガンマ：ガンマ・テラン アセンション インプラント、TEK クロー、TEK 専用ストレージ、TEK レプリケーター、未組立 TEK ホバースキッフ。</li><li>ベータ：アストロセタス TEK サドル、ベータ・インプラント、TEK レギンス、TEK ショルダーキャノンを追加。</li><li>アルファ：アルファ・インプラント、巡航ミサイル、TEK チェストピースを追加。</li></ul>
+<p>kamigame（ASE）版も内容は同じでより簡潔：ガンマ＝TEK レプリケーター／専用ストレージ／TEK クロー／TEK ホバースキッフ、ベータ＝TEK レギンス／ショルダーキャノン／アストロセタス TEK サドル、アルファ＝TEK チェストピース／巡航ミサイル。上位難易度は下位を含む。
+（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>、<a href="https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html">https://kamigame.jp/ARK/%E3%83%9C%E3%82%B9/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC.html</a>）</p>
+<p>難易度の位置づけ：fandom は、無限湧きの雑魚・フェーズごとの 15 分・徒歩限定の鍵拾い・ポッド解放不可という 4 つの制約が重なることで、
+ガンマですら難関であり、高難易度はエクスティンクションのキングタイタンに匹敵しうると評している。
+（出典：<a href="https://ark.fandom.com/wiki/Corrupted_Master_Controller">https://ark.fandom.com/wiki/Corrupted_Master_Controller</a>）</p>
+<hr>
+<h2 id="未確認リスト">未確認リスト</h2>
+<ul><li><strong>ASA 版ジェネシス パート 1 の 2 ボスの数値・仕様が ASE と同じかどうか</strong>（kamigame の ASA ページ自身が未更新と明記。本ファイルの戦術は全て ASE 出典）。</li><li>ASA で深海バイオームが独立マップ化された後、ムーダーのミッション開始地点までの経路が変わったかどうか。</li><li>ムーダー戦の制限時間（出典に記載なし）。</li><li>ASA における CMC のミッションクリア数条件が 58／116／168 のままかどうか。</li><li>ジェネシス パート 1 の 2 ボスのエレメント入手量（fandom の該当 2 ページにエレメント数量表が無く、kamigame の ASA ボス総覧にも未収録）。</li></ul>
+</main>
+</body>
+</html>

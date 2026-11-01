@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配種通用手冊（ARK: Survival Ascended） - ARK 離線 wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="../index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="_general_JP.html">日本語</a>
+</header>
+<main class="page">
+<h1 id="配種通用手冊ark-survival-ascended">配種通用手冊（ARK: Survival Ascended）</h1>
+<p>手寫檔（不由腳本生成）。各物種的個別計畫在同資料夾，由 <code>scripts/build_breeding.py</code> 產出。
+<strong>寫法紀律</strong>：攻略文字一律用自己的話重寫、每段標來源 URL；來源沒寫的一律標「未確認」或「推論」，不腦補。</p>
+<h2 id="0-物種計畫索引">0. 物種計畫索引</h2>
+<div class="table-wrap"><table><thead><tr><th>英文名</th><th>繁中</th><th>日文</th><th>檔案</th><th>主要用途</th></tr></thead><tbody><tr><td>Rex</td><td>霸王龍</td><td>ティラノサウルス</td><td><a href="rex.html">rex.md</a> ／ <a href="rex_JP.html">_JP</a></td><td>Boss 戰攻擊手</td></tr><tr><td>Therizinosaur</td><td>—</td><td>テリジノサウルス</td><td><a href="therizinosaur.html">therizinosaur.md</a> ／ <a href="therizinosaur_JP.html">_JP</a></td><td>Boss 戰攻擊手（Grendel／Nunatak）</td></tr><tr><td>Yutyrannus</td><td>羽暴龍</td><td>ユウティラヌス</td><td><a href="yutyrannus.html">yutyrannus.md</a> ／ <a href="yutyrannus_JP.html">_JP</a></td><td>Boss 戰增益位</td></tr><tr><td>Deinonychus</td><td>恐爪龍</td><td>デイノニクス</td><td><a href="deinonychus.html">deinonychus.md</a> ／ <a href="deinonychus_JP.html">_JP</a></td><td>出血攻擊手</td></tr><tr><td>Megatherium</td><td>大地懶</td><td>メガテリウム</td><td><a href="megatherium.html">megatherium.md</a> ／ <a href="megatherium_JP.html">_JP</a></td><td>Broodmother 專用</td></tr><tr><td>Shadowmane</td><td>影鬃</td><td>シャドウメイン</td><td><a href="shadowmane.html">shadowmane.md</a> ／ <a href="shadowmane_JP.html">_JP</a></td><td>預備（ASA 未推出）</td></tr><tr><td>Pyromane</td><td>熾炎貓</td><td>パイロメイン</td><td><a href="pyromane.html">pyromane.md</a> ／ <a href="pyromane_JP.html">_JP</a></td><td>現役養成中</td></tr><tr><td>Daeodon</td><td>凶齒豨</td><td>ダエオドン</td><td><a href="daeodon.html">daeodon.md</a> ／ <a href="daeodon_JP.html">_JP</a></td><td>Boss 戰補師</td></tr><tr><td>Argentavis</td><td>阿根廷巨鷹</td><td>アルゲンタヴィス</td><td><a href="argentavis.html">argentavis.md</a> ／ <a href="argentavis_JP.html">_JP</a></td><td>運輸／抓取</td></tr><tr><td>Direwolf</td><td>恐狼</td><td>ダイアウルフ</td><td><a href="direwolf.html">direwolf.md</a> ／ <a href="direwolf_JP.html">_JP</a></td><td>洞窟探索</td></tr><tr><td>Thylacoleo</td><td>袋獅</td><td>ティラコレオ</td><td><a href="thylacoleo.html">thylacoleo.md</a> ／ <a href="thylacoleo_JP.html">_JP</a></td><td>洞窟坐騎</td></tr><tr><td>Wyvern</td><td>飛龍</td><td>ワイバーン</td><td><a href="wyvern.html">wyvern.md</a> ／ <a href="wyvern_JP.html">_JP</a></td><td>偷蛋＋同型配種</td></tr><tr><td>Ice Wyvern</td><td>寒冰飛龍</td><td>アイスワイバーン</td><td><a href="ice-wyvern.html">ice-wyvern.md</a> ／ <a href="ice-wyvern_JP.html">_JP</a></td><td>現有最大飛行戰力</td></tr><tr><td>Deinotherium</td><td>—</td><td>ディノテリウム</td><td><a href="deinotherium.html">deinotherium.md</a> ／ <a href="deinotherium_JP.html">_JP</a></td><td>Nunatak 坦克兼增益</td></tr><tr><td>Stegosaurus</td><td>—</td><td>ステゴサウルス</td><td><a href="stegosaurus.html">stegosaurus.md</a> ／ <a href="stegosaurus_JP.html">_JP</a></td><td>Grendel 坦克</td></tr><tr><td>Rock Drake</td><td>岩龍</td><td>ロックドレイク</td><td><a href="rock-drake.html">rock-drake.md</a> ／ <a href="rock-drake_JP.html">_JP</a></td><td>Aberration 代表坐騎</td></tr></tbody></table></div>
+<p>資料表：<code>data/配種目標.csv</code>（同樣由 <code>scripts/build_breeding.py</code> 產出，欄位見本檔第 5 節）。</p>
+<h2 id="1-配種機制">1. 配種機制</h2>
+<p><strong>交配條件與冷卻</strong>：一公一母都設成交配模式、距離近到頭上出現愛心才會開始；完成後母體進入冷卻，
+本表所有物種的冷卻都是 18 小時到 48 小時之間（<code>Module:Dv/data</code> 的 <code>mintimebetweenmating</code>／
+<code>maxtimebetweenmating</code> 欄位，Dv/data 有資料的 13 種全部同值；Deinotherium、Pyromane 兩種 Dv/data 沒有，未確認）。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a> ／
+<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>stat 遺傳</strong>：子代繼承的是雙親的「野生等級」（馴服完成、玩家加點之前的等級），每一項 stat 各自
+獨立擲骰，<strong>有 55% 的機率拿到雙親中較高的那一邊</strong>（所以 45% 拿到較低的）。這也是為什麼「湊出
+雙親全部高項」的完美個體需要多生幾胎。所謂「55/45」指的就是這一條。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>多胞胎</strong>：10% 機率雙胞胎、2% 機率三胞胎（來源頁引的是 v220 的官方更新說明）。kamigame 的
+說法相同，但補一句「一部の種族を除き」。沒有任何生物能提高多胞胎或突變機率：Oviraptor 與
+Unicorn 能提高機率是誤傳，來源頁專門闢謠。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>突變</strong>：每一胎最多擲 3 次突變骰，每次 2.5%。雙親的（母系＋父系）計數都 &lt;20 時，
+至少中一次的機率是 7.31%、中兩次 0.184%、中三次 0.00156%。中了的那一項會<strong>加 2 個野生等級</strong>，
+同時隨機改一個色區的顏色，並在「提供突變的那一邊」的計數 +1。
+來源：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>20/20 規則的正確理解</strong>：畫面上寫的 X/20 是「母系計數」與「父系計數」，它們<strong>不等於這隻實際有
+幾個突變</strong>：嬰兒的母系計數＝母親的（母系＋父系），父系計數＝父親的（母系＋父系），再加上這胎
+實際中的突變。判斷一隻能不能當突變來源，看的是牠<strong>兩邊計數的合計</strong>是否 &lt;20。
+所以：雙親都 &lt;20 → 完整 7.31%；提供該項的那一邊 ≥20 → 降到 4.07%；兩邊都 ≥20 → 0%。
+來源：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>實作路線（來源給的標準做法）</strong>：先養出一隻各項都最好的個體當「公線」，再湊一群 stat 相同、
+計數 0 的母群（母數愈多愈快）。公的計數會超過 20 沒關係，因為只要母群保持 &lt;20，突變機會就還在；
+中了突變就把新的公換上去。來源頁同時提醒官方伺服器等級上限 450（一般生物）／500（x- 與 r- 生物），
+別把個體堆到上不了等。本專案是單機存檔，上限依自己的設定，但「別堆到無法升級」的道理一樣。
+來源：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>印記</strong>：每 8 小時會出現一次照顧需求（抱抱／散步／指定 kibble），全部做滿的話基礎屬性 +20%，
+而且由印記者本人騎乘時再多 30% 傷害與 30% 減傷。沒印記沒有懲罰、但也完全沒有加成，
+已經累積的印記值不會因為漏掉一次而消失。活動期間的間隔與每次的增加量可能被改動。
+各物種實際要印幾次、最後一次之後還剩多久，見各物種檔第 5 節（kamigame 的
+「刷り込み回数」「刷り込み猶予時間」）；對照計算：總成熟時間 ÷ 8 小時＝印記次數，餘數＝寬限時間
+（拿 Rex 與 Direwolf 兩例驗算皆吻合，此換算為本專案自行核對、非來源明文）。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>近親</strong>：Breeding 與 Mutations 兩頁都<strong>沒有</strong>任何近親懲罰的敘述；而且官方 wiki 給的突變堆疊流程
+本身就是「一隻公配一群母、代代回配同一條血線」，等於預設近親繁殖可行。「近親無懲罰」這個說法
+在來源裡找不到正面明文，本手冊記為「來源未見懲罰機制，且官方流程預設可行」，不寫成斷言。
+來源：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a> ／ <a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<h2 id="2-孵化設備與溫度">2. 孵化設備與溫度</h2>
+<p><strong>什麼時候開始孵</strong>：受精蛋要放到地上、或正確放進 Egg Incubator（Genesis: Part 2 的孵蛋器）
+才會開始計時；撿起來放進冰箱、保存箱或任何背包都等於暫停，蛋在背包裡不會掉耐久、腐敗也極慢。
+溫度不對時不但不前進，還會持續掉「受精蛋耐久」，歸零就毀掉。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>空調數量（來源給的概數）</strong>：6 台空調可應付大多數的蛋、8 台可以撐過冷熱風暴；
+大型蛋如 Giganotosaurus 或 Scorched Earth／Ragnarok 的 Wyvern 可能要 14 台以上；
+Aberration 的 Rock Drake 因為要求極低溫，至少 15 台；Valguero 的 Deinonychus 因為要求極高溫，
+在雪地大約要 23 台。<strong>來源頁自己在註解裡質疑這組數字</strong>：實際需要幾台高度取決於周圍環境溫度與
+各圖差異。所以這組數字當起跳參考，實際以蛋的 HUD 顯示為準。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></p>
+<p><strong>替代方案</strong>：Egg Incubator 可同時安放、孵化最多 10 顆蛋，溫度要手動設定；
+Dimetrodon 提供的保溫效果隨牠的近戰傷害上升、可疊加，來源頁說約 1000 近戰時連 Wyvern 蛋都撐得住，
+而且吃肉就好、比空調便宜（缺點是慢、難搬）。早期沒有空調時可用站立火把／營火／工業烤爐等熱源，
+但熱源會給負的耐熱，要自己權衡。kamigame 那邊的排序是「エアコンで囲うのが基本、
+ディメトロドンは補助、エアコンで十分」。
+來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a> ／ <a href="https://ark.fandom.com/wiki/Wyvern">https://ark.fandom.com/wiki/Wyvern</a> ／
+<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>同一組空調不能混放的例外</strong>：本表 16 種裡溫度段差最大的三群彼此不可能共用同一組設備：
+Argentavis 是低溫段（12～13.5℃）、Wyvern 系是最高溫段（80～90℃）、Rock Drake 是極低溫段（-90～-80℃）。
+可以放一起的例子：Rex 與 Yutyrannus 同為 32～34℃。各物種的溫度見個別檔第 4 節。
+來源：<a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a>（本專案自行比對 16 種的溫度區間）</p>
+<p><strong>Oviraptor</strong>：kamigame 的配種頁把 Oviraptor 列為推薦度最高的輔助生物：縮短周圍生物的交配間隔、
+自動收有精蛋。（注意它<strong>不會</strong>提高突變或多胞胎機率，見第 1 節闢謠。）
+來源：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<h2 id="3-色系規則">3. 色系規則</h2>
+<p><strong>繼承</strong>：每個色區各自獨立，從雙親其中一方繼承該區的顏色，活動色（イベントカラー）也會遺傳；
+升等與染色不影響遺傳，遺傳的是「馴服完成時或成熟完成時」的值。
+「各區獨立 50/50」這個說法：<strong>獨立</strong>這一半在來源找得到，<strong>50/50 的機率</strong>在 kamigame 與
+fandom 兩邊都沒有明文，本手冊標為未確認，不寫死。
+來源：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></p>
+<p><strong>突變的色變</strong>：每中一次突變就會隨機改一個色區。可能改出跟親代很像的顏色，也可能改到這個物種
+根本沒使用的色區，於是「看不出來」。所以肉眼看不到顏色變化不代表沒突變。
+來源：<a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></p>
+<p><strong>本專案的顏色口徑</strong>（<code>data/顏色表.csv</code>，<code>scripts/build_color_table.py</code> 產出）：
+只收一般生物色 ID 1–100，染料色 201–226 不收（個體屬性出現 200 號以上的一律標未確認、不猜）；
+色系（紅／橙／黃／綠／青／藍／紫／灰／黑／白）由十六進位轉 HSL 自動分類；
+色碼 0 代表該區「未使用」，育種決策頁不查表。各物種檔第 6 節的配對建議所用的「目標色系」預設為紅
+（可在 <code>scripts/report_breeding.py --family</code> 改）。
+來源：本工作區 <code>README.md</code>「顏色表.csv」節</p>
+<h2 id="4-常見錯誤">4. 常見錯誤</h2>
+<ol><li><strong>以為蛋放背包也會孵</strong>：不放地上／孵蛋器不會開始計時（第 2 節）。</li><li><strong>把 X/20 當成「這隻有幾個突變」</strong>：那是母系與父系的累計計數，判斷用的是兩邊合計 &lt;20（第 1 節）。</li><li><strong>以為高計數＝好個體</strong>：來源頁明說計數與 stat 無關，0 突變的個體也可能各項都很高。</li><li><strong>母群被污染</strong>：一旦拿計數已 ≥20 的母去配，突變機率直接腰斬甚至歸零。母群要永遠保持乾淨。</li><li><strong>幼年期用餌箱餵</strong>：幼年期吃不到餌箱，必須手動把食物放進幼體身上；少年期以後才會自己去餌箱吃。
+來源：<a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li><strong>在沒有野生 Wyvern 的地圖上繁殖 Wyvern</strong>：幼體只吃 Wyvern Milk，而奶只能從野生母體或 Alpha 取得，
+結果就是餓死。來源：<a href="https://ark.fandom.com/wiki/Wyvern">https://ark.fandom.com/wiki/Wyvern</a></li><li><strong>忘了時間是原始倍率</strong>：本手冊與各物種檔的孵化／成熟時間取自遊戲檔原始值（等同 1× 倍率），
+單機若調過孵化或成熟倍率要自行換算（此句為說明，非來源明文）。</li><li><strong>出生沒人在場</strong>：幼體出生時是無主的，要靠近按使用鍵認領才算你的；同時食物掉得很快，
+放著不管會餓死。來源：<a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li></ol>
+<h2 id="5-資料表與工具本工作區">5. 資料表與工具（本工作區）</h2>
+<ul><li><code>data/配種目標.csv</code>：欄位＝<code>英文名,用途,目標stat優先序,目標數值區間,突變策略,孵化溫度,
+妊娠或孵化時間,成長時間,幼體注意,幼體注意_JP,來源,信心</code>。
+信心欄的判定：兩源（fandom <code>Module:Dv/data</code> 與 kamigame）數值互相核對，全部一致＝高、
+差 ≤1% 的換算誤差＝中（近似）、只有單邊有值＝中（單源）、兩邊數值衝突＝低、兩邊都沒有＝未確認；
+衝突項若已查第三源裁決（目前只有 Deinonychus 一例）＝高（三源裁決），裁決內容寫在該物種檔第 4 節。</li><li><code>目標stat優先序</code> 欄的括號標記：來源沒有任何一頁明寫「配種時 stat 的優先順序」，所以該欄一律標明出處：
+「stat 項目取自來源門檻，排序為本卡判斷」＝kamigame Boss 編成表有給該物種的 stat 門檻（Rex／Therizinosaur／
+Deinotherium 三種）；「推論：來源未寫 stat 優先序，項目與排序皆本卡判斷」＝連 stat 門檻都沒有，
+項目與排序都是從用途推出來的（其餘 13 種）。</li><li><code>scripts/build_breeding.py</code>：重建本資料夾所有物種檔與 <code>data/配種目標.csv</code>（冪等）；
+<code>--check</code> 只印兩源核對結果不寫檔。</li><li><code>scripts/report_breeding.py --species &lt;英文名&gt;</code>：出 <code>reports/育種決策_&lt;物種&gt;.md</code>，
+與儀表板 🧬 育種決策頁共用 <code>ark_progress.compute_breeding()</code>，各物種檔第 6 節也是同一支函式，
+三邊不會各算一套。</li><li>配對建議的資料底是 <code>data/個體屬性.csv</code>（存檔掃描產出，2026-07-20 快照，220 隻）。
+存檔資料更新後重跑 <code>build_breeding.py</code>，第 6 節會自動跟著更新。</li></ul>
+<h2 id="6-本手冊沒有涵蓋的">6. 本手冊沒有涵蓋的</h2>
+<ul><li>各 stat 的實際數值成長公式（各物種的 <code>statgain</code> 係數），本輪未取。</li><li>特質（Gene Trait）對配種的影響：<code>data/個體屬性.csv</code> 現有的特質欄仍是舊格式的亂碼
+（<code>scripts/scan_saves.py</code> 的序列化 bug 已於 2026-09-05 修好，但要重跑掃描才會用新格式重建），
+所以各物種檔的配對建議<strong>不含特質</strong>。來源：本工作區 <code>README.md</code>「個體屬性.csv」節。</li><li>官方倍率以外的伺服器設定（本專案為單機）。</li></ul>
+</main>
+</body>
+</html>

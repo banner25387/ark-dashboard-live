@@ -1,0 +1,130 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fafaf8;
+  --fg: #1a1a1a;
+  --muted: #5a5a5a;
+  --border: #d8d8d2;
+  --link: #0b5fa5;
+  --link-visited: #6a3fa0;
+  --code-bg: #eee;
+  --header-bg: #f0efe9;
+  --table-stripe: #f3f3ee;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1c1a;
+    --fg: #eaeaea;
+    --muted: #a8a8a0;
+    --border: #3a3b38;
+    --link: #7bb6ff;
+    --link-visited: #c79bff;
+    --code-bg: #2a2b28;
+    --header-bg: #232420;
+    --table-stripe: #232420;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, "Segoe UI", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.site-header .home-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--fg);
+}
+.lang-toggle {
+  margin-left: auto;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--link);
+  font-size: 0.9rem;
+}
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+h1, h2, h3, h4, h5, h6 { line-height: 1.35; }
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+code {
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.4em 1em;
+  border-left: 4px solid var(--border);
+  color: var(--muted);
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+.table-wrap {
+  overflow-x: auto;
+  margin: 0.8em 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.4em 0.6em;
+  text-align: left;
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: var(--table-stripe); }
+th { background: var(--header-bg); }
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.25em 0; }
+/* 段落/清單項目/引言在來源 markdown 裡可能是好幾行軟換行接成（沒有空行分段）；
+   轉換器保留原始換行字元而不是直接黏成一長串，這裡用 pre-line 顯示成真正的換行，
+   同時仍會依容器寬度自動折行。 */
+p, li, blockquote p { white-space: pre-line; }
+
+.stats-line { color: var(--muted); }
+.search-section { margin: 1.2em 0 2em; }
+.search-section label { display: block; margin-bottom: 0.3em; font-weight: bold; }
+#search-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.5em 0.7em;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 1rem;
+}
+#search-results { list-style: none; padding: 0; margin-top: 0.6em; }
+#search-results li { padding: 0.15em 0; }
+#search-results .more-note { color: var(--muted); font-style: italic; }
+.entry-list { list-style: none; padding: 0; }
+.entry-list li { margin: 0.4em 0; }
+.entry-list a { font-size: 1.05rem; }
+
+@media (max-width: 480px) {
+  .page { padding: 0.75rem 0.75rem 2rem; }
+  table { min-width: 420px; }
+}

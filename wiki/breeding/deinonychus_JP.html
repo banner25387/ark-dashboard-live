@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配種計画：デイノニクス（Deinonychus／恐爪龍） - ARK 離線 wiki</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="home-link" href="../index.html">&#8962; ARK 離線 wiki</a>
+<a class="lang-toggle" href="deinonychus.html">繁體中文</a>
+</header>
+<main class="page">
+<h1 id="配種計画デイノニクスdeinonychus恐爪龍">配種計画：デイノニクス（Deinonychus／恐爪龍）</h1>
+<blockquote><p>自動生成：<code>scripts/build_breeding.py</code>。数値の出典は末尾「出典」節。不明な項目は「未確認」と記載し、推測では埋めない。</p></blockquote>
+<h2 id="1-用途--使いどころ">1. 用途 / 使いどころ</h2>
+<p><strong>出血アタッカー（出血はボスにも有効）、グレンデル戦の代替アタッカー</strong></p>
+<p>kamigame は「出血効果はボスにも有効」「HP の高いボスほど効果が高い」と記載する一方、「体力は低く被弾しない立ち回りが重要」とも警告。グレンデル攻略では代替アタッカーとして挙げ、「複数人／特質厳選ができるならデイノニクスが最速」（同ページは未実践と明記）。低耐久が死因になりやすいため HP 優先・次に攻撃（優先順位は推論）。</p>
+<h2 id="2-目標ステータスと優先順位">2. 目標ステータスと優先順位</h2>
+<p>優先順位：HP（体力） ＞ 攻（近接攻撃）（推論：出典に stat の優先順位の記載なし、項目も順序も本カードの判断）</p>
+<p>目標値：攻略サイトの目標値：メレー 700% を目標（kamigame ヌナタク攻略「ほかの生物候補」欄。同欄に他マップからの転送が必要と注記）（注意：攻略サイトの数値は「育成完了後の実数」＝体力値・メレー%・サドル鎧値であり、<code>data/個体属性.csv</code> の「野生ポイント」とは単位が異なる。相互換算はできず、野生ポイントは同種内の優劣比較にのみ使う）／現状の基準線＝野生ポイント HP≥25、攻≥28（＝現有個体の最高値。出典 data/個体属性.csv 2026-07-20 スナップショット）</p>
+<h2 id="3-変異戦略">3. 変異戦略</h2>
+<p>高ステータスのオス 1 体＋変異カウンタ 0 のメス群を固定運用。両親の母系＋父系合計が 20 未満で 7.31%、片方が 20 以上で 4.07%、両方 20 以上で 0%。変異が出たら新しいオスに入れ替え、メス群は常にカウンタ 0 を維持する。</p>
+<h2 id="4-孵化温度妊娠孵化時間成熟時間">4. 孵化温度・妊娠/孵化時間・成熟時間</h2>
+<ul><li>孵化適正温度：80 ～ 90℃（kamigame：42℃、同サイトの誤記の疑い）</li><li>孵化／出産時間：孵化 4時間59分59秒（kamigame：2時間0分0秒、同サイトの誤記の疑い）</li><li>合計成熟時間：1日13時間2分13秒（kamigame：1日13時間02分13秒）</li><li>幼年期時間：3時間42分13秒</li><li>交配クールタイム：18時間0分0秒 〜 2日0時間0分0秒</li><li>産卵/妊娠場所：陸上</li><li>卵から作れるキブル：通常キブル</li></ul>
+<p>出典突き合わせ：成熟時間＝一致／孵化/妊娠時間＝第三出典で裁定済み（Dv 17999 秒 vs kamigame 7200 秒（差 10799 秒）、本節の裁定説明を参照）／孵化温度＝第三出典で裁定済み（Dv 80.0–90.0℃ vs kamigame 42℃、本節の裁定説明を参照）</p>
+<p><strong>三出典による裁定（2026-09-13）：孵化温度は 80 〜 90℃、孵化時間は 5 時間を主値とする。</strong>ark.wiki.gg（公式 ASA wiki）の Deinonychus wikitext は <code>incubationmin = 80</code>／<code>incubationmax = 90</code>、dododex の Deinonychus ページ（ASA・ASE 共通と自称）は 80–90°C と 5h Egg incubation を記載し、いずれも fandom <code>Module:Dv/data</code> の 80–90℃／17998 秒と一致する。kamigame の 42℃／2 時間は同サイトの誤記と判断：同じ表の他の 4 欄（合計成熟 1日13時間02分13秒、幼年期 3時間42分13秒、刷り込み回数 4、猶予 5時間02分13秒）がゲームファイルと秒単位で一致しており、温度と孵化時間だけを変更して成熟・刷り込みの系列を据え置く理由がない。準備は 80 〜 90℃（極高温帯、エアコン台数は総合ハンドブック第 2 節）で行い、42℃ では準備しないこと。温度が範囲外の卵は孵化が進まないうえ、受精卵の耐久が減り続けて破棄される。</p>
+<h2 id="5-幼体の世話">5. 幼体の世話</h2>
+<ul><li>餌（kamigame）：肉類</li><li>刷り込み回数：4｜刷り込み猶予時間：5時間02分13秒</li><li>肉食。卵限定テイム種だが幼体は通常の肉を食べる例外（fandom Breeding の 「Caring for Babies from Egg-only Tames」で Deinonychus は exception と明記）。</li></ul>
+<h2 id="6-現有個体でのペアリング">6. 現有個体でのペアリング</h2>
+<ul><li>頭数 10｜オス 8／メス 2｜冷凍 0｜キープ 8／淘汰候補 2</li></ul>
+<div class="table-wrap"><table><thead><tr><th>ステータス</th><th>最高値</th><th>保有個体</th></tr></thead><tbody><tr><td>HP（体力）</td><td>25</td><td>母Lv187#896137、母Lv202#019820、公Lv198#439626、公Lv194#467100、公Lv197#697338、公Lv191#390364</td></tr><tr><td>耐（スタミナ）</td><td>22</td><td>公Lv198#439626、公Lv194#467100、公Lv197#697338、公Lv191#390364</td></tr><tr><td>氧（酸素）</td><td>31</td><td>母Lv187#896137、母Lv202#019820、公Lv198#439626</td></tr><tr><td>食（食料）</td><td>29</td><td>公Lv190#348556</td></tr><tr><td>重（重量）</td><td>28</td><td>母Lv187#896137、母Lv202#019820、公Lv191#390364</td></tr><tr><td>攻（近接攻撃）</td><td>28</td><td>公Lv190#348556</td></tr></tbody></table></div>
+<p><strong>ペアリング推奨（上位 3）</strong></p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>オス</th><th>メス</th><th>子に載りうる合計点</th><th>内訳</th></tr></thead><tbody><tr><td>1</td><td>公Lv190#348556</td><td>母Lv187#896137</td><td>53</td><td>HP25(メス)；攻28(オス)</td></tr><tr><td>2</td><td>公Lv190#348556</td><td>母Lv202#019820</td><td>53</td><td>HP25(メス)；攻28(オス)</td></tr><tr><td>3</td><td>公Lv197#697338</td><td>母Lv187#896137</td><td>49</td><td>HP25(オス)；攻24(メス)</td></tr></tbody></table></div>
+<p>（ペアリング計算はダッシュボード 🧬 育種決策ページおよび <code>scripts/report_breeding.py</code> と同じ <code>ark_progress.compute_breeding()</code> を使用。計算対象 stat＝HP、攻、目標カラー系＝紅）</p>
+<h2 id="7-出典">7. 出典</h2>
+<ul><li><a href="https://kamigame.jp/asa/page/383839160559000779.html">https://kamigame.jp/asa/page/383839160559000779.html</a></li><li><a href="https://kamigame.jp/asa/page/400530104020635620.html">https://kamigame.jp/asa/page/400530104020635620.html</a></li><li><a href="https://ark.wiki.gg/wiki/Deinonychus">https://ark.wiki.gg/wiki/Deinonychus</a></li><li><a href="https://www.dododex.com/taming/deinonychus">https://www.dododex.com/taming/deinonychus</a></li><li><a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a></li><li><a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li><li><a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></li><li><a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li>kamigame 快取檔：<code>.cache/kamigame/page_383839160559000779.html</code></li></ul>
+</main>
+</body>
+</html>
