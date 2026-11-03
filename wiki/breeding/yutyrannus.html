@@ -19,7 +19,7 @@
 <p>kamigame 物種頁把咆哮效果寫成「攻撃力約 20% 増加・防御力 20% 増加」，Center Boss 編成也是「ユウティラヌス×1 バッファー」。增益是對周圍我方生效的百分比效果，跟 Yutyrannus 自己的攻擊力無關，所以配種目標優先 HP／耐（活到咆哮 CD 轉完），攻擊力排最後（本段末句為推論，來源未直接寫優先序）。</p>
 <h2 id="2-目標-stat-與優先序">2. 目標 stat 與優先序</h2>
 <p>優先序：HP（體力） ＞ 耐（耐力）（推論：來源未寫 stat 優先序，項目與排序皆本卡判斷）</p>
-<p>目標數值：攻略來源目標：HP 25000、耐力 2000、鞍具甲值 25、不需印記（kamigame センターボス編成表）（注意：攻略來源給的是「養成完成後的實數」，即 HP 值、近戰 %、鞍甲值；<code>data/個體屬性.csv</code> 記的是「野生點數」，兩者單位不同，不能直接互換，野生點數只能當「同物種之間誰比較好」的排序用）；現況基準線＝野生點數 HP≥31、耐≥40（＝現有個體最高值，來源 data/個體屬性.csv 2026-07-20 快照）</p>
+<p>目標數值：攻略來源目標：HP 25000、耐力 2000、鞍具甲值 25、不需印記（kamigame センターボス編成表）（注意：攻略來源給的是「養成完成後的實數」，即 HP 值、近戰 %、鞍甲值；<code>data/個體屬性.csv</code> 記的是「野生點數」，兩者單位不同，不能直接互換，野生點數只能當「同物種之間誰比較好」的排序用）；現況基準線＝本存檔無該物種個體，無基準線可用</p>
 <h2 id="3-突變策略">3. 突變策略</h2>
 <p>固定一隻高 stat 公＋一群突變計數 0 的母；雙親母系＋父系合計 &lt;20 才有完整 7.31% 機率，一方 ≥20 降到 4.07%，雙方都 ≥20 為 0%。突變出現就把新公換上去，母群永遠保持乾淨。</p>
 <h2 id="4-孵化溫度妊娠或孵化時間成長時間">4. 孵化溫度／妊娠或孵化時間／成長時間</h2>
@@ -28,11 +28,7 @@
 <h2 id="5-幼體照顧">5. 幼體照顧</h2>
 <ul><li>餌（kamigame 原字）：肉類</li><li>印記次數：23｜印記寬限時間：1時間11分06秒</li><li>肉食；成熟時間是本表最長的一種（Dv/data 666,666 秒），排程要留整段時間。</li></ul>
 <h2 id="6-現有個體配對建議">6. 現有個體配對建議</h2>
-<ul><li>隻數 3｜公 1／母 2｜冷凍中 1｜留種 3／淘汰候選 0</li></ul>
-<div class="table-wrap"><table><thead><tr><th>stat</th><th>最高值</th><th>持有者</th></tr></thead><tbody><tr><td>HP（體力）</td><td>31</td><td>母Lv264#843534</td></tr><tr><td>耐（耐力）</td><td>40</td><td>母Lv264#843534</td></tr><tr><td>氧（氧氣）</td><td>38</td><td>母Lv264#843534、母Lv162#592618</td></tr><tr><td>食（食物）</td><td>27</td><td>母Lv264#843534</td></tr><tr><td>重（負重）</td><td>41</td><td>母Lv264#843534</td></tr><tr><td>攻（近戰攻擊）</td><td>31</td><td>母Lv264#843534、母Lv162#592618</td></tr></tbody></table></div>
-<p><strong>配對建議（前 3）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>公</th><th>母</th><th>子代可湊點數總和</th><th>各項貢獻</th></tr></thead><tbody><tr><td>1</td><td>公Lv115#364964</td><td>母Lv264#843534</td><td>71</td><td>HP31(母)；耐40(母)</td></tr><tr><td>2</td><td>公Lv115#364964</td><td>母Lv162#592618</td><td>32</td><td>HP16(公)；耐16(公)</td></tr></tbody></table></div>
-<p>（配對算法與儀表板 🧬 育種決策頁、<code>scripts/report_breeding.py</code> 共用 <code>ark_progress.compute_breeding()</code>，納入計算 stat＝HP、耐、目標色系＝紅）</p>
+<p>現無個體（<code>data/個體屬性.csv</code> 最新掃描查無本物種）。</p>
 <h2 id="7-來源">7. 來源</h2>
 <ul><li><a href="https://kamigame.jp/asa/page/292375114517852774.html">https://kamigame.jp/asa/page/292375114517852774.html</a></li><li><a href="https://kamigame.jp/asa/page/323439280288496229.html">https://kamigame.jp/asa/page/323439280288496229.html</a></li><li><a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a></li><li><a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li><li><a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></li><li><a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li>kamigame 快取檔：<code>.cache/kamigame/page_292375114517852774.html</code></li></ul>
 </main>

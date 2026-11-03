@@ -19,7 +19,7 @@
 <p>任務單原本把 Wyvern 歸在「不可繁殖」，但 fandom Wyvern 頁的 Breeding 節寫得很清楚：拿到第一代成體後同型 Wyvern 之間可以互相繁殖（不同型不可互配），只是後代仍然只吃 Wyvern Milk，而奶只能從野生母體或 Alpha 取得，所以「不要在沒有野生 Wyvern 的地圖上繁殖」。本專案照來源走：本頁同時寫偷蛋挑等級與同型配種兩條線，並在下面標明與任務單口徑的差異。野生孵化個體的等級＝下蛋母體的等級（野生上限 190），不像一般馴服會再加成，所以蛋要挑最高等的拿。</p>
 <h2 id="2-目標-stat-與優先序">2. 目標 stat 與優先序</h2>
 <p>優先序：HP（體力） ＞ 攻（近戰攻擊） ＞ 重（負重）（推論：來源未寫 stat 優先序，項目與排序皆本卡判斷）</p>
-<p>目標數值：野生點數 HP≥36、攻≥28、重≥23（＝現有個體最高值，來源 data/個體屬性.csv 2026-07-20 快照）</p>
+<p>目標數值：未確認（本存檔無該物種個體，無基準線可用）</p>
 <h2 id="3-突變策略">3. 突變策略</h2>
 <p>固定一隻高 stat 公＋一群突變計數 0 的母；雙親母系＋父系合計 &lt;20 才有完整 7.31% 機率，一方 ≥20 降到 4.07%，雙方都 ≥20 為 0%。突變出現就把新公換上去，母群永遠保持乾淨。</p>
 <p>本種額外注意：</p>
@@ -30,11 +30,7 @@
 <h2 id="5-幼體照顧">5. 幼體照顧</h2>
 <ul><li>餌（kamigame 原字）：ワイバーンミルク</li><li>印記次數：11｜印記寬限時間：4時間35分33秒</li><li>幼體只吃 Wyvern Milk，一次補 1200 食物、約撐 3 小時 20 分；低等幼體的食物上限可能不到 1200，那就得用強制餵食。無奶備案：讓食物歸零後用興奮劑壓昏迷、旁邊放一隻開被動回復的 Daeodon 撐血（fandom Wyvern 頁，該頁註明會影響印記品質）。</li></ul>
 <h2 id="6-現有個體配對建議">6. 現有個體配對建議</h2>
-<ul><li>隻數 4｜公 2／母 2｜冷凍中 3｜留種 4／淘汰候選 0</li></ul>
-<div class="table-wrap"><table><thead><tr><th>stat</th><th>最高值</th><th>持有者</th></tr></thead><tbody><tr><td>HP（體力）</td><td>36</td><td>公Lv165#170268</td></tr><tr><td>耐（耐力）</td><td>31</td><td>公Lv165#170268</td></tr><tr><td>氧（氧氣）</td><td>25</td><td>公Lv165#170268</td></tr><tr><td>食（食物）</td><td>26</td><td>母Lv213#481864</td></tr><tr><td>重（負重）</td><td>23</td><td>母Lv213#481864</td></tr><tr><td>攻（近戰攻擊）</td><td>28</td><td>母Lv213#481864</td></tr></tbody></table></div>
-<p><strong>配對建議（前 3）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>公</th><th>母</th><th>子代可湊點數總和</th><th>各項貢獻</th></tr></thead><tbody><tr><td>1</td><td>公Lv165#170268</td><td>母Lv213#481864</td><td>87</td><td>HP36(公)；攻28(母)；重23(母)</td></tr><tr><td>2</td><td>公Lv50#100904</td><td>母Lv213#481864</td><td>84</td><td>HP33(母)；攻28(母)；重23(母)</td></tr><tr><td>3</td><td>公Lv165#170268</td><td>母Lv62#461030</td><td>83</td><td>HP36(公)；攻25(公)；重22(公)</td></tr></tbody></table></div>
-<p>（配對算法與儀表板 🧬 育種決策頁、<code>scripts/report_breeding.py</code> 共用 <code>ark_progress.compute_breeding()</code>，納入計算 stat＝HP、攻、重、目標色系＝紅）</p>
+<p>現無個體（<code>data/個體屬性.csv</code> 最新掃描查無本物種）。</p>
 <h2 id="7-來源">7. 來源</h2>
 <ul><li><a href="https://ark.fandom.com/wiki/Wyvern">https://ark.fandom.com/wiki/Wyvern</a></li><li><a href="https://kamigame.jp/asa/page/371409572566406955.html">https://kamigame.jp/asa/page/371409572566406955.html</a></li><li><a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a></li><li><a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li><li><a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></li><li><a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li>備註：以ファイアワイバーン頁為代表（kamigame 無「ワイバーン」總頁）</li><li>kamigame 快取檔：<code>.cache/kamigame/page_371409572566406955.html</code></li></ul>
 </main>

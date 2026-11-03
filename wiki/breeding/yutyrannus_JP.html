@@ -19,7 +19,7 @@
 <p>kamigame の種族ページは咆哮を「攻撃力約 20% 増加・防御力 20% 増加」と記載、センターボス編成も「ユウティラヌス×1 バッファー」。バフは周囲の味方に乗る割合効果で本体の攻撃力とは無関係のため、育成目標は HP／スタミナ優先、攻撃は最後（この一文は推論、出典に優先順位の明記なし）。</p>
 <h2 id="2-目標ステータスと優先順位">2. 目標ステータスと優先順位</h2>
 <p>優先順位：HP（体力） ＞ 耐（スタミナ）（推論：出典に stat の優先順位の記載なし、項目も順序も本カードの判断）</p>
-<p>目標値：攻略サイトの目標値：体力 25000、スタミナ 2000、サドル鎧値 25、刷り込み不要（kamigame センターボス編成表）（注意：攻略サイトの数値は「育成完了後の実数」＝体力値・メレー%・サドル鎧値であり、<code>data/個体属性.csv</code> の「野生ポイント」とは単位が異なる。相互換算はできず、野生ポイントは同種内の優劣比較にのみ使う）／現状の基準線＝野生ポイント HP≥31、耐≥40（＝現有個体の最高値。出典 data/個体属性.csv 2026-07-20 スナップショット）</p>
+<p>目標値：攻略サイトの目標値：体力 25000、スタミナ 2000、サドル鎧値 25、刷り込み不要（kamigame センターボス編成表）（注意：攻略サイトの数値は「育成完了後の実数」＝体力値・メレー%・サドル鎧値であり、<code>data/個体属性.csv</code> の「野生ポイント」とは単位が異なる。相互換算はできず、野生ポイントは同種内の優劣比較にのみ使う）／現状の基準線＝出典に数値基準なし。本セーブに該当種の個体がなく基準線も取れない</p>
 <h2 id="3-変異戦略">3. 変異戦略</h2>
 <p>高ステータスのオス 1 体＋変異カウンタ 0 のメス群を固定運用。両親の母系＋父系合計が 20 未満で 7.31%、片方が 20 以上で 4.07%、両方 20 以上で 0%。変異が出たら新しいオスに入れ替え、メス群は常にカウンタ 0 を維持する。</p>
 <h2 id="4-孵化温度妊娠孵化時間成熟時間">4. 孵化温度・妊娠/孵化時間・成熟時間</h2>
@@ -28,11 +28,7 @@
 <h2 id="5-幼体の世話">5. 幼体の世話</h2>
 <ul><li>餌（kamigame）：肉類</li><li>刷り込み回数：23｜刷り込み猶予時間：1時間11分06秒</li><li>肉食。成熟時間は本表で最長（Dv/data で 666,666 秒）、スケジュールを長めに確保する。</li></ul>
 <h2 id="6-現有個体でのペアリング">6. 現有個体でのペアリング</h2>
-<ul><li>頭数 3｜オス 1／メス 2｜冷凍 1｜キープ 3／淘汰候補 0</li></ul>
-<div class="table-wrap"><table><thead><tr><th>ステータス</th><th>最高値</th><th>保有個体</th></tr></thead><tbody><tr><td>HP（体力）</td><td>31</td><td>母Lv264#843534</td></tr><tr><td>耐（スタミナ）</td><td>40</td><td>母Lv264#843534</td></tr><tr><td>氧（酸素）</td><td>38</td><td>母Lv264#843534、母Lv162#592618</td></tr><tr><td>食（食料）</td><td>27</td><td>母Lv264#843534</td></tr><tr><td>重（重量）</td><td>41</td><td>母Lv264#843534</td></tr><tr><td>攻（近接攻撃）</td><td>31</td><td>母Lv264#843534、母Lv162#592618</td></tr></tbody></table></div>
-<p><strong>ペアリング推奨（上位 3）</strong></p>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>オス</th><th>メス</th><th>子に載りうる合計点</th><th>内訳</th></tr></thead><tbody><tr><td>1</td><td>公Lv115#364964</td><td>母Lv264#843534</td><td>71</td><td>HP31(メス)；耐40(メス)</td></tr><tr><td>2</td><td>公Lv115#364964</td><td>母Lv162#592618</td><td>32</td><td>HP16(オス)；耐16(オス)</td></tr></tbody></table></div>
-<p>（ペアリング計算はダッシュボード 🧬 育種決策ページおよび <code>scripts/report_breeding.py</code> と同じ <code>ark_progress.compute_breeding()</code> を使用。計算対象 stat＝HP、耐、目標カラー系＝紅）</p>
+<p>個体なし（<code>data/個体属性.csv</code> 最新スキャンに該当種なし）。</p>
 <h2 id="7-出典">7. 出典</h2>
 <ul><li><a href="https://kamigame.jp/asa/page/292375114517852774.html">https://kamigame.jp/asa/page/292375114517852774.html</a></li><li><a href="https://kamigame.jp/asa/page/323439280288496229.html">https://kamigame.jp/asa/page/323439280288496229.html</a></li><li><a href="https://ark.fandom.com/wiki/Module:Dv/data">https://ark.fandom.com/wiki/Module:Dv/data</a></li><li><a href="https://ark.fandom.com/wiki/Breeding">https://ark.fandom.com/wiki/Breeding</a></li><li><a href="https://ark.fandom.com/wiki/Mutations">https://ark.fandom.com/wiki/Mutations</a></li><li><a href="https://kamigame.jp/asa/page/295411911627956079.html">https://kamigame.jp/asa/page/295411911627956079.html</a></li><li>kamigame 快取檔：<code>.cache/kamigame/page_292375114517852774.html</code></li></ul>
 </main>

@@ -114,7 +114,7 @@ Deinotherium 三種）；「推論：來源未寫 stat 優先序，項目與排�
 項目與排序都是從用途推出來的（其餘 13 種）。</li><li><code>scripts/build_breeding.py</code>：重建本資料夾所有物種檔與 <code>data/配種目標.csv</code>（冪等）；
 <code>--check</code> 只印兩源核對結果不寫檔。</li><li><code>scripts/report_breeding.py --species &lt;英文名&gt;</code>：出 <code>reports/育種決策_&lt;物種&gt;.md</code>，
 與儀表板 🧬 育種決策頁共用 <code>ark_progress.compute_breeding()</code>，各物種檔第 6 節也是同一支函式，
-三邊不會各算一套。</li><li>配對建議的資料底是 <code>data/個體屬性.csv</code>（存檔掃描產出，2026-07-20 快照，220 隻）。
+三邊不會各算一套。</li><li>配對建議的資料底是 <code>data/個體屬性.csv</code>（存檔掃描產出；輪 1 2026-07 快照為 220 隻，輪 2 自 2026-10-31 重新累積）。
 存檔資料更新後重跑 <code>build_breeding.py</code>，第 6 節會自動跟著更新。</li></ul>
 <h2 id="6-本手冊沒有涵蓋的">6. 本手冊沒有涵蓋的</h2>
 <ul><li>各 stat 的實際數值成長公式（各物種的 <code>statgain</code> 係數），本輪未取。</li><li>特質（Gene Trait）對配種的影響：<code>data/個體屬性.csv</code> 現有的特質欄仍是舊格式的亂碼

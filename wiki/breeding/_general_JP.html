@@ -124,7 +124,7 @@ kamigame にも fandom にも明文が無い。本ハンドブックでは未確
 「推論：出典に stat の優先順位の記載なし」＝閾値すら無く、項目も順序も用途から推した場合（残り 13 種）。</li><li><code>scripts/build_breeding.py</code>：本フォルダの全種ファイルと <code>data/配種目標.csv</code> を再生成（冪等）。
 <code>--check</code> は突き合わせ結果のみ表示し、書き込まない。</li><li><code>scripts/report_breeding.py --species &lt;英名&gt;</code>：<code>reports/育種決策_&lt;種&gt;.md</code> を出力。
 ダッシュボードの 🧬 育種決策ページと同じ <code>ark_progress.compute_breeding()</code> を使用し、
-各種ファイル第 6 節も同じ関数なので、3 か所で計算がズレない。</li><li>ペアリングのデータ元は <code>data/個體屬性.csv</code>（セーブスキャン生成、2026-07-20 スナップショット、220 体）。
+各種ファイル第 6 節も同じ関数なので、3 か所で計算がズレない。</li><li>ペアリングのデータ元は <code>data/個體屬性.csv</code>（セーブスキャン生成。第 1 周目 2026-07 時点で 220 体、第 2 周目は 2026-10-31 から再集計）。
 セーブデータ更新後に <code>build_breeding.py</code> を再実行すれば第 6 節は自動更新される。</li></ul>
 <h2 id="6-本ハンドブックが扱っていないこと">6. 本ハンドブックが扱っていないこと</h2>
 <ul><li>各ステータスの実数成長式（種ごとの <code>statgain</code> 係数）。今回は取得していない。</li><li>特質（Gene Trait）のブリーディングへの影響：<code>data/個體屬性.csv</code> の特質列は今なお旧形式の文字化け
