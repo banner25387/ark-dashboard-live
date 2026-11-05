@@ -69,7 +69,8 @@
       help_dots_h: "色點意義",
       help_dot_l3: "已實戰成功（L3）", help_dot_l2: "試過但還沒成功（L2）", help_dot_l1: "只核對過資料來源（L1）", help_dot_none: "未驗證",
       help_grid_h: "全景分頁",
-      help_grid: "上方切到「全景」可一次看 15 張圖。點格子展開該圖物種，點節點看詳情，「看流程」跳回三欄。",
+      help_grid: "上方切到「全景」可一次看 {n} 張圖。點格子展開該圖物種，點節點看詳情，「看流程」跳回三欄。",
+      help_grid_nodata: "上方切到「全景」可一次看全部地圖。點格子展開該圖物種，點節點看詳情，「看流程」跳回三欄。",
       help_url_h: "網址可以分享",
       help_url: "選到哪張圖、哪隻 Boss、走到第幾步都記在網址裡。複製網址給別人，打開就是同一畫面。",
       help_tl_h: "時間軸",
@@ -77,7 +78,7 @@
       help_src_h: "資料來源",
       help_src: "Boss、洞窟、Artifact 資料整理自 ark.wiki.gg 與 kamigame，驗證級數以實際遊玩為準。看到錯誤歡迎回報。",
       // 時間軸視圖（任務單 C4）
-      tl_title: "時間軸", tl_hint: "點時間軸上的項目，右側顯示詳情；側欄可依地圖篩選。",
+      tl_title: "時間軸", tl_hint: "點時間軸上的項目，側欄顯示詳情；側欄也可依地圖篩選。",
       tl_stats_title: "時間軸統計", tl_n_episodes: "集數", tl_n_events: "驗證事件", tl_n_undated: "日期未定", tl_range: "最早～最晚",
       tl_filter: "地圖篩選", tl_all: "全部", tl_no_map_n: "{n} 集未填地圖（篩單一地圖時隱藏）",
       tl_undated: "日期未定", tl_undated_hint: "有驗證級數但還沒有日期的事件；日期補進驗證紀錄後會自動上軸。",
@@ -150,7 +151,8 @@
       help_dots_h: "色の意味",
       help_dot_l3: "実戦で成功済み（L3）", help_dot_l2: "試行済み・未成功（L2）", help_dot_l1: "出典のみ照合済み（L1）", help_dot_none: "未検証",
       help_grid_h: "全景タブ",
-      help_grid: "上部で「全景」に切り替えると、15 マップを一度に見られます。マップを押すと生物を展開、ノードを押すと詳細、「フローを見る」で 3 列表示に戻ります。",
+      help_grid: "上部で「全景」に切り替えると、{n} マップを一度に見られます。マップを押すと生物を展開、ノードを押すと詳細、「フローを見る」で 3 列表示に戻ります。",
+      help_grid_nodata: "上部で「全景」に切り替えると、すべてのマップを一度に見られます。マップを押すと生物を展開、ノードを押すと詳細、「フローを見る」で 3 列表示に戻ります。",
       help_url_h: "URL で共有できます",
       help_url: "選んだマップ、ボス、何歩目まで進んだかは URL に記録されます。URL をコピーして送れば、相手も同じ画面を開けます。",
       help_tl_h: "タイムライン",
@@ -158,7 +160,7 @@
       help_src_h: "データの出典",
       help_src: "ボス、洞窟、アーティファクトのデータは ark.wiki.gg と kamigame をもとに整理し、検証レベルは実際のプレイを基準にしています。誤りに気づいたらお知らせください。",
       // タイムライン表示（C4）
-      tl_title: "タイムライン", tl_hint: "タイムライン上の項目を押すと右に詳細。サイドバーでマップ別に絞り込めます。",
+      tl_title: "タイムライン", tl_hint: "タイムライン上の項目を押すと、サイドバーに詳細を表示します。サイドバーでマップ別に絞り込めます。",
       tl_stats_title: "タイムラインの統計", tl_n_episodes: "配信回", tl_n_events: "検証イベント", tl_n_undated: "日付未定", tl_range: "最古～最新",
       tl_filter: "マップで絞り込み", tl_all: "すべて", tl_no_map_n: "{n} 回はマップ未記入（マップ絞り込み時は非表示）",
       tl_undated: "日付未定", tl_undated_hint: "検証レベルはあるが日付がまだないイベント。検証記録に日付を入れると自動で軸に載ります。",
@@ -288,6 +290,7 @@
    *   groups  ＝ [{ month: "2026-02", days: [{ date: "2026-02-16", items: [...] }] }]，月份只列有項目的月。
    *   undated ＝ 沒有日期的項目（目前＝L2／L3 但 date 空的驗證事件；集數無日期也會落到這裡）。
    *   stats   ＝ { episodes, events, undated, mapProgress, first, last, episodesNoMap }（episodesNoMap＝篩單一地圖時被隱藏的未填地圖集數）。
+   *             first／last 不含 ASA 推出（C5 ④，2026-11-04 裁定）：只有推出項、沒有其他有日期項目時兩者為 ""。
    * 項目：
    *   集數   { kind:"episode", id:"ep:<no>", date, no, title, highlight, vod, map_id }
    *   事件   { kind:"event", id:"ev:<verification 鍵>", key, date, level, episode, note, ref:"species"|"target", species?, target? }
@@ -358,13 +361,14 @@
     });
 
     var count = function (lst, kind) { return lst.filter(function (x) { return x.kind === kind; }).length; };
+    var ranged = dated.filter(function (x) { return !(x.kind === "map" && x.which === "release"); }); // 最早～最晚不含 ASA 推出（C5 ④）
     var stats = {
       episodes: count(dated, "episode"),
       events: count(dated, "event"),
       undated: undated.length,
       mapProgress: dated.filter(function (x) { return x.kind === "map" && x.which !== "release"; }).length,
-      first: dated.length ? dated[0].date.slice(0, 10) : "",
-      last: dated.length ? dated[dated.length - 1].date.slice(0, 10) : "",
+      first: ranged.length ? ranged[0].date.slice(0, 10) : "",
+      last: ranged.length ? ranged[ranged.length - 1].date.slice(0, 10) : "",
       episodesNoMap: episodesNoMap
     };
     return { items: dated, groups: groups, undated: undated, stats: stats, byId: byId };
@@ -401,6 +405,10 @@
   }
   function lsGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* 私密模式等 */ } }
+  // sessionStorage 同樣的容錯包裝（C5 ⑦：localStorage 被擋時的第二層，同分頁重整不再彈說明）
+  function ssGet(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
+  function ssSet(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) { /* 兩層都被擋時退化為每次載入彈一次 */ } }
+  var HELP_SEEN_MEM = false; // 第三層：記憶體旗標，同一頁生命週期內只彈一次（含切語言、切視圖、重繪）
   function readQuery() {
     var out = {};
     var q = window.location.search.replace(/^\?/, "");
@@ -431,7 +439,7 @@
     error: null,        // 失敗畫面：[{key, tail}]，切語言時依此重繪
     tlMap: "",          // 時間軸：地圖篩選（""＝全部；網址 map=）
     tlSel: null,        // 時間軸：選中項目 id（"ep:45"／"ev:species:Rex"／"mp:ragnarok:started"；網址 ep=／ev=）
-    tlRelease: true,    // 時間軸：顯示 ASA 推出小標（側欄開關，不進網址）
+    tlRelease: false,   // 時間軸：ASA 推出小標預設不顯示（2026-11-04 裁定，C5 ③），側欄開關可開（不進網址）
     stress: false,
     rendered: { flow: false, grid: false, timeline: false }
   };
@@ -1402,6 +1410,7 @@
     } else if (S.view === "timeline") {
       renderTimeline();
     } else {
+      if (!S.mapId) S.mapId = defaultMapId(); // C5 ①：從時間軸進頁 S.mapId 為 null，先補預設圖再同步焦點，側欄才有地圖詳情
       syncGridFocus();
       renderGrid();
     }
@@ -1421,7 +1430,9 @@
     var panel = el("div", { class: "help-panel", tabindex: "-1" });
     panel.appendChild(el("h2", { id: "help-title", text: t("help_title") }));
     function sec(hKey, body) { panel.appendChild(el("section", { class: "help-sec" }, [el("h3", { text: t(hKey) })].concat(body))); }
-    function p(key) { return el("p", { text: t(key) }); }
+    function p(key, vars) { return el("p", { text: vars ? fmt(t(key), vars) : t(key) }); }
+    // 全景段的地圖數由 maps 長度算（C5 ⑥）；資料未載入（錯誤頁也能按「？」）用不帶數字的 help_grid_nodata
+    var gridP = (D && D.maps && D.maps.length) ? p("help_grid", { n: D.maps.length }) : p("help_grid_nodata");
     sec("help_what_h", [p("help_what")]);
     sec("help_cols_h", [el("ol", {}, ["help_cols_1", "help_cols_2", "help_cols_3"].map(function (k) { return el("li", { text: t(k) }); }))]);
     sec("help_walk_h", [p("help_walk")]);
@@ -1429,7 +1440,7 @@
     sec("help_dots_h", [el("ul", { class: "help-dots" }, [["v-l3", "help_dot_l3"], ["v-l2", "help_dot_l2"], ["v-l1", "help_dot_l1"], ["v-none", "help_dot_none"]].map(function (d) {
       return el("li", {}, [el("span", { class: "hdot " + d[0], "aria-hidden": "true" }), el("span", { text: t(d[1]) })]);
     }))]);
-    sec("help_grid_h", [p("help_grid")]);
+    sec("help_grid_h", [gridP]);
     sec("help_tl_h", [p("help_tl")]);
     sec("help_url_h", [p("help_url")]);
     sec("help_src_h", [p("help_src")]);
@@ -1463,9 +1474,13 @@
     if (ev.target === box || (ev.target.closest && ev.target.closest('[data-act="help-close"]'))) closeHelp();
   }
   // 首次開頁：鍵不存在才彈並寫入；資料載入失敗時 boot 已先 return，不會走到這裡
+  // C5 ⑦ 三層依序：記憶體旗標 → localStorage → sessionStorage；兩個 storage 都被擋時每次載入彈一次為已知上限
   function autoOpenHelpOnce() {
-    if (lsGet(HELP_KEY) !== null) return;
+    if (HELP_SEEN_MEM) return;
+    if (lsGet(HELP_KEY) !== null || ssGet(HELP_KEY) !== null) return;
+    HELP_SEEN_MEM = true;
     lsSet(HELP_KEY, "1");
+    ssSet(HELP_KEY, "1");
     openHelp();
   }
 
