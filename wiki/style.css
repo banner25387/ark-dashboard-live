@@ -41,6 +41,21 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+.site-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+.site-switch a {
+  padding: 0.15rem 0.75rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-switch a + a { border-left: 1px solid var(--border); }
+.site-switch a:hover { color: var(--fg); }
+.site-switch a[aria-current="page"] { background: var(--fg); color: var(--bg); }
 .site-header .home-link {
   font-weight: bold;
   text-decoration: none;

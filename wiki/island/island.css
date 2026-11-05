@@ -86,6 +86,12 @@ button { font: inherit; }
 }
 .top .title { font-size: 1.1rem; margin: 0; }
 .top .back { text-decoration: none; font-size: 0.9rem; }
+/* ARK 三頁共用切換鈕（儀表板／全景／生物圖鑑；2026-11-05） */
+.site-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; font-size: 0.85rem; }
+.site-switch a { padding: 0.15rem 0.75rem; text-decoration: none; color: var(--muted); }
+.site-switch a + a { border-left: 1px solid var(--border); }
+.site-switch a:hover { color: var(--fg); }
+.site-switch a[aria-current="page"] { background: var(--fg); color: var(--bg); }
 .top-actions { margin-left: auto; display: flex; gap: 0.8rem; align-items: center; }
 .views { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
 .view-btn {

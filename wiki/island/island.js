@@ -11,6 +11,7 @@
     zh: {
       title: "ARK 全景",
       back_to_list: "← 清單（離線 wiki 首頁）",
+      nav_dash: "儀表板", nav_pano: "全景", nav_wiki: "生物圖鑑",
       lang_btn: "日本語",
       view_flow: "流程", view_grid: "全景", view_timeline: "時間軸",
       stats_title: "驗證統計",
@@ -93,6 +94,7 @@
     ja: {
       title: "ARK 全景図",
       back_to_list: "← 一覧（オフライン wiki トップ）",
+      nav_dash: "ダッシュボード", nav_pano: "全景図", nav_wiki: "生物図鑑",
       lang_btn: "繁中",
       view_flow: "フロー", view_grid: "全景", view_timeline: "タイムライン",
       stats_title: "検証の統計",
